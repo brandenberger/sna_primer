@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"SNA - A Primer\"\ndate: \"Session #1 Introduction to core concepts\"\nauthor: \"Mario Angst, Laurence Brandenberger\"\noutput: ioslides_presentation\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = FALSE)\nlibrary(igraph)\nlibrary(networkD3)\nlibrary(colorspace)\nlibrary(ggplot2)\n```\n\n## \n\n1) Please discuss 5 minutes with your neighbour: Which animal would you like to be in your next life, and why?\n\n\n2) Please introduce your neighbour as an animal and provide sufficient reasoning why he/ she would prefer his/ her chosen animal existence to any other.  \n\nShould you not believe in resurrection, you may also discuss your favorit saint, spaghetti monster sauce or yoga posture.\n\n![](bookdown_resources/ganesha.jpg)\n\n##\n\n<div class=\"notes\">\n\nThe issue of structure and agency is central for sociology. Sociologists recognize two main determinants of social phenomena, social structure and individual actions (human agency); what is contested is their relative importance. Social structure refers to those larger and relatively enduring features of society which provide the background against which social life is carried out: for example, the class structure. It highlights the fact that human societies have certain regularities in the social relationships which people engage in. Agency, on the other hand, refers to the volitional and purposeful nature of human activity. Social structure is believed to exert a constraining effect on human activity; agency refers to the ability of individuals to act independently of this.\n\nIt is possible to identify three main standpoints in the debate. (1) Some branches of sociology (such as structuralism, functionalism and Marxism) assert that social life is largely determined by social structure, and that individual activities can be explained mostly as an outcome of structure. (2) Other branches (for instance, phenomenological sociology, ethnomethodology and symbolic interactionism) reverse this emphasis, stressing the ability of individuals to construct and reconstruct and give meaning to their world. Proponents of this view emphasize the need to provide explanations for social phenomena which reflect the views of the individuals they study. (3) Other approaches stress the complementarity of structure and agency. Social structure influences human actions, but individual activities can similarly influence social structure.\n\n</div>\n\n## \n\n- Think about your study. Or, if you do not have on, come up with an interesting question you would like to work on. With your neighbour, elaborate the questions in the checklist at the end of the bookdown chapter 1 provided.\n- What are possible consequences of your particular research setting, as identified through the checklist? Be prepared to share the results with the group.\n\n\n## \n\n",
+    "created" : 1521628740220.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3768613149",
+    "id" : "44EEA8C1",
+    "lastKnownWriteTime" : 1521629507,
+    "last_content_update" : 1521629507804,
+    "path" : "~/Documents/GitHub/sna_primer/Intro_slides.Rmd",
+    "project_path" : "Intro_slides.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

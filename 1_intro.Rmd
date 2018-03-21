@@ -17,7 +17,9 @@ print(types_of_edges_table, type = 'html', include.rownames = F)
 
 ## Network phenomena: Global and individual levels
 
-
+We can broadly distinguish between network measures on the individual and global level. 
+Individual level metrics tell us something about a member of the network. How many integrated is he/ she? How central? What role does he/ she play?
+Global metrics tell us something about the overall structure of the network. How centralized is it? How well connected? How many parts are there?
 
 ## Networks as independent variables
 
@@ -25,7 +27,11 @@ What is the influence of structure?
 
 ### Example: English soccer teams
 
+@Grund2012 examine the relationship between the passing structure of English soccer teams (network characteristics on the global level as an independent variable) on team success.
+
 ### Example: something with individual-level dependent variable
+
+
 
 ## Networks as dependent variables
 
@@ -33,15 +39,20 @@ How does structure come about?
 
 ### Example: 
 
+@Gyarmati2014 study different styles of soccer teams, again using passing data. This is maybe not an exact case of a network being the dependent variable, as they mostly seem to be interested in description. However, you could think about how these networks come about. Does it depend on the ligue? The age of the coach? The nationality of the players?...
+
 ## Setting boundaries
 
 Nominalist and realist [@Waesche2017]
 
 ## Conclusion: A checklist to inform your research design
 
+```{block, type ='rmdright'}
 - Am I studying a relational phenomenon? What are my ties/ links?
 - What is the content of my ties?
 - Do I look at network phenomena at the global or individual level?
 - Are network phenomena my dependent or independent variable?
 - How would I go about setting boundaries for my network?
+```
+
 
