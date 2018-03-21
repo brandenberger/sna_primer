@@ -46,7 +46,7 @@ Here the rows correspond to the edges in the network, the columns correspond to 
 An alternative way of storing network data is by creating a matrix with all unique nodes in the rows as well as in the columns: 
 
 ```{r, echo=FALSE}
-mat
+mat[1:10,1:10]
 ```
 
 Here, the network information is stored less efficiently but more intuitively: Every possible tie in a network is listed in the data set, for instance sender `a` tying to target `b`. If this tie exists, if
@@ -93,6 +93,43 @@ Read in the network data of the Swiss national socer team.
 
 
 ## Different Network types: one-mode and two-mode networks
+
+```{r, echo=FALSE}
+twomode_el <- read.csv("bookdown_resources/nati_teams.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+
+unique_players <- unique(twomode_el$Player)
+unique_teams <- unique(twomode_el$Team)
+bip_mat <- matrix(0, nrow = length(unique_players), ncol = length(unique_teams))
+colnames(bip_mat) <- unique_teams
+rownames(bip_mat) <- unique_players
+bip_mat[cbind(twomode_el$Player,twomode_el$Team)] <- 1
+
+col = c("actor" = "forest green", "event" = "light blue")
+ggnet2(network(bip_mat, matrix.type = "bipartite"), 
+       label = TRUE, palette = col,
+       color = "mode", label.size = 2.5)
+
+```
+
+A adjacency matrix for a two-mode network is rectangular.
+
+```{r, echo=FALSE}
+bip_mat[1:4,1:7]
+```
+
+A projection onto a one-mode network can be achieved by multiplying the rectangular matrix by its transpose.
+
+```{r}
+one_mode_projection <- bip_mat %*% t(bip_mat)
+diag(one_mode_projection) <- 0 #exclude self-ties
+one_mode_projection[1:10,1:10] #look at the first 10 players
+```
+
+```{r}
+ggnet2(network(one_mode_projection),
+       label = TRUE)
+```
+
 
 ## Network visualization
 
