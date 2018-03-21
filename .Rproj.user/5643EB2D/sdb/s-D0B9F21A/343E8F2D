@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Introduction: Social Network Analysis - A primer for sport scientists.\n\n## Relational data in sports\n\n@Waesche2017 offer a typology of possible networks in sports. Their article is also an amazing resource to start your journey into SNA (in sports and beyond).\n\n```{r, echo=FALSE, results='asis'}\nlibrary(xtable)\ntypes_of_edges_table <- xtable(read.csv(\"bookdown_resources/Waescher_table.csv\", stringsAsFactors = F, col.names = c(\"Network type\", \"Description\"), row.names = NULL),\n                               caption = \"Types of networks in sports based on Waesche et al. (2017)\")\nprint(types_of_edges_table, type = 'html', include.rownames = F)\n```\n\n## Network phenomena: Global and individual levels\n\n\n\n## Networks as independent variables\n\n### Examples\n\n",
+    "created" : 1521625509803.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1873203182",
+    "id" : "343E8F2D",
+    "lastKnownWriteTime" : 1521627124,
+    "last_content_update" : 1521627124487,
+    "path" : "~/Documents/GitHub/sna_primer/1_intro.Rmd",
+    "project_path" : "1_intro.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

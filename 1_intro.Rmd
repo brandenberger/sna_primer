@@ -1,3 +1,21 @@
-# Introduction: Social Network Analysis
+# Introduction: Social Network Analysis - A primer for sport scientists.
 
-## Tools bla
+## Relational data in sports
+
+@Waesche2017 offer a typology of possible networks in sports. Their article is also an amazing resource to start your journey into SNA (in sports and beyond).
+
+```{r, echo=FALSE, results='asis'}
+library(xtable)
+types_of_edges_table <- xtable(read.csv("bookdown_resources/Waescher_table.csv", stringsAsFactors = F, col.names = c("Network type", "Description"), row.names = NULL),
+                               caption = "Types of networks in sports based on Waesche et al. (2017)")
+print(types_of_edges_table, type = 'html', include.rownames = F)
+```
+
+## Network phenomena: Global and individual levels
+
+
+
+## Networks as independent variables
+
+### Examples
+
