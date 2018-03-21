@@ -1,5 +1,8 @@
 # Introduction: Social Network Analysis - A primer for sport scientists.
 
+
+![](https://media.giphy.com/media/sHH10dFyWGGeA/giphy.gif)
+
 ## Relational data in sports
 
 @Waesche2017 offer a typology of possible networks in sports. Their article is also an amazing resource to start your journey into SNA (in sports and beyond).
@@ -17,5 +20,31 @@ print(types_of_edges_table, type = 'html', include.rownames = F)
 
 ## Networks as independent variables
 
-### Examples
+What is the influence of structure?
 
+### Example: English soccer teams
+
+### Example: something with individual-level dependent variable
+
+## Networks as dependent variables
+
+How does structure come about?
+
+### Example: 
+
+## Setting boundaries
+
+Nominalist and realist [@Waesche2017]
+
+## Conclusion: A checklist to inform your research design
+
+- Am I studying a relational phenomenon? What are my ties/ links?
+- What is the content of my ties?
+- Do I look at network phenomena at the global or individual level?
+- Are network phenomena my dependent or independent variable?
+- How would I go about setting boundaries for my network?
+
+### Your turn:
+
+Think about your study. Or, if you do not have on, come up with an interesting question you would like to work on. 
+With your neighbour, elaborate the questions in the checklist. Be prepared to share the results with the group.

@@ -1,14 +1,14 @@
 {
     "collab_server" : "",
-    "contents" : "# Introduction: Social Network Analysis - A primer for sport scientists.\n\n## Relational data in sports\n\n@Waesche2017 offer a typology of possible networks in sports. Their article is also an amazing resource to start your journey into SNA (in sports and beyond).\n\n```{r, echo=FALSE, results='asis'}\nlibrary(xtable)\ntypes_of_edges_table <- xtable(read.csv(\"bookdown_resources/Waescher_table.csv\", stringsAsFactors = F, col.names = c(\"Network type\", \"Description\"), row.names = NULL),\n                               caption = \"Types of networks in sports based on Waesche et al. (2017)\")\nprint(types_of_edges_table, type = 'html', include.rownames = F)\n```\n\n## Network phenomena: Global and individual levels\n\n\n\n## Networks as independent variables\n\n### Examples\n\n",
+    "contents" : "# Introduction: Social Network Analysis - A primer for sport scientists.\n\n\n![](https://media.giphy.com/media/sHH10dFyWGGeA/giphy.gif)\n\n## Relational data in sports\n\n@Waesche2017 offer a typology of possible networks in sports. Their article is also an amazing resource to start your journey into SNA (in sports and beyond).\n\n```{r, echo=FALSE, results='asis'}\nlibrary(xtable)\ntypes_of_edges_table <- xtable(read.csv(\"bookdown_resources/Waescher_table.csv\", stringsAsFactors = F, col.names = c(\"Network type\", \"Description\"), row.names = NULL),\n                               caption = \"Types of networks in sports based on Waesche et al. (2017)\")\nprint(types_of_edges_table, type = 'html', include.rownames = F)\n```\n\n## Network phenomena: Global and individual levels\n\n\n\n## Networks as independent variables\n\nWhat is the influence of structure?\n\n### Example: English soccer teams\n\n### Example: something with individual-level dependent variable\n\n## Networks as dependent variables\n\nHow does structure come about?\n\n### Example: \n\n## Setting boundaries\n\nNominalist and realist [@Waesche2017]\n\n## Conclusion: A checklist to inform your research design\n\n- Am I studying a relational phenomenon? What are my ties/ links?\n- What is the content of my ties?\n- Do I look at network phenomena at the global or individual level?\n- Are network phenomena my dependent or independent variable?\n- How would I go about setting boundaries for my network?\n\n### Your turn:\n\nThink about your study. Or, if you do not have on, come up with an interesting question you would like to work on. \nWith your neighbour, elaborate the questions in the checklist. Be prepared to share the results with the group.\n",
     "created" : 1521625509803.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1873203182",
+    "hash" : "731544920",
     "id" : "343E8F2D",
-    "lastKnownWriteTime" : 1521627124,
-    "last_content_update" : 1521627124487,
+    "lastKnownWriteTime" : 1521628523,
+    "last_content_update" : 1521628523589,
     "path" : "~/Documents/GitHub/sna_primer/1_intro.Rmd",
     "project_path" : "1_intro.Rmd",
     "properties" : {
