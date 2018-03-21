@@ -1,7 +1,4 @@
 
-# Introduction: Social Network Analysis
-## Tools bla
-=======
 # Introduction: Social Network Analysis - A primer for sport scientists.
 
 
