@@ -1,0 +1,40 @@
+---
+title: "Social Network Analysis Primer"
+author: "Mario Angst and Laurence Brandenberger"
+site: bookdown::bookdown_site
+documentclass: book
+output:
+  bookdown::gitbook: 
+    css: [style.css, font-awesome.min.css]
+  bookdown::pdf_book: default
+bibliography: ["book.bib"]
+biblio-style: "apalike"
+link-citations: true
+---
+
+<!-- Verlinken:  \@ref(forschungsfrage) -->
+<!-- ```{block, type='rmdcomment'} -->
+<!-- Hier steht ein Kommentar. -->
+<!-- ``` -->
+
+<!-- ```{block, type ='rmdwrong'} -->
+<!-- Hier steht ein schlechtes oder falsches Beispiel. -->
+<!-- ``` -->
+
+<!-- ```{block, type ='rmdright'} -->
+<!-- Hier steht ein korrektes Beispiel. -->
+<!-- ``` -->
+
+<!-- ```{block, type = 'rmddaumenregel'} -->
+<!-- Hier steht eine Daumenregel. -->
+<!-- ``` -->
+
+<!-- ```{r setup, include=FALSE} -->
+<!-- opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE) -->
+<!-- ``` -->
+
+# Einführung Unterrichtsunterlagen
+
+## bla 
+blablabla
+
