@@ -14,38 +14,25 @@ The edges that make up a network need to be stored in a slightly more complex ma
 Take the following network:
 
 ```{r, echo=FALSE}
-myel <- matrix(c("d", "f",
-                 "f", "a",
-                 "f", "c",
-                 "f", "b",
-                 "f", "e",
-                 "e", "f",
-                 "e", "c",
-                 "c", "e",
-                 "b", "h",
-                 "h", "e",
-                 "h", "c",
-                 "h", "g",
-                 "g", "e",
-                 "g", "a" ),
-               ncol = 2, byrow = TRUE)
-## create adjacency matrix (using loop)
-nodes <- unique(c(myel[,1], myel[,2]))
-mat <- matrix(0, nrow = length(nodes), ncol = length(nodes)) 
-rownames(mat) <- nodes
-colnames(mat) <- nodes
-for(i in 1:nrow(myel)){
-  senderi <- which(nodes == myel[i,1]) # sender 
-  targeti <- which(nodes == myel[i,2]) # target 
-  mat[senderi, targeti] <- 1
-} 
-att <- data.frame(nodes = nodes)
-att$groups <- c(rep("group 1", 3), rep("group 2", 5))
+myel <- read.csv("bookdown_resources/nati_friends.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+myel <- myel[myel$Receiver != "Alle",]
+
+## create adjacency matrix
+
+unique_names <- unique(c(myel$Sender, myel$Receiver))
+mat <- matrix(0, nrow = length(unique_names), ncol = length(unique_names))
+colnames(mat) <- unique_names
+rownames(mat) <- unique_names
+mat[cbind(myel$Sender,myel$Receiver)] <- 1
+
+att <- read.csv("bookdown_resources/nati_atts.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
+att <- att[att$Name %in% unique_names,]
+att <- att[match(att$Name, unique_names),]
 ## plot the network
 ggnet2(mat,
        label = TRUE,
        arrow.size = 4, arrow.gap = 0.04, 
-       node.color = att$groups)
+       node.color = att$Position)
 ```
 
 To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a `edgelist`, where each row in a data set corresponds to a tie in the network: 
@@ -68,9 +55,10 @@ Here, the network information is stored less efficiently but more intuitively: E
 A third way of storing network data is through adjacency lists. They combine both features of the edge list and of the adjacency matrix: 
 
 ```{r, echo = FALSE}
-admat <- data.frame(sender = c("a", "b", "c", "d", "e", "f", "g", "h"), 
-                    target = c(NA, "h", "e", "f","c, f", "a, b, c, e", "a, e", "c, e, g"))
-admat        
+adj_list <- apply(rbind(colnames(mat),mat), 2, function(x) ifelse(x == 1,x[1],""))
+adj_list <- cbind(rownames(adj_list),apply(adj_list, 1, function(x) paste(x[x !=""], collapse = ",")))
+rownames(adj_list) <- NULL
+adj_list[-1,]
 ```
 
 
