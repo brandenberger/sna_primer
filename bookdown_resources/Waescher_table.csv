@@ -1,0 +1,7 @@
+"Network type","Description"
+"Competition Networks","Results of games, rankings or structural patterns in sport (e.g. two-mode networks such as athletes at same competitions, players in same team). Relative performance or structural patterns are analyzed."
+"Interaction Networks (intra-event)","Relations are rule-based elements of the game (e.g. passes), often analyzed for effectiveness."
+"Inter-organizational Networks","Network structures between organizations (e.g. collaboration between sport providers, franchises, clubs, event organizers)."
+"Intra-organizational Networks","Network structures within organizations (e.g. communication among team members or within sport associations)."
+"Affiliation Networks","Affiliations of social actors with aggregations of social actors (e.g. membership of individuals in organizations, participation of actors at events). Data are usually collected as two-mode networks."
+"Social Environments","Representation of a sport-related social environment as a network in which individual sports actors (e.g. athletes, individuals, teams) are embedded. Analysis of support, influence etc."
