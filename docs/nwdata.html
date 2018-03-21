@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Social Network Analysis Primer</title>
+  <meta name="description" content="Social Network Analysis Primer">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Social Network Analysis Primer" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Social Network Analysis Primer" />
+  
+  
+  
+
+<meta name="author" content="Mario Angst and Laurence Brandenberger">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="introduction-social-network-analysis.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Einführung Unterrichtsunterlagen</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#bla"><i class="fa fa-check"></i><b>1.1</b> bla</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html"><i class="fa fa-check"></i><b>2</b> Introduction: Social Network Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#tools-bla"><i class="fa fa-check"></i><b>2.1</b> Tools bla</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="nwdata.html"><a href="nwdata.html"><i class="fa fa-check"></i><b>3</b> Network data: how to store and use network data</a><ul>
+<li class="chapter" data-level="3.1" data-path="nwdata.html"><a href="nwdata.html#different-formats-to-store-network-data"><i class="fa fa-check"></i><b>3.1</b> Different formats to store network data</a></li>
+<li class="chapter" data-level="3.2" data-path="nwdata.html"><a href="nwdata.html#dealing-with-network-data-in-r"><i class="fa fa-check"></i><b>3.2</b> Dealing with network data in R</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="nwdata.html"><a href="nwdata.html#storing-network-data-using-edge-lists"><i class="fa fa-check"></i><b>3.2.1</b> Storing network data using edge lists</a></li>
+<li class="chapter" data-level="3.2.2" data-path="nwdata.html"><a href="nwdata.html#converting-an-edge-list-to-adjacency-matrix"><i class="fa fa-check"></i><b>3.2.2</b> Converting an edge list to adjacency matrix</a></li>
+<li class="chapter" data-level="3.2.3" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.2.3</b> Storing nodal attributes the right way</a></li>
+<li class="chapter" data-level="3.2.4" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.2.4</b> The network object from the <code>statnet</code>-package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.3</b> Different Network types: one-mode and two-mode networks</a></li>
+<li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.4</b> Network visualization</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Social Network Analysis Primer</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="nwdata" class="section level1">
+<h1><span class="header-section-number">3</span> Network data: how to store and use network data</h1>
+<div id="different-formats-to-store-network-data" class="section level2">
+<h2><span class="header-section-number">3.1</span> Different formats to store network data</h2>
+<p>Relational data consist of nodes and edges between these nodes. Data on the nodes—nodal attributes—can be stored in the conventional way: in a data frame where each row corresponds to each node in the network. The edges that make up a network need to be stored in a slightly more complex manner.</p>
+<p>Take the following network:</p>
+<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p>To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a <code>edgelist</code>, where each row in a data set corresponds to a tie in the network:</p>
+<pre><code>##       [,1] [,2]
+##  [1,] &quot;d&quot;  &quot;f&quot; 
+##  [2,] &quot;f&quot;  &quot;a&quot; 
+##  [3,] &quot;f&quot;  &quot;c&quot; 
+##  [4,] &quot;f&quot;  &quot;b&quot; 
+##  [5,] &quot;f&quot;  &quot;e&quot; 
+##  [6,] &quot;e&quot;  &quot;f&quot; 
+##  [7,] &quot;e&quot;  &quot;c&quot; 
+##  [8,] &quot;c&quot;  &quot;e&quot; 
+##  [9,] &quot;b&quot;  &quot;h&quot; 
+## [10,] &quot;h&quot;  &quot;e&quot; 
+## [11,] &quot;h&quot;  &quot;c&quot; 
+## [12,] &quot;h&quot;  &quot;g&quot; 
+## [13,] &quot;g&quot;  &quot;e&quot; 
+## [14,] &quot;g&quot;  &quot;a&quot;</code></pre>
+<p>Here the rows correspond to the edges in the network, the columns correspond to sender nodes <code>myel[,1]</code> and target nodes <code>myel[,2]</code>.</p>
+<p>An alternative way of storing network data is by creating a matrix with all unique nodes in the rows as well as in the columns:</p>
+<pre><code>##   d f e c b h g a
+## d 0 1 0 0 0 0 0 0
+## f 0 0 1 1 1 0 0 1
+## e 0 1 0 1 0 0 0 0
+## c 0 0 1 0 0 0 0 0
+## b 0 0 0 0 0 1 0 0
+## h 0 0 1 1 0 0 1 0
+## g 0 0 1 0 0 0 0 1
+## a 0 0 0 0 0 0 0 0</code></pre>
+<p>Here, the network information is stored less efficiently but more intuitively: Every possible tie in a network is listed in the data set, for instance sender <code>a</code> tying to target <code>b</code>. If this tie exists, if <code>(a, b)</code> are indeed linked in the network, the matrix alotts them a 1. If <code>(a, b)</code> are not linked, they receive a 0 in the adjacency matrix.</p>
+<p>A third way of storing network data is through adjacency lists. They combine both features of the edge list and of the adjacency matrix:</p>
+<pre><code>##   sender     target
+## 1      a       &lt;NA&gt;
+## 2      b          h
+## 3      c          e
+## 4      d          f
+## 5      e       c, f
+## 6      f a, b, c, e
+## 7      g       a, e
+## 8      h    c, e, g</code></pre>
+<p>As mentioned above, nodal attributes can be stored in a data frame with row corresponding to unique nodes and columns to variables:</p>
+<pre><code>##   nodes  groups
+## 1     d group 1
+## 2     f group 1
+## 3     e group 1
+## 4     c group 2
+## 5     b group 2
+## 6     h group 2
+## 7     g group 2
+## 8     a group 2</code></pre>
+</div>
+<div id="dealing-with-network-data-in-r" class="section level2">
+<h2><span class="header-section-number">3.2</span> Dealing with network data in R</h2>
+<div id="storing-network-data-using-edge-lists" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Storing network data using edge lists</h3>
+<div class="task">
+<p>
+Read in the network data of the Swiss national socer team.
+</p>
+</div>
+</div>
+<div id="converting-an-edge-list-to-adjacency-matrix" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> Converting an edge list to adjacency matrix</h3>
+</div>
+<div id="storing-nodal-attributes-the-right-way" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Storing nodal attributes the right way</h3>
+</div>
+<div id="the-network-object-from-the-statnet-package" class="section level3">
+<h3><span class="header-section-number">3.2.4</span> The network object from the <code>statnet</code>-package</h3>
+</div>
+</div>
+<div id="different-network-types-one-mode-and-two-mode-networks" class="section level2">
+<h2><span class="header-section-number">3.3</span> Different Network types: one-mode and two-mode networks</h2>
+</div>
+<div id="network-visualization" class="section level2">
+<h2><span class="header-section-number">3.4</span> Network visualization</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction-social-network-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

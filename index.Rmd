@@ -33,6 +33,11 @@ link-citations: true
 <!-- opts_chunk$set(tidy.opts = list(width.cutoff = 80), tidy = TRUE) -->
 <!-- ``` -->
 
+<!-- Bild einfügen:  -->
+<!-- ```{r, echo=FALSE, fig.cap = 'Plagiatssoftware Turnitin', fig.width=10, fig.height=8} -->
+<!-- knitr::include_graphics(rep("screenshots/plagiate.png")) -->
+<!-- ``` -->
+
 # Einführung Unterrichtsunterlagen
 
 ## bla 
