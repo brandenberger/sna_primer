@@ -1,3 +1,7 @@
+
+# Introduction: Social Network Analysis
+## Tools bla
+=======
 # Introduction: Social Network Analysis - A primer for sport scientists.
 
 
@@ -43,3 +47,4 @@ Nominalist and realist [@Waesche2017]
 - Do I look at network phenomena at the global or individual level?
 - Are network phenomena my dependent or independent variable?
 - How would I go about setting boundaries for my network?
+

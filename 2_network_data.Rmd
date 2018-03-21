@@ -1,0 +1,114 @@
+# Network data: how to store and use network data {#nwdata}
+## Different formats to store network data
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(statnet)
+library(ggplot2)
+library(GGally)
+library(scales)
+```
+
+Relational data consist of nodes and edges between these nodes. Data on the nodes---nodal attributes---can be stored in the conventional way: in a data frame where each row corresponds to each node in the network. 
+The edges that make up a network need to be stored in a slightly more complex manner. 
+
+Take the following network:
+
+```{r, echo=FALSE}
+myel <- matrix(c("d", "f",
+                 "f", "a",
+                 "f", "c",
+                 "f", "b",
+                 "f", "e",
+                 "e", "f",
+                 "e", "c",
+                 "c", "e",
+                 "b", "h",
+                 "h", "e",
+                 "h", "c",
+                 "h", "g",
+                 "g", "e",
+                 "g", "a" ),
+               ncol = 2, byrow = TRUE)
+## create adjacency matrix (using loop)
+nodes <- unique(c(myel[,1], myel[,2]))
+mat <- matrix(0, nrow = length(nodes), ncol = length(nodes)) 
+rownames(mat) <- nodes
+colnames(mat) <- nodes
+for(i in 1:nrow(myel)){
+  senderi <- which(nodes == myel[i,1]) # sender 
+  targeti <- which(nodes == myel[i,2]) # target 
+  mat[senderi, targeti] <- 1
+} 
+att <- data.frame(nodes = nodes)
+att$groups <- c(rep("group 1", 3), rep("group 2", 5))
+## plot the network
+ggnet2(mat,
+       label = TRUE,
+       arrow.size = 4, arrow.gap = 0.04, 
+       node.color = att$groups)
+```
+
+To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a `edgelist`, where each row in a data set corresponds to a tie in the network: 
+
+```{r, echo=FALSE}
+myel
+```
+
+Here the rows correspond to the edges in the network, the columns correspond to sender nodes `myel[,1]` and target nodes `myel[,2]`.
+
+An alternative way of storing network data is by creating a matrix with all unique nodes in the rows as well as in the columns: 
+
+```{r, echo=FALSE}
+mat
+```
+
+Here, the network information is stored less efficiently but more intuitively: Every possible tie in a network is listed in the data set, for instance sender `a` tying to target `b`. If this tie exists, if
+`(a, b)` are indeed linked in the network, the matrix alotts them a 1. If `(a, b)` are not linked, they receive a 0 in the adjacency matrix.
+
+A third way of storing network data is through adjacency lists. They combine both features of the edge list and of the adjacency matrix: 
+
+```{r, echo = FALSE}
+admat <- data.frame(sender = c("a", "b", "c", "d", "e", "f", "g", "h"), 
+                    target = c(NA, "h", "e", "f","c, f", "a, b, c, e", "a, e", "c, e, g"))
+admat        
+```
+
+
+As mentioned above, nodal attributes can be stored in a data frame with row corresponding to unique nodes and columns to variables: 
+
+```{r, echo=FALSE}
+att
+```
+
+## Dealing with network data in R
+
+### Storing network data using edge lists
+
+
+
+
+
+```{block, type ='task'}
+Read in the network data of the Swiss national socer team.
+```
+
+### Converting an edge list to adjacency matrix
+
+
+
+### Storing nodal attributes the right way
+
+
+
+### The network object from the `statnet`-package
+
+
+
+## Different Network types: one-mode and two-mode networks
+
+## Network visualization
+
+
+
+
+
