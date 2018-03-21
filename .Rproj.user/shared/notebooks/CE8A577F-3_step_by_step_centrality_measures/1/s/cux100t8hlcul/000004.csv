@@ -1,0 +1,1 @@
+"0","net_directed <- network(friends_adjmat,directed = T) #make a directed network object"

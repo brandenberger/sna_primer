@@ -5,13 +5,6 @@ date: "Mario Angst"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-source("session_7_script_edgetoadjmat.R")
-#subset adjacency matrix (only take the first ten rows and first ten columns)
-mat <- adj_matrix[1:10,1:10]
-```
-
 ## Vorbereitung
 
 Was ist statnet? Ein Kompendium von R-Tools welche Netzwerkanalyse vereinfachen. Darum laden wir es zuerst. Keine Angst vor roten Warnungen, dies sind nur Package Informationen. Daher:

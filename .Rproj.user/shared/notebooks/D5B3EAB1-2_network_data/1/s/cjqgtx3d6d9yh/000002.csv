@@ -1,5 +1,7 @@
-"0","adj_list[-1,]
-"
+"0","adj_list <- apply(rbind(colnames(friends_adjmat),friends_adjmat), 2, function(x) ifelse(x == 1,x[1],""""))"
+"0","adj_list <- cbind(rownames(adj_list),apply(adj_list, 1, function(x) paste(x[x !=""""], collapse = "","")))"
+"0","rownames(adj_list) <- NULL"
+"0","adj_list[-1,]"
 "1","     "
 "1"," [,1]          "
 "1"," [,2]                                   "

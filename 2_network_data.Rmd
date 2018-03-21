@@ -20,16 +20,16 @@ myel <- myel[myel$Receiver != "Alle",]
 ## create adjacency matrix
 
 unique_names <- unique(c(myel$Sender, myel$Receiver))
-mat <- matrix(0, nrow = length(unique_names), ncol = length(unique_names))
-colnames(mat) <- unique_names
-rownames(mat) <- unique_names
-mat[cbind(myel$Sender,myel$Receiver)] <- 1
+friends_adjmat <- matrix(0, nrow = length(unique_names), ncol = length(unique_names))
+colnames(friends_adjmat) <- unique_names
+rownames(friends_adjmat) <- unique_names
+friends_adjmat[cbind(myel$Sender,myel$Receiver)] <- 1
 
 att <- read.csv("bookdown_resources/nati_atts.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
 att <- att[att$Name %in% unique_names,]
 att <- att[match(att$Name, unique_names),]
 ## plot the network
-ggnet2(mat,
+ggnet2(friends_adjmat,
        label = TRUE,
        arrow.size = 4, arrow.gap = 0.04, 
        node.color = att$Position)
@@ -46,7 +46,7 @@ Here the rows correspond to the edges in the network, the columns correspond to 
 An alternative way of storing network data is by creating a matrix with all unique nodes in the rows as well as in the columns: 
 
 ```{r, echo=FALSE}
-mat[1:10,1:10]
+friends_adjmat[1:10,1:10]
 ```
 
 Here, the network information is stored less efficiently but more intuitively: Every possible tie in a network is listed in the data set, for instance sender `a` tying to target `b`. If this tie exists, if
@@ -55,7 +55,7 @@ Here, the network information is stored less efficiently but more intuitively: E
 A third way of storing network data is through adjacency lists. They combine both features of the edge list and of the adjacency matrix: 
 
 ```{r, echo = FALSE}
-adj_list <- apply(rbind(colnames(mat),mat), 2, function(x) ifelse(x == 1,x[1],""))
+adj_list <- apply(rbind(colnames(friends_adjmat),friends_adjmat), 2, function(x) ifelse(x == 1,x[1],""))
 adj_list <- cbind(rownames(adj_list),apply(adj_list, 1, function(x) paste(x[x !=""], collapse = ",")))
 rownames(adj_list) <- NULL
 adj_list[-1,]
