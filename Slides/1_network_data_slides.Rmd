@@ -1,0 +1,34 @@
+---
+  title: "SNA - A Primer"
+date: "Session #1 Introduction to core concepts"
+author: "Mario Angst, Laurence Brandenberger"
+output: ioslides_presentation
+---
+  
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(igraph)
+library(networkD3)
+library(colorspace)
+library(ggplot2)
+```
+
+## 
+
+What we are going to do
+
+![](bookdown_resources/ganesha.jpg)
+
+
+
+# Network data in R
+
+
+<div class="notes">
+  
+A comment
+
+</div>
+  
+## <span style="color:blue">Your turn</span>
+  

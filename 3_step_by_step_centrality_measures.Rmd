@@ -143,7 +143,7 @@ ggnet2(net_undirected, node.label = T, node.size = centrality_df$bet) #plot undi
 We can now for example look at correlation between our centrality measures (these are usually quite high).
 
 ```{r}
-cor(df)
+cor(centrality_df)
 ```
 
 Das Resultat zeigt auf, dass die verschiedenen Zentralitätsmasse stark miteinander korreliert sind. Dies ist meistens der Fall.
@@ -151,7 +151,7 @@ Das Resultat zeigt auf, dass die verschiedenen Zentralitätsmasse stark miteinan
 
 
 
-## Globale Zentralisierungsmasse
+## Global centrality measures
 
 We can also use the network objects to compute global centralization measures. To do so wie use the function centralization(). The parameter _FUN_ in centralization() allows to specify the centrality measure to base our centralization score on. For example, we can choose degree:
 

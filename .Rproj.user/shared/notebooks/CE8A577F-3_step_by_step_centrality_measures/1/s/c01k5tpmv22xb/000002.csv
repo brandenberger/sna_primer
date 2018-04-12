@@ -1,0 +1,2 @@
+"0","centrality_df <- data.frame(bet, clo, deg, row.names = rownames(adj_mat_largest_comp))"
+"0","round(centrality_df,digits = 2) #just a bit of rounding."

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Social Network Analysis Primer</title>
   <meta name="description" content="Social Network Analysis Primer">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Social Network Analysis Primer" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="introduction-social-network-analysis.html">
-
+<link rel="prev" href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html">
+<link rel="next" href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -48,6 +48,43 @@
 
 
 
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 <link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
@@ -66,21 +103,18 @@
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Einführung Unterrichtsunterlagen</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#bla"><i class="fa fa-check"></i><b>1.1</b> bla</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html"><i class="fa fa-check"></i><b>2</b> Introduction: Social Network Analysis</a><ul>
-<li class="chapter" data-level="2.1" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#tools-bla"><i class="fa fa-check"></i><b>2.1</b> Tools bla</a></li>
-<li class="chapter" data-level="2.2" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#relational-data-in-sports"><i class="fa fa-check"></i><b>2.2</b> Relational data in sports</a></li>
-<li class="chapter" data-level="2.3" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#network-phenomena-global-and-individual-levels"><i class="fa fa-check"></i><b>2.3</b> Network phenomena: Global and individual levels</a></li>
-<li class="chapter" data-level="2.4" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#networks-as-independent-variables"><i class="fa fa-check"></i><b>2.4</b> Networks as independent variables</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#example-english-soccer-teams"><i class="fa fa-check"></i><b>2.4.1</b> Example: English soccer teams</a></li>
-<li class="chapter" data-level="2.4.2" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#example-something-with-individual-level-dependent-variable"><i class="fa fa-check"></i><b>2.4.2</b> Example: something with individual-level dependent variable</a></li>
+<li class="chapter" data-level="2" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><i class="fa fa-check"></i><b>2</b> Introduction: Social Network Analysis - A primer for sport scientists.</a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#relational-data-in-sports"><i class="fa fa-check"></i><b>2.1</b> Relational data in sports</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#network-phenomena-global-and-individual-levels"><i class="fa fa-check"></i><b>2.2</b> Network phenomena: Global and individual levels</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#networks-as-independent-variables"><i class="fa fa-check"></i><b>2.3</b> Networks as independent variables</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#example-english-soccer-teams"><i class="fa fa-check"></i><b>2.3.1</b> Example: English soccer teams</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#example-something-with-individual-level-dependent-variable"><i class="fa fa-check"></i><b>2.3.2</b> Example: something with individual-level dependent variable</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#networks-as-dependent-variables"><i class="fa fa-check"></i><b>2.5</b> Networks as dependent variables</a><ul>
-<li class="chapter" data-level="2.5.1" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#example"><i class="fa fa-check"></i><b>2.5.1</b> Example:</a></li>
+<li class="chapter" data-level="2.4" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#networks-as-dependent-variables"><i class="fa fa-check"></i><b>2.4</b> Networks as dependent variables</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#example"><i class="fa fa-check"></i><b>2.4.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="2.6" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#setting-boundaries"><i class="fa fa-check"></i><b>2.6</b> Setting boundaries</a></li>
-<li class="chapter" data-level="2.7" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#conclusion-a-checklist-to-inform-your-research-design"><i class="fa fa-check"></i><b>2.7</b> Conclusion: A checklist to inform your research design</a><ul>
-<li class="chapter" data-level="2.7.1" data-path="introduction-social-network-analysis.html"><a href="introduction-social-network-analysis.html#your-turn"><i class="fa fa-check"></i><b>2.7.1</b> Your turn:</a></li>
-</ul></li>
+<li class="chapter" data-level="2.5" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#setting-boundaries"><i class="fa fa-check"></i><b>2.5</b> Setting boundaries</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-social-network-analysis-a-primer-for-sport-scientists-.html"><a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html#conclusion-a-checklist-to-inform-your-research-design"><i class="fa fa-check"></i><b>2.6</b> Conclusion: A checklist to inform your research design</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="nwdata.html"><a href="nwdata.html"><i class="fa fa-check"></i><b>3</b> Network data: how to store and use network data</a><ul>
 <li class="chapter" data-level="3.1" data-path="nwdata.html"><a href="nwdata.html#different-formats-to-store-network-data"><i class="fa fa-check"></i><b>3.1</b> Different formats to store network data</a></li>
@@ -91,7 +125,23 @@
 <li class="chapter" data-level="3.2.4" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.2.4</b> The network object from the <code>statnet</code>-package</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.3</b> Different Network types: one-mode and two-mode networks</a></li>
-<li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.4</b> Network visualization</a></li>
+<li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.4</b> Network visualization</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="nwdata.html"><a href="nwdata.html#a-word-of-warning"><i class="fa fa-check"></i><b>3.4.1</b> A word of warning</a></li>
+<li class="chapter" data-level="3.4.2" data-path="nwdata.html"><a href="nwdata.html#resources-for-visualization"><i class="fa fa-check"></i><b>3.4.2</b> Resources for visualization</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><i class="fa fa-check"></i><b>4</b> A step by step guide to computing centrality measures in statnet</a><ul>
+<li class="chapter" data-level="4.1" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#preparation"><i class="fa fa-check"></i><b>4.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#objekte-vom-typ-network"><i class="fa fa-check"></i><b>4.2</b> Objekte vom Typ network</a></li>
+<li class="chapter" data-level="4.3" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#create-adjacency-matrix"><i class="fa fa-check"></i><b>4.3</b> create adjacency matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#density"><i class="fa fa-check"></i><b>4.4</b> Density</a></li>
+<li class="chapter" data-level="4.5" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#node-level-centrality-measures"><i class="fa fa-check"></i><b>4.5</b> Node-level centrality measures</a></li>
+<li class="chapter" data-level="4.6" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#globale-zentralisierungsmasse"><i class="fa fa-check"></i><b>4.6</b> Globale Zentralisierungsmasse</a></li>
+<li class="chapter" data-level="4.7" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#vorbereitung"><i class="fa fa-check"></i><b>4.7</b> Vorbereitung</a></li>
+<li class="chapter" data-level="4.8" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#objekte-vom-typ-network-1"><i class="fa fa-check"></i><b>4.8</b> Objekte vom Typ network</a></li>
+<li class="chapter" data-level="4.9" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#dichte"><i class="fa fa-check"></i><b>4.9</b> Dichte</a></li>
+<li class="chapter" data-level="4.10" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#node-level-zentralitatsmasse"><i class="fa fa-check"></i><b>4.10</b> Node-level Zentralitätsmasse</a></li>
+<li class="chapter" data-level="4.11" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#globale-zentralisierungsmasse-1"><i class="fa fa-check"></i><b>4.11</b> Globale Zentralisierungsmasse</a></li>
 </ul></li>
 </ul>
 
@@ -114,57 +164,105 @@
 <h1><span class="header-section-number">3</span> Network data: how to store and use network data</h1>
 <div id="different-formats-to-store-network-data" class="section level2">
 <h2><span class="header-section-number">3.1</span> Different formats to store network data</h2>
-<p>Relational data consist of nodes and edges between these nodes. Data on the nodes—nodal attributes—can be stored in the conventional way: in a data frame where each row corresponds to each node in the network. The edges that make up a network need to be stored in a slightly more complex manner.</p>
+<p>Relational data consist of nodes and edges between these nodes. Data on the nodes—nodal attributes—can be stored in the conventional way of storing observational data: in a data frame where each row corresponds to each node (observation) in the network and columns to variables (eg. gender). The edges that make up a network need to be stored in a slightly more complex manner.</p>
 <p>Take the following network:</p>
 <p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a <code>edgelist</code>, where each row in a data set corresponds to a tie in the network:</p>
-<pre><code>##       [,1] [,2]
-##  [1,] &quot;d&quot;  &quot;f&quot; 
-##  [2,] &quot;f&quot;  &quot;a&quot; 
-##  [3,] &quot;f&quot;  &quot;c&quot; 
-##  [4,] &quot;f&quot;  &quot;b&quot; 
-##  [5,] &quot;f&quot;  &quot;e&quot; 
-##  [6,] &quot;e&quot;  &quot;f&quot; 
-##  [7,] &quot;e&quot;  &quot;c&quot; 
-##  [8,] &quot;c&quot;  &quot;e&quot; 
-##  [9,] &quot;b&quot;  &quot;h&quot; 
-## [10,] &quot;h&quot;  &quot;e&quot; 
-## [11,] &quot;h&quot;  &quot;c&quot; 
-## [12,] &quot;h&quot;  &quot;g&quot; 
-## [13,] &quot;g&quot;  &quot;e&quot; 
-## [14,] &quot;g&quot;  &quot;a&quot;</code></pre>
+<pre><code>##          Sender     Receiver
+## 2    Gavranovic        Drmic
+## 3    Gavranovic    Seferovic
+## 4          Lang       Sommer
+## 5          Lang        Schär
+## 6          Lang    Seferovic
+## 7          Lang     Barnetta
+## 8          Lang        Drmic
+## 9         Bürki         Lang
+## 10        Schär      Stocker
+## 11       Sommer      Stocker
+## 12      Stocker     Benaglio
+## 13      Stocker     Barnetta
+## 14      Stocker        Schär
+## 15      Stocker       Sommer
+## 16      Stocker         Lang
+## 17      Shaqiri      Mehmedi
+## 18     Benaglio Lichtsteiner
+## 20        Xhaka    Rodriguez
+## 22 Lichtsteiner     Benaglio
+## 23    Rodriguez        Xhaka
+## 27     Dzemaili      Mehmedi
+## 28     Dzemaili      Shaqiri
+## 29     Dzemaili      Behrami
+## 31      Mehmedi      Shaqiri
+## 32     Senderos      Ziegler
+## 33     Senderos      Behrami
+## 34      Behrami     Senderos</code></pre>
 <p>Here the rows correspond to the edges in the network, the columns correspond to sender nodes <code>myel[,1]</code> and target nodes <code>myel[,2]</code>.</p>
 <p>An alternative way of storing network data is by creating a matrix with all unique nodes in the rows as well as in the columns:</p>
-<pre><code>##   d f e c b h g a
-## d 0 1 0 0 0 0 0 0
-## f 0 0 1 1 1 0 0 1
-## e 0 1 0 1 0 0 0 0
-## c 0 0 1 0 0 0 0 0
-## b 0 0 0 0 0 1 0 0
-## h 0 0 1 1 0 0 1 0
-## g 0 0 1 0 0 0 0 1
-## a 0 0 0 0 0 0 0 0</code></pre>
+<pre><code>##              Gavranovic Lang Bürki Schär Sommer Stocker Shaqiri Benaglio
+## Gavranovic            0    0     0     0      0       0       0        0
+## Lang                  0    0     0     1      1       0       0        0
+## Bürki                 0    1     0     0      0       0       0        0
+## Schär                 0    0     0     0      0       1       0        0
+## Sommer                0    0     0     0      0       1       0        0
+## Stocker               0    1     0     1      1       0       0        1
+## Shaqiri               0    0     0     0      0       0       0        0
+## Benaglio              0    0     0     0      0       0       0        0
+## Xhaka                 0    0     0     0      0       0       0        0
+## Lichtsteiner          0    0     0     0      0       0       0        1
+##              Xhaka Lichtsteiner
+## Gavranovic       0            0
+## Lang             0            0
+## Bürki            0            0
+## Schär            0            0
+## Sommer           0            0
+## Stocker          0            0
+## Shaqiri          0            0
+## Benaglio         0            1
+## Xhaka            0            0
+## Lichtsteiner     0            0</code></pre>
 <p>Here, the network information is stored less efficiently but more intuitively: Every possible tie in a network is listed in the data set, for instance sender <code>a</code> tying to target <code>b</code>. If this tie exists, if <code>(a, b)</code> are indeed linked in the network, the matrix alotts them a 1. If <code>(a, b)</code> are not linked, they receive a 0 in the adjacency matrix.</p>
 <p>A third way of storing network data is through adjacency lists. They combine both features of the edge list and of the adjacency matrix:</p>
-<pre><code>##   sender     target
-## 1      a       &lt;NA&gt;
-## 2      b          h
-## 3      c          e
-## 4      d          f
-## 5      e       c, f
-## 6      f a, b, c, e
-## 7      g       a, e
-## 8      h    c, e, g</code></pre>
+<pre><code>##       [,1]           [,2]                                   
+##  [1,] &quot;Gavranovic&quot;   &quot;Drmic,Seferovic&quot;                      
+##  [2,] &quot;Lang&quot;         &quot;Schär,Sommer,Drmic,Seferovic,Barnetta&quot;
+##  [3,] &quot;Bürki&quot;        &quot;Lang&quot;                                 
+##  [4,] &quot;Schär&quot;        &quot;Stocker&quot;                              
+##  [5,] &quot;Sommer&quot;       &quot;Stocker&quot;                              
+##  [6,] &quot;Stocker&quot;      &quot;Lang,Schär,Sommer,Benaglio,Barnetta&quot;  
+##  [7,] &quot;Shaqiri&quot;      &quot;Mehmedi&quot;                              
+##  [8,] &quot;Benaglio&quot;     &quot;Lichtsteiner&quot;                         
+##  [9,] &quot;Xhaka&quot;        &quot;Rodriguez&quot;                            
+## [10,] &quot;Lichtsteiner&quot; &quot;Benaglio&quot;                             
+## [11,] &quot;Rodriguez&quot;    &quot;Xhaka&quot;                                
+## [12,] &quot;Dzemaili&quot;     &quot;Shaqiri,Mehmedi,Behrami&quot;              
+## [13,] &quot;Mehmedi&quot;      &quot;Shaqiri&quot;                              
+## [14,] &quot;Senderos&quot;     &quot;Behrami,Ziegler&quot;                      
+## [15,] &quot;Behrami&quot;      &quot;Senderos&quot;                             
+## [16,] &quot;Drmic&quot;        &quot;&quot;                                     
+## [17,] &quot;Seferovic&quot;    &quot;&quot;                                     
+## [18,] &quot;Barnetta&quot;     &quot;&quot;                                     
+## [19,] &quot;Ziegler&quot;      &quot;&quot;</code></pre>
 <p>As mentioned above, nodal attributes can be stored in a data frame with row corresponding to unique nodes and columns to variables:</p>
-<pre><code>##   nodes  groups
-## 1     d group 1
-## 2     f group 1
-## 3     e group 1
-## 4     c group 2
-## 5     b group 2
-## 6     h group 2
-## 7     g group 2
-## 8     a group 2</code></pre>
+<pre><code>##            Name    Position
+## 2    Gavranovic     Stürmer
+## 3          Lang Verteidiger
+## 5         Bürki      Goalie
+## 6         Schär Verteidiger
+## 7        Sommer      Goalie
+## 8       Stocker  Mittelfeld
+## 9       Shaqiri     Stürmer
+## 10     Benaglio      Goalie
+## 12        Xhaka  Mittelfeld
+## 14 Lichtsteiner Verteidiger
+## 15    Rodriguez Verteidiger
+## 20     Barnetta  Mittelfeld
+## 17      Mehmedi     Stürmer
+## 18     Senderos Verteidiger
+## 19      Behrami  Mittelfeld
+## 22     Dzemaili  Mittelfeld
+## 23    Seferovic     Stürmer
+## 16        Drmic     Stürmer
+## 21      Ziegler Verteidiger</code></pre>
 </div>
 <div id="dealing-with-network-data-in-r" class="section level2">
 <h2><span class="header-section-number">3.2</span> Dealing with network data in R</h2>
@@ -188,10 +286,60 @@ Read in the network data of the Swiss national socer team.
 </div>
 <div id="different-network-types-one-mode-and-two-mode-networks" class="section level2">
 <h2><span class="header-section-number">3.3</span> Different Network types: one-mode and two-mode networks</h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>A adjacency matrix for a two-mode network is rectangular.</p>
+<pre><code>##            FC Zürich GC FC Schaffhausen 1. FSV Mainz 05 FC St. Gallen
+## Gavranovic         1  0               0               1             0
+## Lang               0  1               0               0             1
+## Bürki              0  1               1               0             0
+## Schär              0  0               0               0             0
+##            FC Wil FC Basel
+## Gavranovic      0        0
+## Lang            0        0
+## Bürki           0        0
+## Schär           1        1</code></pre>
+<p>A projection onto a one-mode network can be achieved by multiplying the rectangular matrix by its transpose.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">one_mode_projection &lt;-<span class="st"> </span>bip_mat %*%<span class="st"> </span><span class="kw">t</span>(bip_mat)
+<span class="kw">diag</span>(one_mode_projection) &lt;-<span class="st"> </span><span class="dv">0</span> <span class="co">#exclude self-ties</span>
+one_mode_projection[<span class="dv">1</span>:<span class="dv">10</span>,<span class="dv">1</span>:<span class="dv">10</span>] <span class="co">#look at the first 10 players</span></code></pre></div>
+<pre><code>##              Gavranovic Lang Bürki Schär Sommer Stocker Shaqiri Benaglio
+## Gavranovic            0    0     0     0      0       0       0        0
+## Lang                  0    0     1     0      1       0       0        0
+## Bürki                 0    1     0     0      1       0       0        0
+## Schär                 0    0     0     0      0       1       1        0
+## Sommer                0    1     1     0      0       0       0        0
+## Stocker               0    0     0     1      0       0       1        0
+## Shaqiri               0    0     0     1      0       1       0        0
+## Benaglio              0    0     0     0      0       0       0        0
+## Xhaka                 0    0     0     1      1       1       1        0
+## Lichtsteiner          0    0     0     0      0       0       0        0
+##              Xhaka Lichtsteiner
+## Gavranovic       0            0
+## Lang             0            0
+## Bürki            0            0
+## Schär            1            0
+## Sommer           1            0
+## Stocker          1            0
+## Shaqiri          1            0
+## Benaglio         0            0
+## Xhaka            0            0
+## Lichtsteiner     0            0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(<span class="kw">network</span>(one_mode_projection),
+       <span class="dt">label =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="network-visualization" class="section level2">
 <h2><span class="header-section-number">3.4</span> Network visualization</h2>
+<div id="a-word-of-warning" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> A word of warning</h3>
+<p>Network visualizations are at the same time pretty and dangerous. Be aware that nodes will always be placed on a canvas through an algorithm. The choice of a different algorithm can lead to a vastly different illustration. It is thus easy to convey substantive results that are just artefacts of the visualization procedure, for example regarding the centrality of actors. It is in your responsibility to use visualization to augment, not distort interpretation. If you read a network study engaging in “visual interpretation” - look for the numbers. Do they back up the story?</p>
+</div>
+<div id="resources-for-visualization" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> Resources for visualization</h3>
+<p>For pretty graphs in R, ggnet2 is hard to beat. <a href="https://briatte.github.io/ggnet/" class="uri">https://briatte.github.io/ggnet/</a></p>
+<p>For more advanced (and even prettier) visualizations, Gephi is a dedicated open source project (although somewhat buggy). <a href="https://gephi.org/" class="uri">https://gephi.org/</a></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -199,8 +347,8 @@ Read in the network data of the Swiss national socer team.
           </div>
         </div>
       </div>
-<a href="introduction-social-network-analysis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="introduction-social-network-analysis-a-primer-for-sport-scientists-.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -218,10 +366,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",

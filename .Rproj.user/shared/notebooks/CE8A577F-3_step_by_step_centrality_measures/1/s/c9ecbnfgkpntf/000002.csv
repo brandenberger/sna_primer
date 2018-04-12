@@ -1,1 +1,192 @@
 "0","library(statnet)"
+"2","Loading required package: tergm
+"
+"2","Loading required package: statnet.common
+"
+"2","Loading required package: ergm
+"
+"2","Loading required package: network
+"
+"2","network: Classes for Relational Data
+Version 1.13.0 created on 2015-08-31.
+copyright (c) 2005, Carter T. Butts, University of California-Irvine
+                    Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+                    Martina Morris, University of Washington
+                    Skye Bender-deMoll, University of Washington
+ For citation information, type citation(""network"").
+ Type help(""network-package"") to get started.
+
+"
+"2","
+ergm: version 3.7.1, created on 2017-03-20
+Copyright (c) 2017, Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+                    Carter T. Butts, University of California -- Irvine
+                    Steven M. Goodreau, University of Washington
+                    Pavel N. Krivitsky, University of Wollongong
+                    Martina Morris, University of Washington
+                    with contributions from
+                    Li Wang
+                    Kirk Li, University of Washington
+                    Skye Bender-deMoll, University of Washington
+Based on ""statnet"" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation(""ergm"").
+
+"
+"2","NOTE: Versions before 3.6.1 had a bug in the implementation of the bd() constriant which
+distorted the sampled distribution somewhat. In addition, Sampson's Monks datasets had
+mislabeled verteces. See the NEWS and the documentation for more details.
+
+"
+"2","Loading required package: networkDynamic
+"
+"2","
+networkDynamic: version 0.9.0, created on 2016-01-12
+Copyright (c) 2016, Carter T. Butts, University of California -- Irvine
+                    Ayn Leslie-Cook, University of Washington
+                    Pavel N. Krivitsky, University of Wollongong
+                    Skye Bender-deMoll, University of Washington
+                    with contributions from
+                    Zack Almquist, University of California -- Irvine
+                    David R. Hunter, Penn State University
+                    Li Wang
+                    Kirk Li, University of Washington
+                    Steven M. Goodreau, University of Washington
+                    Jeffrey Horner
+                    Martina Morris, University of Washington
+Based on ""statnet"" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation(""networkDynamic"").
+
+"
+"2","
+tergm: version 3.4.0, created on 2016-03-28
+Copyright (c) 2016, Pavel N. Krivitsky, University of Wollongong
+                    Mark S. Handcock, University of California -- Los Angeles
+                    with contributions from
+                    David R. Hunter, Penn State University
+                    Steven M. Goodreau, University of Washington
+                    Martina Morris, University of Washington
+                    Nicole Bohme Carnegie, New York University
+                    Carter T. Butts, University of California -- Irvine
+                    Ayn Leslie-Cook, University of Washington
+                    Skye Bender-deMoll
+                    Li Wang
+                    Kirk Li, University of Washington
+Based on ""statnet"" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation(""tergm"").
+
+"
+"2","Loading required package: ergm.count
+"
+"2","
+ergm.count: version 3.2.2, created on 2016-03-29
+Copyright (c) 2016, Pavel N. Krivitsky, University of Wollongong
+                    with contributions from
+                    Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+Based on ""statnet"" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation(""ergm.count"").
+
+"
+"2","NOTE: The form of the term ‘CMP’ has been changed in version 3.2 of ‘ergm.count’. See the
+news or help('CMP') for more information.
+
+"
+"2","Loading required package: sna
+"
+"2","sna: Tools for Social Network Analysis
+Version 2.4 created on 2016-07-23.
+copyright (c) 2005, Carter T. Butts, University of California-Irvine
+ For citation information, type citation(""sna"").
+ Type help(package=""sna"") to get started.
+
+"
+"2","
+statnet: version 2016.9, created on 2016-08-29
+Copyright (c) 2016, Mark S. Handcock, University of California -- Los Angeles
+                    David R. Hunter, Penn State University
+                    Carter T. Butts, University of California -- Irvine
+                    Steven M. Goodreau, University of Washington
+                    Pavel N. Krivitsky, University of Wollongong
+                    Skye Bender-deMoll
+                    Martina Morris, University of Washington
+Based on ""statnet"" project software (statnet.org).
+For license and citation information see statnet.org/attribution
+or type citation(""statnet"").
+
+"
+"2","cannot open URL 'http://www.stats.ox.ac.uk/pub/RWin/src/contrib/PACKAGES.rds': HTTP status was '404 Not Found'"
+"2","
+There are updates for the following statnet packages on CRAN:
+"
+"1","              "
+"1"," Installed"
+"1"," ReposVer  "
+"1"," Built  "
+"1","
+ergm          "
+"1"," ""3.7.1""  "
+"1"," ""3.8.0""   "
+"1"," ""3.4.0"""
+"1","
+network       "
+"1"," ""1.13.0"" "
+"1"," ""1.13.0.1"""
+"1"," ""3.4.0"""
+"1","
+statnet.common"
+"1"," ""3.3.0""  "
+"1"," ""4.0.0""   "
+"1"," ""3.4.0"""
+"1","
+tergm         "
+"1"," ""3.4.0""  "
+"1"," ""3.4.1""   "
+"1"," ""3.4.0"""
+"1","
+"
+"2","Restart R and use ""statnet::update_statnet()"" to get the updates.
+"
+"2","Warning messages:
+"
+"2","1: "
+"2","In readLines(input, encoding = ""UTF-8"") :"
+"2","
+ "
+"2"," incomplete final line found on '_bookdown.yml'
+"
+"2","2: "
+"2","In readLines(input, encoding = ""UTF-8"") :"
+"2","
+ "
+"2"," incomplete final line found on '_bookdown.yml'
+"
+"2","3: "
+"2","In readLines(input, encoding = ""UTF-8"") :"
+"2","
+ "
+"2"," incomplete final line found on '_bookdown.yml'
+"
+"2","4: "
+"2","In readLines(input, encoding = ""UTF-8"") :"
+"2","
+ "
+"2"," incomplete final line found on '_bookdown.yml'
+"
+"2","5: "
+"2","In readLines(input, encoding = ""UTF-8"") :"
+"2","
+ "
+"2"," incomplete final line found on '_bookdown.yml'
+"
+"2","6: "
+"2","In readLines(input, encoding = ""UTF-8"") :"
+"2","
+ "
+"2"," incomplete final line found on '_bookdown.yml'
+"

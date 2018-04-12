@@ -8,7 +8,7 @@ library(GGally)
 library(scales)
 ```
 
-Relational data consist of nodes and edges between these nodes. Data on the nodes---nodal attributes---can be stored in the conventional way: in a data frame where each row corresponds to each node in the network. 
+Relational data consist of nodes and edges between these nodes. Data on the nodes---nodal attributes---can be stored in the conventional way of storing observational data: in a data frame where each row corresponds to each node (observation) in the network and columns to variables (eg. gender). 
 The edges that make up a network need to be stored in a slightly more complex manner. 
 
 Take the following network:
@@ -133,7 +133,14 @@ ggnet2(network(one_mode_projection),
 
 ## Network visualization
 
+### A word of warning
 
+Network visualizations are at the same time pretty and dangerous. Be aware that nodes will always be placed on a canvas through an algorithm. The choice of a different algorithm can lead to a vastly different illustration. It is thus easy to convey substantive results that are just artefacts of the visualization procedure, for example regarding the centrality of actors. It is in your responsibility to use visualization to augment, not distort interpretation. If you read a network study engaging in "visual interpretation" - look for the numbers. Do they back up the story?
 
+### Resources for visualization
+
+For pretty graphs in R, ggnet2 is hard to beat. https://briatte.github.io/ggnet/
+
+For more advanced (and even prettier) visualizations, Gephi is a dedicated open source project (although somewhat buggy). https://gephi.org/
 
 
