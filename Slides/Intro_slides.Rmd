@@ -36,9 +36,54 @@ It is possible to identify three main standpoints in the debate. (1) Some branch
 
 ## 
 
-- Think about your study. Or, if you do not have on, come up with an interesting question you would like to work on. With your neighbour, elaborate the questions in the checklist at the end of the bookdown chapter 1 provided.
+- Think about your study. Or, if you do not have one, come up with an interesting question you would like to work on. With your neighbour, elaborate the questions in the checklist at the end of the bookdown chapter 1 provided.
 - What are possible consequences of your particular research setting, as identified through the checklist? Be prepared to share the results with the group.
 
 
 ## 
+
+*Day 1*
+
+13.00-14.30
+_Research Design I: Introduction to core concepts_
+
+Relational data and the importance of tie content
+Network phenomena on global and individual levels
+Networks as dependent and independent variables
+Setting boundaries
+
+15.00-16.30
+_Research Design II: Relational data _
+
+Edgelists, adjacency matrices, adjacency lists
+Bipartite and unipartite networks
+The joys and dangers of visualizing social networks
+
+17.00-18.30
+_Highlight of the day :)_
+
+Case Demonstration of the research done in the field from Dr. Filipe Clemente
+
+##
+*Day 2*
+
+8.30-10.00
+_Data Gathering: Including social network questions in survey research _
+
+Name generators, hybrid name generators and rosters
+
+10.30-12.00
+_Analysis I: Centrality and structural measures _
+
+Introduction to basic individual and structural level measures
+
+13.00-14.30
+_Analysis II: R, R, R _
+
+Manipulating network data in R (and how to create pretty pictures)
+
+17.00-18.20
+_Analysis III: Inference _
+
+Introduction of models that can be used for statistical inference with relational data
 
