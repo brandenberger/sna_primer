@@ -28,11 +28,19 @@ friends_adjmat[cbind(myel$Sender,myel$Receiver)] <- 1
 att <- read.csv("bookdown_resources/nati_atts.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
 att <- att[att$Name %in% unique_names,]
 att <- att[match(att$Name, unique_names),]
+```
+
+```{r, echo=FALSE, results='hide'}
 ## plot the network
 ggnet2(friends_adjmat,
        label = TRUE,
        arrow.size = 4, arrow.gap = 0.04, 
-       node.color = att$Position)
+       node.color = att$Position) +
+  ggsave(file = "figures/nwdata_1.pdf", width = 24, height = 20, units = 'cm')
+```
+
+```{r, echo=FALSE}
+knitr::include_graphics(rep("figures/nwdata_1.pdf"))
 ```
 
 To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a `edgelist`, where each row in a data set corresponds to a tie in the network: 

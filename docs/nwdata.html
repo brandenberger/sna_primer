@@ -164,7 +164,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">3.1</span> Different formats to store network data</h2>
 <p>Relational data consist of nodes and edges between these nodes. Data on the nodes—nodal attributes—can be stored in the conventional way of storing observational data: in a data frame where each row corresponds to each node (observation) in the network and columns to variables (eg. gender). The edges that make up a network need to be stored in a slightly more complex manner.</p>
 <p>Take the following network of friendship relations between members of the Swiss national soccer team, leading up to the 2014 world championship. Players were asked in a series of interviews with each player in Neue Zürcher Zeitung about their friends in the team. This information was used to create a network dataset for illustrative purposes. <a href="https://www.nzz.ch/sport/wm-2014/portraetserie-der-schweizer-nationalspieler-1.18315579" class="uri">https://www.nzz.ch/sport/wm-2014/portraetserie-der-schweizer-nationalspieler-1.18315579</a></p>
-<p><img src="_main_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><embed src="figures/nwdata_1.pdf" /><!-- --></p>
 <p>To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a <code>edgelist</code>, where each row in a data set corresponds to a tie in the network:</p>
 <pre><code>##          Sender     Receiver
 ## 2    Gavranovic        Drmic
@@ -288,7 +289,7 @@ Read in the network data of the Swiss national socer team.
 <div id="different-network-types-one-mode-and-two-mode-networks" class="section level2">
 <h2><span class="header-section-number">3.3</span> Different Network types: one-mode and two-mode networks</h2>
 <p>Two-mode networks consist of two disjoint sets of nodes (modes) with relations only possible between modes. For example, a two-mode network could illustrate associations between Swiss national soccer players and the clubs they played in between 2012 and 2014.</p>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p>A matrix storing ties for a two-mode network is rectangular and commonly referred to as an incidence or occurence matrix.</p>
 <pre><code>##            FC Zürich GC FC Schaffhausen 1. FSV Mainz 05 FC St. Gallen
 ## Gavranovic         1  0               0               1             0
@@ -328,7 +329,7 @@ one_mode_projection[<span class="dv">1</span><span class="op">:</span><span clas
 ## Lichtsteiner     0            0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(<span class="kw">network</span>(one_mode_projection),
        <span class="dt">label =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 </div>
 <div id="network-visualization" class="section level2">
 <h2><span class="header-section-number">3.4</span> Network visualization</h2>
