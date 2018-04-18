@@ -112,7 +112,6 @@ col = c("actor" = "forest green", "event" = "light blue")
 ggnet2(network(bip_mat, matrix.type = "bipartite"), 
        label = TRUE, palette = col,
        color = "mode", label.size = 2.5)
-
 ```
 
 A matrix storing ties for a two-mode network is rectangular and commonly referred to as an incidence or occurence matrix.
