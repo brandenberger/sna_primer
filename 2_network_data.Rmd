@@ -30,7 +30,7 @@ att <- att[att$Name %in% unique_names,]
 att <- att[match(att$Name, unique_names),]
 ```
 
-```{r trialfriendsadjmat, echo=FALSE}
+```{r trialfriendsadjmat, echo=FALSE, fig.cap='Friendship relations between members of the Swiss national soccer team'}
 ## plot the network
 ggnet2(friends_adjmat,
        label = TRUE,

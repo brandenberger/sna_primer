@@ -164,7 +164,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">3.1</span> Different formats to store network data</h2>
 <p>Relational data consist of nodes and edges between these nodes. Data on the nodes—nodal attributes—can be stored in the conventional way of storing observational data: in a data frame where each row corresponds to each node (observation) in the network and columns to variables (eg. gender). The edges that make up a network need to be stored in a slightly more complex manner.</p>
 <p>Take the following network of friendship relations between members of the Swiss national soccer team, leading up to the 2014 world championship. Players were asked in a series of interviews with each player in Neue Zürcher Zeitung about their friends in the team. This information was used to create a network dataset for illustrative purposes. <a href="https://www.nzz.ch/sport/wm-2014/portraetserie-der-schweizer-nationalspieler-1.18315579" class="uri">https://www.nzz.ch/sport/wm-2014/portraetserie-der-schweizer-nationalspieler-1.18315579</a></p>
-<p><img src="_main_files/figure-html/trialfriendsadjmat-1.png" width="672" /></p>
+<div class="figure"><span id="fig:trialfriendsadjmat"></span>
+<img src="_main_files/figure-html/trialfriendsadjmat-1.png" alt="Friendship relations between members of the Swiss national soccer team" width="672" />
+<p class="caption">
+Figure 3.1: Friendship relations between members of the Swiss national soccer team
+</p>
+</div>
 <p>To store the network data leading to the network plot, the sender and target nodes of each edge in the network have to be recorded. There are multiple ways of storing network data. The simplest form is called a <code>edgelist</code>, where each row in a data set corresponds to a tie in the network:</p>
 <pre><code>##          Sender     Receiver
 ## 2    Gavranovic        Drmic
