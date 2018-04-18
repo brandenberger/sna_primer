@@ -1,4 +1,4 @@
-# A step by step guide to computing centrality measures in statnet
+# A step by step guide to computing centrality measures in statnet {#centrality}
 ## Preparation
 
 ```{r include=FALSE}
@@ -27,8 +27,7 @@ In the following, we will utilize the friendship network of the Swiss national s
 myel <- read.csv("bookdown_resources/nati_friends.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
 myel <- myel[myel$Receiver != "Alle",]
 
-## create adjacency matrix
-
+#create adjacency matrix
 unique_names <- unique(c(myel$Sender, myel$Receiver))
 friends_adjmat <- matrix(0, nrow = length(unique_names), ncol = length(unique_names))
 colnames(friends_adjmat) <- unique_names

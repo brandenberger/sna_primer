@@ -50,6 +50,9 @@ The following document contains a brief introduction to social network analysis.
 ## Chapters
 
 Chapter \@ref(intro) gives an overview of social network analsis for sport scientists.
+Chapter \@ref(nwdata) summarizes how to deal with network data. This includes data transformations from edgelists to adjacency matrices as well as getting familiar with the `network`-object and plotting network graphs.
+Chapter \@ref(centrality) gives an overview over centrality measures that can be calculated from network data.
+Chapter \@ref(nwinference) briefly descirbes how to perform statistical tests on network data, outlines pitfalls and gives an more in-depth overview over network autocorrelation models.
 
 ## Textblocks
 
@@ -68,7 +71,4 @@ This is a good example.
 ```{block, type = 'rmddaumenregel'}
 This is a rule of thumb.
 ```
-
-
-
 

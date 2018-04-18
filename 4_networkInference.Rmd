@@ -1,9 +1,28 @@
 # Network inference: Running regressions with network data {#nwinference}
-## Basic idea of Temporal Network Autocorrelation Model (TNAM)
+## Why run a regression?
 
 ```{r include=FALSE}
 knitr::opts_chunk$set(fig.path = 'mainimages/')
 ```
+
+Regressions are powerful tools that help you figure out which variable is correlated with another variable. There are two main reasons to use regressions: 
+
+1. you can find patterns of associations between variables that you cannot spot with the nacked eye (mainly because data is always messy and there is never a perfect correlation between two variables that you can spot alone by looking the data)
+2. you can include control-variables: i.e., variables that you know from theory/past research are associated with your dependent variable and you should therefore control for
+
+## Which model should I use?
+
+Since we are working with network data, the regression models you can use are a little bit more complicated that ordinary least squares regressions or generalized linear models.
+Basically there are two main model-groups that can be used to achieve a differnt goal.
+
+1. Group 1: Which factors explain the variance in a specific variable? (whilst controlling for network dependencies)
+2. Group 2: Explaining the data generating process of a network (how does a network come to be? is it significantly different from a random network with equalsized nodes and edges?)
+
+We'll focus on the first group, where we use standard regression tools to explain factors that correlate with a depenent variable (e.g., player performance) and control for network effects.
+For the secound group: check out this wonderful summary of advances in inferential network analysis: @cranmer2017navigating
+
+
+## Basic idea of Temporal Network Autocorrelation Model (TNAM)
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(statnet)
@@ -14,39 +33,46 @@ library(xergm)
 library(texreg)
 ```
 
+The network autocorrelation model can be used to run regressions on data that show an inherent dependency among observations. If you do not control for these dependencies, the standard errors are calculated wrongly and your results will not hold!
+
+First, let's prepare the data:
+
 ```{r}
-## read data 
+#read data 
 el  <- read.table('data_literatur_varia/Edgelist_highSchoolfriends.csv', 
                   sep = ";", header = TRUE)
 dt <- read.table('data_literatur_varia/Students_highSchoolAttributes.csv', 
                  sep = ";", header = TRUE)
+```
 
-## create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)
+We'll create two networks: one for all sorts of friends (best friends, drinking buddies etc.) and one for school friends only:
+
+```{r}
+#create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)
 students <- unique(c(el$studentID, el$friend.ID.code))
 mat <- matrix(0, nrow =length(students) , ncol = length(students))
 colnames(mat) <- as.character(students)
 rownames(mat) <- as.character(students)
 mat[cbind(as.character(el$studentID), 
             as.character(el$friend.ID.code))] <- 1
+```
 
-## create adjacency matrix for school friends
+```{r}
+#create adjacency matrix for school friends
 matsf <- matrix(0, nrow =length(students) , ncol = length(students))
 colnames(matsf) <- as.character(students)
 rownames(matsf) <- as.character(students)
 matsf[cbind(as.character(el$studentID[el$school.friend == 'Yes']), 
             as.character(el$friend.ID.code[el$school.friend == 'Yes']))] <- 1
+```
 
-## create adjacency matrix for going-out-friends (friends with whom you go out and have drinks with)
-matdf <- matrix(0, nrow =length(students) , ncol = length(students))
-colnames(matdf) <- as.character(students)
-rownames(matdf) <- as.character(students)
-matdf[cbind(as.character(el$studentID[el$go.out.friend == 'Yes']), 
-            as.character(el$friend.ID.code[el$go.out.friend == 'Yes']))] <- 1
+Next we need to create an attribute file and add variables:
 
-## create attributes file that matches the adjacency matrix
+```{r}
+#create attributes file that matches the adjacency matrix
 att <- data.frame('studentID' = rownames(mat))
 
-## add attributes
+#add attributes
 # Grades in Math and French-Class
 att$grade.math.french <- dt$marks.french.math.num[match(att$studentID, dt$studentID)]
 # Name of school class
@@ -72,6 +98,8 @@ att$true.parentsinterested <- dt$true.parents.interested.num[match(att$studentID
 att$true.respectelderly <- dt$agree.respect.elderly.num[match(att$studentID, dt$studentID)]
 ```
 
+And then we're done preparing.
+
 ## TNAM-terms
 
 To capture network dependencies in the data, several different `tnam`-terms can be used to calculate new variables that may affect the dependent variable (or more neutrally: is correlated with the dependent variable).
@@ -88,8 +116,7 @@ dependent variable of your friends to your own value in the dependent variable
 to see whether homophily (either influence or selection or both) is at work.
 
 3. Network effects - you can test the effect of network 
-effects on the dependent variable, i.e., whether popularity affects a dependent variable
-or centrality scores correlate with the dependent variable.
+effects on the dependent variable, i.e., whether popularity affects a dependent variable or centrality scores correlate with the dependent variable.
 
 Find out more on tnam-terms by typing: 
 
@@ -114,7 +141,7 @@ Now these results are not reliable since we do not control for network dependenc
 ### Checking for network autocorrelation
 
 Let's add a netlag term for network dependency. This term measures whether 
-your own performance (= measured by the grades achieved in the German class) correlates with the performance of your immediate friends. 
+your own performance (= measured by the grades achieved in math and French class) correlates with the performance of your immediate friends. 
 
 With the `netlag()`-function we can easily estimate the (average) performance of an ego's friends.
 
@@ -193,6 +220,8 @@ summary(fit4)
 
 ### Checking for centrality effects
 
+Next we can check if the network position of a student affects their performance. We'll test indegree-, outdegree- and betweenness-centrality.
+
 ```{r}
 att$indegree <- degree(mat, cmode = 'indegree')
 fit5a <- lm(grade.math.french ~ 
@@ -220,16 +249,18 @@ fit5c <- lm(grade.math.french ~
 summary(fit5c)
 ```
 
+None of them seem to correlate with students' performance. 
+
 ### Attribute similarity
 
 You can also check whether students who share some attribute also share performance scores. 
 We could test this using the 'sport.hours' variable that measures the hours a student spends doing sports/exercises.
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, eval=FALSE}
 source("data_literatur_varia/fun-error.R")
 ```
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, eval=FALSE}
 att$attrsim.sporthr <- attribsim(att$grade.math.french, att$sport.hours, match = FALSE)[,1]
 fit6 <- lm(grade.math.french ~ 
              age 
@@ -237,19 +268,44 @@ fit6 <- lm(grade.math.french ~
            + avg.grade.ofriends
            + attrsim.sporthr,
            data = att)
-summary(fit6)
 ```
+
+Sadly the `tnam`-package has an bug in this function for now. It will be solved soon (I already reported the bug).
 
 ### A fuller model
 
 Controlling for gender and age is probably an underspecification, which leads to biased estimates (i.e., coefficients and standard errors). For sake of teaching a sparse model was chosen, but: 
 
 ```{block, type = 'rmdright'}
-always make sure you include all (potential) control variables! 
-Do this by: 
-- comparing BIC scores between models (lower BIC = better model)
-- comparing R^2 between models
-- checking prediction performance of your model (advanced topic)
+always make sure you include all (potential) control variables! Otherwise your results will be biased.
 ```
 
-If you neglect ... HIER WEITER
+You can check your regression by: 
+    - comparing BIC scores between models (lower BIC = better model)
+    - comparing R^2 between models
+    - checking prediction performance of your model (advanced topic)
+
+If you neglect this, you will interpret a model that does not explain your data well. Your results will be biased - meaning that the coefficients may be wrong in size or your standard errors too small (or too large). If you are unsure whether or not you should include another variable do this: 
+
+Run two models: one with the variable and one without. Then check if the fit is better (lower BIC score) and if your effects (i.e., coefficients) change drastically. 
+Check out this lovely YouTube-Video on variable selection in multiple regression models: https://www.youtube.com/watch?v=HP3RhjLhRjY.
+
+```{r}
+fit7 <- lm(grade.math.french ~ age 
+           + gender 
+           + liking.school #yes/no-dummy
+           + tv.hours #hours of tv/week
+           + reading.hours #hours of reading/week
+           + agree.earnalot #want to earn alot? scale: no = 1, yes = 4
+           + true.parentsinterested #are your parents interested in your life? scale: no = 1, yes = 4
+           + avg.grade.ofriends,
+           data = att)
+summary(fit7)
+```
+
+If you want to compare models, use the `texreg`-package: 
+
+```{r, results='asis'}
+htmlreg(list(fit1, fit4, fit7), 
+        stars = c(.1, 0.05, 0.01, 0.001))
+```

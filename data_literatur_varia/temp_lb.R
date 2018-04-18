@@ -155,3 +155,13 @@ fit3 <- lm(temp ~ age
 summary(fit3)
 
 
+fit1 <- lm(grade.math.french ~ age 
+           + gender 
+           + liking.school 
+           + tv.hours 
+           + reading.hours
+           + agree.earnalot 
+           + true.parentsinterested,
+           data = att)
+summary(fit1)
+

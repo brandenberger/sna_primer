@@ -1,0 +1,91 @@
+\documentclass[12pt,a4paper]{article} % article, book, report, scrartcl
+\usepackage{fullpage}
+\usepackage{graphicx}
+\usepackage{tabularx,booktabs,dcolumn, longtable, tabu}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+%\usepackage[ansinew]{inputenc}
+\usepackage{ucs}				% Umlaute richtig darstellen 
+\usepackage[utf8]{inputenc}		% Umlaute richtig darstellen 
+\usepackage{caption}			% für captionof befehle
+\usepackage{setspace}			% für 1.5 Zeilenabstand: \onehalfspacing
+\usepackage{natbib}
+\usepackage{amstext}			% to write text in math equation \text{...}
+\usepackage{lscape}				% use landscape environment
+\usepackage{fancyvrb}			% to wrap verbatim-code in box
+\usepackage{subfigure}
+\usepackage{dcolumn}			% for nice regression tables (with texreg in R)
+\usepackage{graphicx}
+\usepackage[colorlinks=true, linkcolor=black, citecolor=blue]{hyperref}
+%\usepackage{subcaption}
+\usepackage{todonotes}			% want to ad notes?
+\usepackage{mathtools}
+\usepackage{savesym}
+\usepackage{amsmath}
+\savesymbol{iint}
+\usepackage{txfonts}
+\restoresymbol{TXF}{iint}
+\usepackage{amssymb}
+\usepackage{pifont} 			% for checkmark sign in tables
+% Page settings:
+\emergencystretch 1.5em
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+
+\title{\begin{large}Networks \& Sports Workshop\end{large}\\[1cm] Social Network Analysis - A Primer for Sport Scientists}
+\author{Instructors: Mario Angst and Laurence Brandenberger\\University of Bern and Eawag}
+\date{April 19-20, 2018}
+
+\begin{document}
+\maketitle
+
+%
+\section{Assignment 1 - Handling Network Data}
+
+\subsection{Task 1}
+
+\begin{figure}[!hbt]
+\begin{center}
+\includegraphics[width = .6\textwidth]{randNW_directed.pdf}
+\end{center}
+\captionof{figure}{Random directed network}~\label{rdn}
+\end{figure}
+
+\begin{enumerate}
+	\item Enter the network in Figure \ref{rdn} as an edge list in R.
+	\item Convert the edgelist to a matrix (using a loop; \textcolor{red}{Do not use the \texttt{igraph}-package}).
+	\item Plot the network (with the arrows, i.e., directed).
+	\item Nodes $a$, $f$, $e$, $c$ are all `smokers', color these nodes blue. Create an attribute-file for your data and add a smoker-variable. Plot the network again. Make sure you include a legend.
+\end{enumerate}
+
+\subsection{Task 2}
+
+XXHELGA-DATA
+
+% 
+\newpage
+\section{Assignment 2 - Calculating Centrality Scores}
+
+XXHELGA-DATA
+
+%
+\newpage
+\section{Assignment 3 - Running a Network Autocorrelation Model}
+
+
+XXHELGA-DATA
+
+
+
+
+
+
+
+
+
+
+
+	
+\end{document}

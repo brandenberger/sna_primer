@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="intro.html">
-<link rel="next" href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html">
+<link rel="next" href="centrality.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -123,8 +123,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="nwdata.html"><a href="nwdata.html#dealing-with-network-data-in-r"><i class="fa fa-check"></i><b>3.2</b> Dealing with network data in R</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="nwdata.html"><a href="nwdata.html#reading-in-data-stored-in-an-edge-list"><i class="fa fa-check"></i><b>3.2.1</b> Reading in data stored in an edge list</a></li>
 <li class="chapter" data-level="3.2.2" data-path="nwdata.html"><a href="nwdata.html#converting-an-edge-list-to-adjacency-matrix"><i class="fa fa-check"></i><b>3.2.2</b> Converting an edge list to adjacency matrix</a></li>
-<li class="chapter" data-level="3.2.3" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.2.3</b> Storing nodal attributes the right way</a></li>
-<li class="chapter" data-level="3.2.4" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.2.4</b> The network object from the <code>statnet</code>-package</a></li>
+<li class="chapter" data-level="3.2.3" data-path="nwdata.html"><a href="nwdata.html#converting-an-adjacency-list-to-an-edge-list"><i class="fa fa-check"></i><b>3.2.3</b> Converting an adjacency list to an edge list</a></li>
+<li class="chapter" data-level="3.2.4" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.2.4</b> Storing nodal attributes the right way</a></li>
+<li class="chapter" data-level="3.2.5" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.2.5</b> The network object from the <code>statnet</code>-package</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.3</b> Different Network types: one-mode and two-mode networks</a></li>
 <li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.4</b> Network visualization</a><ul>
@@ -133,13 +134,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#a-brief-overview-over-ggnet2"><i class="fa fa-check"></i><b>3.4.3</b> A brief overview over ggnet2()</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><i class="fa fa-check"></i><b>4</b> A step by step guide to computing centrality measures in statnet</a><ul>
-<li class="chapter" data-level="4.1" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#preparation"><i class="fa fa-check"></i><b>4.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#objekte-vom-typ-network"><i class="fa fa-check"></i><b>4.2</b> Objekte vom Typ network</a></li>
-<li class="chapter" data-level="4.3" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#create-adjacency-matrix"><i class="fa fa-check"></i><b>4.3</b> create adjacency matrix</a></li>
-<li class="chapter" data-level="4.4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#density"><i class="fa fa-check"></i><b>4.4</b> Density</a></li>
-<li class="chapter" data-level="4.5" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#node-level-centrality-measures"><i class="fa fa-check"></i><b>4.5</b> Node-level centrality measures</a></li>
-<li class="chapter" data-level="4.6" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#global-centrality-measures"><i class="fa fa-check"></i><b>4.6</b> Global centrality measures</a></li>
+<li class="chapter" data-level="4" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>4</b> A step by step guide to computing centrality measures in statnet</a><ul>
+<li class="chapter" data-level="4.1" data-path="centrality.html"><a href="centrality.html#preparation"><i class="fa fa-check"></i><b>4.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2" data-path="centrality.html"><a href="centrality.html#objekte-vom-typ-network"><i class="fa fa-check"></i><b>4.2</b> Objekte vom Typ network</a></li>
+<li class="chapter" data-level="4.3" data-path="centrality.html"><a href="centrality.html#create-adjacency-matrix"><i class="fa fa-check"></i><b>4.3</b> create adjacency matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="centrality.html"><a href="centrality.html#density"><i class="fa fa-check"></i><b>4.4</b> Density</a></li>
+<li class="chapter" data-level="4.5" data-path="centrality.html"><a href="centrality.html#node-level-centrality-measures"><i class="fa fa-check"></i><b>4.5</b> Node-level centrality measures</a></li>
+<li class="chapter" data-level="4.6" data-path="centrality.html"><a href="centrality.html#global-centrality-measures"><i class="fa fa-check"></i><b>4.6</b> Global centrality measures</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="nwinference.html"><a href="nwinference.html"><i class="fa fa-check"></i><b>5</b> Network inference: Running regressions with network data</a><ul>
+<li class="chapter" data-level="5.1" data-path="nwinference.html"><a href="nwinference.html#basic-idea-of-temporal-network-autocorrelation-model-tnam"><i class="fa fa-check"></i><b>5.1</b> Basic idea of Temporal Network Autocorrelation Model (TNAM)</a></li>
+<li class="chapter" data-level="5.2" data-path="nwinference.html"><a href="nwinference.html#read-data"><i class="fa fa-check"></i><b>5.2</b> read data</a></li>
+<li class="chapter" data-level="5.3" data-path="nwinference.html"><a href="nwinference.html#create-adjacency-matrix-for-all-sorts-of-friends-best-friends-drinking-buddies-school-friends-etc."><i class="fa fa-check"></i><b>5.3</b> create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)</a></li>
+<li class="chapter" data-level="5.4" data-path="nwinference.html"><a href="nwinference.html#create-adjacency-matrix-for-school-friends"><i class="fa fa-check"></i><b>5.4</b> create adjacency matrix for school friends</a></li>
+<li class="chapter" data-level="5.5" data-path="nwinference.html"><a href="nwinference.html#create-adjacency-matrix-for-going-out-friends-friends-with-whom-you-go-out-and-have-drinks-with"><i class="fa fa-check"></i><b>5.5</b> create adjacency matrix for going-out-friends (friends with whom you go out and have drinks with)</a></li>
+<li class="chapter" data-level="5.6" data-path="nwinference.html"><a href="nwinference.html#create-attributes-file-that-matches-the-adjacency-matrix"><i class="fa fa-check"></i><b>5.6</b> create attributes file that matches the adjacency matrix</a></li>
+<li class="chapter" data-level="5.7" data-path="nwinference.html"><a href="nwinference.html#add-attributes"><i class="fa fa-check"></i><b>5.7</b> add attributes</a></li>
+<li class="chapter" data-level="5.8" data-path="nwinference.html"><a href="nwinference.html#tnam-terms"><i class="fa fa-check"></i><b>5.8</b> TNAM-terms</a></li>
+<li class="chapter" data-level="5.9" data-path="nwinference.html"><a href="nwinference.html#running-tnams"><i class="fa fa-check"></i><b>5.9</b> Running TNAMs</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="nwinference.html"><a href="nwinference.html#purely-exogenous-factors---neglecting-important-network-dependencies"><i class="fa fa-check"></i><b>5.9.1</b> Purely exogenous factors - neglecting important network dependencies!</a></li>
+<li class="chapter" data-level="5.9.2" data-path="nwinference.html"><a href="nwinference.html#checking-for-network-autocorrelation"><i class="fa fa-check"></i><b>5.9.2</b> Checking for network autocorrelation</a></li>
+<li class="chapter" data-level="5.9.3" data-path="nwinference.html"><a href="nwinference.html#checking-for-clique-effects"><i class="fa fa-check"></i><b>5.9.3</b> Checking for Clique effects</a></li>
+<li class="chapter" data-level="5.9.4" data-path="nwinference.html"><a href="nwinference.html#checking-for-centrality-effects"><i class="fa fa-check"></i><b>5.9.4</b> Checking for centrality effects</a></li>
+<li class="chapter" data-level="5.9.5" data-path="nwinference.html"><a href="nwinference.html#attribute-similarity"><i class="fa fa-check"></i><b>5.9.5</b> Attribute similarity</a></li>
+<li class="chapter" data-level="5.9.6" data-path="nwinference.html"><a href="nwinference.html#a-fuller-model"><i class="fa fa-check"></i><b>5.9.6</b> A fuller model</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -225,26 +244,6 @@ Figure 3.1: Friendship relations between members of the Swiss national soccer te
 ## Lichtsteiner     0            0</code></pre>
 <p>Here, every possible tie in a network is listed in the data set, for instance sender <code>a</code> tying to target <code>b</code>. If this tie exists, if <code>(a, b)</code> are indeed linked in the network, the matrix alotts them a 1. If <code>(a, b)</code> are not linked, they receive a 0 in the adjacency matrix. This way of storing network data also preserves the direction of the tie. Entries in the lower triangle of the matrix specify a tie from row entry to column entry and vice versa for the upper triangle. For large networks, storing data in adjacency matrices can become inefficient, as a lot of information is redundant (non-existing ties). However, many ways of computing network statistics operate directly on the adjaceny matrix.</p>
 <p>A third way of storing network data is through adjacency lists. Adjacency list specify a sender first and then list all receivers. They are the most efficient format for gathering data in the field or transcribing/ entering data by hand.</p>
-<pre><code>##       [,1]           [,2]                                   
-##  [1,] &quot;Gavranovic&quot;   &quot;Drmic,Seferovic&quot;                      
-##  [2,] &quot;Lang&quot;         &quot;Schär,Sommer,Drmic,Seferovic,Barnetta&quot;
-##  [3,] &quot;Bürki&quot;        &quot;Lang&quot;                                 
-##  [4,] &quot;Schär&quot;        &quot;Stocker&quot;                              
-##  [5,] &quot;Sommer&quot;       &quot;Stocker&quot;                              
-##  [6,] &quot;Stocker&quot;      &quot;Lang,Schär,Sommer,Benaglio,Barnetta&quot;  
-##  [7,] &quot;Shaqiri&quot;      &quot;Mehmedi&quot;                              
-##  [8,] &quot;Benaglio&quot;     &quot;Lichtsteiner&quot;                         
-##  [9,] &quot;Xhaka&quot;        &quot;Rodriguez&quot;                            
-## [10,] &quot;Lichtsteiner&quot; &quot;Benaglio&quot;                             
-## [11,] &quot;Rodriguez&quot;    &quot;Xhaka&quot;                                
-## [12,] &quot;Dzemaili&quot;     &quot;Shaqiri,Mehmedi,Behrami&quot;              
-## [13,] &quot;Mehmedi&quot;      &quot;Shaqiri&quot;                              
-## [14,] &quot;Senderos&quot;     &quot;Behrami,Ziegler&quot;                      
-## [15,] &quot;Behrami&quot;      &quot;Senderos&quot;                             
-## [16,] &quot;Drmic&quot;        &quot;&quot;                                     
-## [17,] &quot;Seferovic&quot;    &quot;&quot;                                     
-## [18,] &quot;Barnetta&quot;     &quot;&quot;                                     
-## [19,] &quot;Ziegler&quot;      &quot;&quot;</code></pre>
 <p>As mentioned above, nodal attributes can be stored in a data frame with row corresponding to unique nodes and columns to variables:</p>
 <pre><code>##            Name    Position
 ## 2    Gavranovic     Stürmer
@@ -274,11 +273,6 @@ Figure 3.1: Friendship relations between members of the Swiss national soccer te
 <p>Since edge lists (or adjacency lists) are the most efficient way of storing your data, we urge you to compile your network data in excel/txt-file using the sender-target columns for individual network ties.</p>
 <p>Reading in your data:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">myel &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="dt">file =</span> <span class="st">&quot;myedgelist.csv&quot;</span>, <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<div class="rmdtask">
-<p>
-Read in the network data of the Swiss national socer team.
-</p>
-</div>
 </div>
 <div id="converting-an-edge-list-to-adjacency-matrix" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Converting an edge list to adjacency matrix</h3>
@@ -291,9 +285,90 @@ Read in the network data of the Swiss national socer team.
 <p>Next you can fill your empty matrix with the ties reported in your egelist:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mat[<span class="kw">cbind</span>(myel<span class="op">$</span>sender, myel<span class="op">$</span>target)] &lt;-<span class="st"> </span><span class="dv">1</span></code></pre></div>
 </div>
+<div id="converting-an-adjacency-list-to-an-edge-list" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Converting an adjacency list to an edge list</h3>
+<p>If you have collected your data as an adjacency list, you can convert it to an edge list using the procedure below. It requires that your adjacency list is stored as a matrix with the first column specifing the sender and the remaining columns specifying receivers:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">adjlist_mat</code></pre></div>
+<pre><code>##       [,1]           [,2]           [,3]        [,4]      [,5]       
+##  [1,] &quot;Gavranovic&quot;   &quot;Drmic&quot;        &quot;Seferovic&quot; NA        NA         
+##  [2,] &quot;Lang&quot;         &quot;Schär&quot;        &quot;Sommer&quot;    &quot;Drmic&quot;   &quot;Seferovic&quot;
+##  [3,] &quot;Bürki&quot;        &quot;Lang&quot;         NA          NA        NA         
+##  [4,] &quot;Schär&quot;        &quot;Stocker&quot;      NA          NA        NA         
+##  [5,] &quot;Sommer&quot;       &quot;Stocker&quot;      NA          NA        NA         
+##  [6,] &quot;Stocker&quot;      &quot;Lang&quot;         &quot;Schär&quot;     &quot;Sommer&quot;  &quot;Benaglio&quot; 
+##  [7,] &quot;Shaqiri&quot;      &quot;Mehmedi&quot;      NA          NA        NA         
+##  [8,] &quot;Benaglio&quot;     &quot;Lichtsteiner&quot; NA          NA        NA         
+##  [9,] &quot;Xhaka&quot;        &quot;Rodriguez&quot;    NA          NA        NA         
+## [10,] &quot;Lichtsteiner&quot; &quot;Benaglio&quot;     NA          NA        NA         
+## [11,] &quot;Rodriguez&quot;    &quot;Xhaka&quot;        NA          NA        NA         
+## [12,] &quot;Dzemaili&quot;     &quot;Shaqiri&quot;      &quot;Mehmedi&quot;   &quot;Behrami&quot; NA         
+## [13,] &quot;Mehmedi&quot;      &quot;Shaqiri&quot;      NA          NA        NA         
+## [14,] &quot;Senderos&quot;     &quot;Behrami&quot;      &quot;Ziegler&quot;   NA        NA         
+## [15,] &quot;Behrami&quot;      &quot;Senderos&quot;     NA          NA        NA         
+## [16,] &quot;Drmic&quot;        NA             NA          NA        NA         
+## [17,] &quot;Seferovic&quot;    NA             NA          NA        NA         
+## [18,] &quot;Barnetta&quot;     NA             NA          NA        NA         
+## [19,] &quot;Ziegler&quot;      NA             NA          NA        NA         
+##       [,6]      
+##  [1,] NA        
+##  [2,] &quot;Barnetta&quot;
+##  [3,] NA        
+##  [4,] NA        
+##  [5,] NA        
+##  [6,] &quot;Barnetta&quot;
+##  [7,] NA        
+##  [8,] NA        
+##  [9,] NA        
+## [10,] NA        
+## [11,] NA        
+## [12,] NA        
+## [13,] NA        
+## [14,] NA        
+## [15,] NA        
+## [16,] NA        
+## [17,] NA        
+## [18,] NA        
+## [19,] NA</code></pre>
+<p>The procedure is slightly complicated-looking, but it’s alright :).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">el &lt;-
+<span class="st">  </span><span class="kw">cbind</span>(
+    <span class="kw">c</span>(<span class="kw">apply</span>(adjlist_mat,<span class="dv">1</span>,<span class="cf">function</span>(x) <span class="kw">rep</span>(x[<span class="dv">1</span>], <span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>))),
+    <span class="kw">c</span>(<span class="kw">apply</span>(adjlist_mat,<span class="dv">1</span>,<span class="cf">function</span>(x) x[<span class="dv">2</span><span class="op">:</span><span class="kw">length</span>(x)]))  
+  )
+el &lt;-<span class="st"> </span>el[<span class="op">!</span>(<span class="kw">is.na</span>(el[,<span class="dv">2</span>])),]
+el</code></pre></div>
+<pre><code>##       [,1]           [,2]          
+##  [1,] &quot;Gavranovic&quot;   &quot;Drmic&quot;       
+##  [2,] &quot;Gavranovic&quot;   &quot;Seferovic&quot;   
+##  [3,] &quot;Lang&quot;         &quot;Schär&quot;       
+##  [4,] &quot;Lang&quot;         &quot;Sommer&quot;      
+##  [5,] &quot;Lang&quot;         &quot;Drmic&quot;       
+##  [6,] &quot;Lang&quot;         &quot;Seferovic&quot;   
+##  [7,] &quot;Lang&quot;         &quot;Barnetta&quot;    
+##  [8,] &quot;Bürki&quot;        &quot;Lang&quot;        
+##  [9,] &quot;Schär&quot;        &quot;Stocker&quot;     
+## [10,] &quot;Sommer&quot;       &quot;Stocker&quot;     
+## [11,] &quot;Stocker&quot;      &quot;Lang&quot;        
+## [12,] &quot;Stocker&quot;      &quot;Schär&quot;       
+## [13,] &quot;Stocker&quot;      &quot;Sommer&quot;      
+## [14,] &quot;Stocker&quot;      &quot;Benaglio&quot;    
+## [15,] &quot;Stocker&quot;      &quot;Barnetta&quot;    
+## [16,] &quot;Shaqiri&quot;      &quot;Mehmedi&quot;     
+## [17,] &quot;Benaglio&quot;     &quot;Lichtsteiner&quot;
+## [18,] &quot;Xhaka&quot;        &quot;Rodriguez&quot;   
+## [19,] &quot;Lichtsteiner&quot; &quot;Benaglio&quot;    
+## [20,] &quot;Rodriguez&quot;    &quot;Xhaka&quot;       
+## [21,] &quot;Dzemaili&quot;     &quot;Shaqiri&quot;     
+## [22,] &quot;Dzemaili&quot;     &quot;Mehmedi&quot;     
+## [23,] &quot;Dzemaili&quot;     &quot;Behrami&quot;     
+## [24,] &quot;Mehmedi&quot;      &quot;Shaqiri&quot;     
+## [25,] &quot;Senderos&quot;     &quot;Behrami&quot;     
+## [26,] &quot;Senderos&quot;     &quot;Ziegler&quot;     
+## [27,] &quot;Behrami&quot;      &quot;Senderos&quot;</code></pre>
+</div>
 <div id="storing-nodal-attributes-the-right-way" class="section level3">
-<h3><span class="header-section-number">3.2.3</span> Storing nodal attributes the right way</h3>
-<p>Once you have prepared your adjacency list, you can create your nodal attribute data frame.</p>
+<h3><span class="header-section-number">3.2.4</span> Storing nodal attributes the right way</h3>
+<p>Once you have prepared your adjacency matrix, you can create your nodal attribute data frame.</p>
 <div class="rmdwrong">
 <p>
 Never use an attribute data frame without having made sure that the rownames of your adjacency matrix match the rows in your attribute file!
@@ -305,11 +380,11 @@ Never use an attribute data frame without having made sure that the rownames of 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">identical</span>(att<span class="op">$</span>nodeID, <span class="kw">rownames</span>(mat))</code></pre></div>
 <p>If they match, you can proceed. If they don’t match, you’ll have to sort your data:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att &lt;-<span class="st"> </span>att[att<span class="op">$</span>nodeID <span class="op">%in%</span><span class="st"> </span>mynodes,]
-## or: 
+<span class="co">#alternative code: </span>
 att &lt;-<span class="st"> </span>att[att<span class="op">$</span>nodeID <span class="op">%in%</span><span class="st"> </span><span class="kw">rownames</span>(mat),]
-## or: 
+<span class="co">#alternative code: </span>
 att &lt;-<span class="st"> </span>att[<span class="kw">match</span>(att<span class="op">$</span>nodeID, mynodes),]
-## or: 
+<span class="co">#alternative code: </span>
 att &lt;-<span class="st"> </span>att[<span class="kw">match</span>(att<span class="op">$</span>nodeID, <span class="kw">rownames</span>(mat)),]</code></pre></div>
 <p>or create a new data frame:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nodeID =</span> <span class="kw">rownames</span>(mat))</code></pre></div>
@@ -317,7 +392,7 @@ att &lt;-<span class="st"> </span>att[<span class="kw">match</span>(att<span cla
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>newVariable &lt;-<span class="st"> </span>dt<span class="op">$</span>variable[<span class="kw">match</span>(att<span class="op">$</span>nodeID, dt<span class="op">$</span>nodeID)]</code></pre></div>
 </div>
 <div id="the-network-object-from-the-statnet-package" class="section level3">
-<h3><span class="header-section-number">3.2.4</span> The network object from the <code>statnet</code>-package</h3>
+<h3><span class="header-section-number">3.2.5</span> The network object from the <code>statnet</code>-package</h3>
 <p>The <code>statnet</code>-package mainly works with a <code>network</code>-object. This means that once you have prepared your adjacency matrix (here named <code>mat</code>) and your attributes file (here named <code>att</code>) you have to create a nework object with which you can then work with.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nw &lt;-<span class="st"> </span><span class="kw">network</span>(mat, <span class="dt">directed =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <p>The <code>network()</code>-command takes various options. If you have a directed network, specify <code>directed = TRUE</code>, otherwise <code>directed = FALSE</code>.</p>
@@ -341,7 +416,7 @@ att &lt;-<span class="st"> </span>att[<span class="kw">match</span>(att<span cla
 <p>You can see that the network contains 19 nodes (or vertices) and 27 edges (i.e., friendship ties).</p>
 <p>It can also store your network attributes that you have saved in the <code>att</code>-data frame until now:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.vertex.attribute</span>(nw, <span class="st">&#39;gender&#39;</span>, att<span class="op">$</span>gender)
-## or: 
+<span class="co">#alternative code: </span>
 nw <span class="op">%v%</span><span class="st"> &#39;gender&#39;</span> =<span class="st"> </span>att<span class="op">$</span>gender</code></pre></div>
 <p>Now the variable <code>att$gender</code> is stored in the network <code>nw</code> and is labeled <code>gender</code>. You can give it whichever label you’d like, but make sure there are no spaces in between (this may cause errors later on).</p>
 </div>
@@ -349,7 +424,7 @@ nw <span class="op">%v%</span><span class="st"> &#39;gender&#39;</span> =<span c
 <div id="different-network-types-one-mode-and-two-mode-networks" class="section level2">
 <h2><span class="header-section-number">3.3</span> Different Network types: one-mode and two-mode networks</h2>
 <p>Two-mode networks consist of two disjoint sets of nodes (modes) with relations only possible between modes. For example, a two-mode network could illustrate associations between Swiss national soccer players and the clubs they played in between 2012 and 2014.</p>
-<p><img src="mainimages/unnamed-chunk-22-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-24-1.png" width="672" /></p>
 <p>A matrix storing ties for a two-mode network is rectangular and commonly referred to as an incidence or occurence matrix.</p>
 <pre><code>##            FC Zürich GC FC Schaffhausen 1. FSV Mainz 05 FC St. Gallen
 ## Gavranovic         1  0               0               1             0
@@ -387,7 +462,7 @@ one_mode_projection[<span class="dv">1</span><span class="op">:</span><span clas
 ## Benaglio         0            0
 ## Xhaka            0            0
 ## Lichtsteiner     0            0</code></pre>
-<p><img src="mainimages/unnamed-chunk-25-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-27-1.png" width="672" /></p>
 </div>
 <div id="network-visualization" class="section level2">
 <h2><span class="header-section-number">3.4</span> Network visualization</h2>
@@ -409,7 +484,7 @@ one_mode_projection[<span class="dv">1</span><span class="op">:</span><span clas
        <span class="dt">arrow.size =</span> <span class="dv">4</span>, <span class="dt">arrow.gap =</span> <span class="fl">0.04</span>, <span class="co"># set arrowheads</span>
        <span class="dt">node.color =</span> att<span class="op">$</span>Position,        <span class="co"># specify node colors</span>
        <span class="dt">palette =</span> <span class="st">&#39;Spectral&#39;</span>)             <span class="co"># use a pretty color-palette</span></code></pre></div>
-<p><img src="mainimages/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-28-1.png" width="672" /></p>
 <p>Since all <code>ggnet()</code>-plots are <code>ggplots</code> you can add theme options that you usually use in ggplots:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(friends_adjmat,
        <span class="dt">label =</span> <span class="ot">TRUE</span>,                     
@@ -418,7 +493,7 @@ one_mode_projection[<span class="dv">1</span><span class="op">:</span><span clas
        <span class="dt">palette =</span> <span class="st">&#39;Spectral&#39;</span>) <span class="op">+</span><span class="st">   </span>
 <span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position =</span> <span class="st">&#39;bottom&#39;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;Friendship network of the Swiss national soccer team&quot;</span>)</code></pre></div>
-<p><img src="mainimages/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-29-1.png" width="672" /></p>
 <p>Plus you can save the plots using <code>ggsave()</code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggsave</span>(<span class="dt">file =</span> <span class="st">&#39;figures/nw_soccerCH.pdf&#39;</span>, <span class="dt">width =</span> <span class="dv">15</span>, <span class="dt">height =</span> <span class="dv">12</span>, <span class="dt">units =</span> <span class="st">&#39;cm&#39;</span>)</code></pre></div>
 
@@ -431,7 +506,7 @@ one_mode_projection[<span class="dv">1</span><span class="op">:</span><span clas
         </div>
       </div>
 <a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="centrality.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

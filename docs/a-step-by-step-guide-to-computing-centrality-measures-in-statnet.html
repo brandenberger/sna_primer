@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Social Network Analysis Primer</title>
   <meta name="description" content="Social Network Analysis Primer">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Social Network Analysis Primer" />
   <meta property="og:type" content="book" />
@@ -125,7 +125,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#dealing-with-network-data-in-r"><i class="fa fa-check"></i><b>3.4</b> Dealing with network data in R</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="nwdata.html"><a href="nwdata.html#reading-in-data-stored-in-an-edge-list"><i class="fa fa-check"></i><b>3.4.1</b> Reading in data stored in an edge list</a></li>
 <li class="chapter" data-level="3.4.2" data-path="nwdata.html"><a href="nwdata.html#converting-an-edge-list-to-adjacency-matrix"><i class="fa fa-check"></i><b>3.4.2</b> Converting an edge list to adjacency matrix</a></li>
-<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.3</b> Storing nodal attributes the right way</a></li>
+<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#converting-an-adjacency-list-to-an-edge-list"><i class="fa fa-check"></i><b>3.4.3</b> Converting an adjacency list to an edge list</a></li>
+<li class="chapter" data-level="3.4.4" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.4</b> Storing nodal attributes the right way</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="nwdata.html"><a href="nwdata.html#or"><i class="fa fa-check"></i><b>3.5</b> or:</a></li>
 <li class="chapter" data-level="3.6" data-path="nwdata.html"><a href="nwdata.html#or-1"><i class="fa fa-check"></i><b>3.6</b> or:</a></li>
@@ -194,7 +195,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="objekte-vom-typ-network" class="section level2">
 <h2><span class="header-section-number">4.2</span> Objekte vom Typ network</h2>
 <p>In the following, we will utilize the friendship network of the Swiss national soccer team. Let’s quickly recall the adjacency matrix.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friends_adjmat[<span class="dv">1</span>:<span class="dv">5</span>,<span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friends_adjmat[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</code></pre></div>
 <pre><code>##            Gavranovic Lang Bürki Schär Sommer
 ## Gavranovic          0    0     0     0      0
 ## Lang                0    0     0     1      1
@@ -261,7 +262,7 @@ bet &lt;-<span class="st"> </span><span class="kw">betweenness</span>(net_undire
 ## Seferovic     4.0 0.48   2
 ## Barnetta      0.0 0.50   2</code></pre>
 <p>Let’s now size the nodes in our visualization according to betweenness. Who holds the network together? It looks like it’s Fabian Schär.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T, <span class="dt">node.size =</span> centrality_df$bet) <span class="co">#plot undirected network</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T, <span class="dt">node.size =</span> centrality_df<span class="op">$</span>bet) <span class="co">#plot undirected network</span></code></pre></div>
 <p><img src="mainimages/unnamed-chunk-18-1.png" width="672" /></p>
 </div>
 <div id="global-centrality-measures" class="section level2">
@@ -301,11 +302,10 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
-"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
