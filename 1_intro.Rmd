@@ -1,5 +1,5 @@
 
-# Introduction: Social Network Analysis - A primer for sport scientists.{#intro}
+# Introduction: Social Network Analysis - A primer for sport scientists. {#intro}
 
 ![](https://media.giphy.com/media/sHH10dFyWGGeA/giphy.gif)
 
