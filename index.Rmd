@@ -38,7 +38,7 @@ link-citations: true
 <!-- knitr::include_graphics(rep("screenshots/plagiate.png")) -->
 <!-- ``` -->
 
-# Introduction
+# A Guite to Social Network Analysis
 ## Goal
 
 The following document contains a brief introduction to social network analysis.
