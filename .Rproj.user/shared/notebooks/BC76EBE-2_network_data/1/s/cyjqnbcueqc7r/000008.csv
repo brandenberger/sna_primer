@@ -1,0 +1,5 @@
+"0","## plot the network"
+"0","ggnet2(friends_adjmat,"
+"0","       label = TRUE,"
+"0","       arrow.size = 4, arrow.gap = 0.04, "
+"0","       node.color = att$Position) "

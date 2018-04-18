@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"SNA - A Primer\"\ndate: \"Session #1 Introduction to core concepts\"\nauthor: \"Mario Angst, Laurence Brandenberger\"\noutput: ioslides_presentation\n---\n\n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = FALSE)\nlibrary(igraph)\nlibrary(networkD3)\nlibrary(colorspace)\nlibrary(ggplot2)\n```\n\n## \n\n1) Please discuss 5 minutes with your neighbour: Which animal would you like to be in your next life, and why?\n\n\n2) Please introduce your neighbour as an animal and provide sufficient reasoning why he/ she would prefer his/ her chosen animal existence to any other.  \n\nShould you not believe in resurrection, you may also discuss your favorit saint, spaghetti monster sauce or yoga posture.\n\n![](slides_resources/ganesha.jpg)\n\n\n## \n\n*Day 1*\n\n13.00-14.30\n_Introduction to core concepts_\n\nRelational data and the importance of tie content\nNetwork phenomena on global and individual levels\nNetworks as dependent and independent variables\nSetting boundaries\n\n15.00-16.30\n_Working with network data: Relational data in R_\n\nEdgelists, adjacency matrices, adjacency lists\nOne-mode and Two-mode networks\nThe joys and dangers of visualizing social networks\n\n17.00-18.30\n_Highlight of the day :)_\n\nCase Demonstration of the research done in the field from Dr. Filipe Clemente\n\n##\n*Day 2*\n\n8.30-10.00\n_Data Gathering: Including social network questions in survey research _\n\nName generators, hybrid name generators and rosters\n\n10.30-12.00\n_Analysis I: Centrality and structural measures _\n\nIntroduction to basic individual and structural level measures\n\n13.00-16.30\n_Analysis II: Inference _\n\nIntroduction of models that can be used for statistical inference with relational data\n\n17.00-18.20\n_Analysis III: Group work _\n\n\n\n##\n\nAnything else you would love to discuss in this workshop? Pretty sure we can.\n\n# Introduction to core concepts\n\n\n<div class=\"notes\">\n\n_Structure vs. Agency_\n_Tie content_\n_Global vs individual level phenomena_\n_NWs as dependent/ independent_\n_ Boundary setting_\n\nThe issue of structure and agency is central for sociology. Sociologists recognize two main determinants of social phenomena, social structure and individual actions (human agency); what is contested is their relative importance. Social structure refers to those larger and relatively enduring features of society which provide the background against which social life is carried out: for example, the class structure. Agency, on the other hand, refers to the volitional and purposeful nature of human activity. Social structure is believed to exert a constraining effect on human activity; agency refers to the ability of individuals to act independently of this.\nNon-extreme approaches stress the complementarity of structure and agency. Social structure influences human actions, but individual activities can similarly influence social structure.\n\n</div>\n\n## <span style=\"color:blue\">Your turn</span>\n\n- Think about your study. Or, if you do not have one, come up with an interesting question you would like to work on. With your neighbour, elaborate the questions in the checklist at the end of the bookdown chapter 1 provided.\n- What are possible consequences of your particular research setting, as identified through the checklist? Be prepared to share the results with the group.",
+    "created" : 1524058429702.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1457817855",
+    "id" : "BFCA2745",
+    "lastKnownWriteTime" : 1524062403,
+    "last_content_update" : 1524062403426,
+    "path" : "~/Documents/GitHub/sna_primer/Slides/0_Intro_slides.Rmd",
+    "project_path" : "Slides/0_Intro_slides.Rmd",
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

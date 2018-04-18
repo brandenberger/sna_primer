@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"SNA - A Primer\"\ndate: \"Session #2 Network data in R\"\nauthor: \"Mario Angst, Laurence Brandenberger\"\noutput: ioslides_presentation\n---\n  \n```{r setup, include=FALSE}\nknitr::opts_chunk$set(echo = FALSE)\nlibrary(igraph)\nlibrary(networkD3)\nlibrary(colorspace)\nlibrary(ggplot2)\n```\n\n## \n\nWhat we are going to do:\n\n- Look at different forms of storing network data in R\n- Look at two types of networks\n- Practice with your own data\n- Visualize a network in R\n\n![](bookdown_resources/ganesha.jpg)\n\n\n\n# Network data in R\n\n\n<div class=\"notes\">\n  \nA comment\n\n</div>\n  \n## <span style=\"color:blue\">Your turn</span>\n\nRead in your own data and save it as an edgelist. Use bookdown chapter 2 for instructions.\n  ",
+    "created" : 1523526380373.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3488969109",
+    "id" : "C81C7F3E",
+    "lastKnownWriteTime" : 1524061890,
+    "last_content_update" : 1524061890652,
+    "path" : "~/Documents/GitHub/sna_primer/Slides/1_network_data_slides.Rmd",
+    "project_path" : "Slides/1_network_data_slides.Rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

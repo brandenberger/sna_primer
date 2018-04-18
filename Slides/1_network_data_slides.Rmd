@@ -1,6 +1,6 @@
 ---
-  title: "SNA - A Primer"
-date: "Session #1 Introduction to core concepts"
+title: "SNA - A Primer"
+date: "Session #2 Network data in R"
 author: "Mario Angst, Laurence Brandenberger"
 output: ioslides_presentation
 ---
@@ -15,7 +15,12 @@ library(ggplot2)
 
 ## 
 
-What we are going to do
+What we are going to do:
+
+- Look at different forms of storing network data in R
+- Look at two types of networks
+- Practice with your own data
+- Visualize a network in R
 
 ![](bookdown_resources/ganesha.jpg)
 
@@ -31,4 +36,6 @@ A comment
 </div>
   
 ## <span style="color:blue">Your turn</span>
+
+Read in your own data and save it as an edgelist. Use bookdown chapter 2 for instructions.
   
