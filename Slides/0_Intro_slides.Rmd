@@ -41,7 +41,7 @@ Setting boundaries
 _Working with network data: Relational data in R_
 
 Edgelists, adjacency matrices, adjacency lists
-Bipartite and unipartite networks
+One-mode and Two-mode networks
 The joys and dangers of visualizing social networks
 
 17.00-18.30

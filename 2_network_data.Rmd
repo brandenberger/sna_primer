@@ -86,12 +86,6 @@ Reading in your data:
 myel <- read.table(file = "myedgelist.csv", sep = ";", header = TRUE)
 ```
 
-
-```{block, type ='rmdtask'}
-Read in the network data of the Swiss national socer team.
-```
-
-
 ### Converting an edge list to adjacency matrix
 
 Next you'll need to determine how many unique nodes you have in your network:  
