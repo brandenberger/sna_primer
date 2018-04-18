@@ -38,8 +38,33 @@ link-citations: true
 <!-- knitr::include_graphics(rep("screenshots/plagiate.png")) -->
 <!-- ``` -->
 
-# Einführung Unterrichtsunterlagen
+# Introduction
+## Goal
 
-## bla 
-blablabla
+The following document contains a brief introduction to social network analysis.
+
+## Chapters
+
+Chapter \@ref(intro) gives an overview of social network analsis for sport scientists.
+
+## Textblocks
+
+```{block, type='rmdcomment'}
+This is a comment.
+```
+
+```{block, type ='rmdwrong'}
+This is a bad example.
+```
+
+```{block, type ='rmdright'}
+This is a good example.
+```
+
+```{block, type = 'rmddaumenregel'}
+This is a rule of thumb.
+```
+
+
+
 
