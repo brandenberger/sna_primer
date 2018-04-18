@@ -1,1 +1,0 @@
-"0","net_undirected <- network(friends_adjmat,directed = F) #make an undirected network object"

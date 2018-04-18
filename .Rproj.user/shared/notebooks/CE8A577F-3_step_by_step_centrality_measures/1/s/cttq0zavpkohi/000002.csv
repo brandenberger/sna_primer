@@ -1,2 +1,0 @@
-"0","clo <- closeness(net_undirected,gmode = ""graph"", )"
-"0","bet <- betweenness(net_undirected,gmode = ""graph"")"
