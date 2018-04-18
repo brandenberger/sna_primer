@@ -1,0 +1,7 @@
+"0","vec_list <- unlist(lapply(adj_list[,2], strsplit, split = "",""),recursive = F)"
+"0","vec_list[unlist(lapply(vec_list, function (x) length(x))) == 0] <- NA"
+"0","max_adjlist <- max(unlist(lapply(vec_list, length)))"
+"0","adjlist_mat <- do.call(what = ""rbind"",lapply(vec_list, function(x) {na_vec <- rep(NA,max_adjlist)"
+"0","na_vec[1:length(x)] <- x"
+"0","na_vec}))"
+"0","adjlist_mat <- cbind(adj_list[,1], adjlist_mat)"

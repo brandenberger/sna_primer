@@ -22,7 +22,7 @@ library(ggplot2)
 
 Should you not believe in resurrection, you may also discuss your favorit saint, spaghetti monster sauce or yoga posture.
 
-![](bookdown_resources/ganesha.jpg)
+![](slides_resources/ganesha.jpg)
 
 
 ## 
@@ -30,7 +30,7 @@ Should you not believe in resurrection, you may also discuss your favorit saint,
 *Day 1*
 
 13.00-14.30
-_Research Design I: Introduction to core concepts_
+_Introduction to core concepts_
 
 Relational data and the importance of tie content
 Network phenomena on global and individual levels
@@ -38,7 +38,7 @@ Networks as dependent and independent variables
 Setting boundaries
 
 15.00-16.30
-_Research Design II: Relational data in R_
+_Working with network data: Relational data in R_
 
 Edgelists, adjacency matrices, adjacency lists
 Bipartite and unipartite networks

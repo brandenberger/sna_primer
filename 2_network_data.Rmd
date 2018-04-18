@@ -65,7 +65,7 @@ A third way of storing network data is through adjacency lists. Adjacency list s
 adj_list <- apply(rbind(colnames(friends_adjmat),friends_adjmat), 2, function(x) ifelse(x == 1,x[1],""))
 adj_list <- cbind(rownames(adj_list),apply(adj_list, 1, function(x) paste(x[x !=""], collapse = ",")))
 rownames(adj_list) <- NULL
-adj_list[-1,]
+adj_list <- adj_list[-1,]
 ```
 
 
@@ -114,9 +114,40 @@ Next you can fill your empty matrix with the ties reported in your egelist:
 mat[cbind(myel$sender, myel$target)] <- 1
 ```
 
+### Converting an adjacency list to an edge list
+
+If you have collected your data as an adjacency list, you can convert it to an edge list using the procedure below. It requires that your adjacency list is stored as a matrix with the first column specifing the sender and the remaining columns specifying receivers:
+
+```{r, echo=FALSE}
+vec_list <- unlist(lapply(adj_list[,2], strsplit, split = ","),recursive = F)
+vec_list[unlist(lapply(vec_list, function (x) length(x))) == 0] <- NA
+max_adjlist <- max(unlist(lapply(vec_list, length)))
+adjlist_mat <- do.call(what = "rbind",lapply(vec_list, function(x) {na_vec <- rep(NA,max_adjlist)
+na_vec[1:length(x)] <- x
+na_vec}))
+adjlist_mat <- cbind(adj_list[,1], adjlist_mat)
+```
+
+```{r}
+adjlist_mat
+```
+
+The procedure is slightly complicated-looking, but it's alright :).
+
+```{r}
+el <-
+  cbind(
+    c(apply(adjlist_mat,1,function(x) rep(x[1], length(x)-1))),
+    c(apply(adjlist_mat,1,function(x) x[2:length(x)]))  
+  )
+el <- el[!(is.na(el[,2])),]
+el
+```
+
+
 ### Storing nodal attributes the right way
 
-Once you have prepared your adjacency list, you can create your nodal attribute data frame. 
+Once you have prepared your adjacency matrix, you can create your nodal attribute data frame. 
 
 ```{block, type ='rmdwrong'}
 Never use an attribute data frame without having made sure that the rownames of your adjacency matrix match the rows in your attribute file!
