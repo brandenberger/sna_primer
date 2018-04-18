@@ -62,6 +62,7 @@ Using the option directed = F, we can create an undirected network object, which
 ```{r}
 net_undirected <- network(friends_adjmat,directed = F) #make an undirected network object
 ```
+
 ```{r}
 ggnet2(net_undirected, node.label = T) #plot undirected network
 ```
@@ -84,8 +85,6 @@ The network now looks like this - only the largest components remains.
 ```{r}
 ggnet2(net_directed, node.label = T, arrow.size = 3, arrow.gap = 0.05) #plot directed network
 ```
-
-
 
 ## Density
 
