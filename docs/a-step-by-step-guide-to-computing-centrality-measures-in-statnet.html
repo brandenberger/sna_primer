@@ -219,7 +219,7 @@ net_directed &lt;-<span class="st"> </span><span class="kw">network</span>(adj_m
 <p>To further work with these degree values, we have to write them into an object. Thus, we write the vector we receive by running degree into an R object we call deg.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">deg &lt;-<span class="st"> </span><span class="kw">degree</span>(net_undirected,<span class="dt">gmode =</span> <span class="st">&quot;graph&quot;</span>) <span class="co">#calculate a vector of degree values for all nodes in</span></code></pre></div>
 <p>Let’s do the same things for closeness and betweenness.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">clo &lt;-<span class="st"> </span><span class="kw">closeness</span>(net_undirected,<span class="dt">gmode =</span> <span class="st">&quot;graph&quot;</span>, )
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">clo &lt;-<span class="st"> </span><span class="kw">closeness</span>(net_undirected,<span class="dt">gmode =</span> <span class="st">&quot;graph&quot;</span>)
 bet &lt;-<span class="st"> </span><span class="kw">betweenness</span>(net_undirected,<span class="dt">gmode =</span> <span class="st">&quot;graph&quot;</span>)</code></pre></div>
 <p>What do we do with this now. For example, we can create a data frame of all nodes in the undirected network with their respective degree, closeness and betweennes values.</p>
 <p>To do so, we combine the three vectors in a data frame.</p>

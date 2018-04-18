@@ -119,7 +119,7 @@ deg <- degree(net_undirected,gmode = "graph") #calculate a vector of degree valu
 Let's do the same things for closeness and betweenness.
 
 ```{r}
-clo <- closeness(net_undirected,gmode = "graph", )
+clo <- closeness(net_undirected,gmode = "graph")
 bet <- betweenness(net_undirected,gmode = "graph")
 ```
 
