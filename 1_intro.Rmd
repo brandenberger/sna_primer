@@ -1,5 +1,9 @@
 # Introduction: Social Network Analysis - A primer for sport scientists. {#intro}
 
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'mainimages/')
+```
+
 ![](https://media.giphy.com/media/sHH10dFyWGGeA/giphy.gif)
 
 ## Relational data in sports

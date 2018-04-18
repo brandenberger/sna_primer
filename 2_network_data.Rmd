@@ -1,6 +1,10 @@
 # Network data: how to store and use network data {#nwdata}
 ## Different formats to store network data
 
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'mainimages/')
+```
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE}
 library(knitr)
 library(statnet)

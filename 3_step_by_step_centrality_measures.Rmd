@@ -1,6 +1,9 @@
 # A step by step guide to computing centrality measures in statnet
-
 ## Preparation
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'mainimages/')
+```
 
 What is statnet? It's a compendium of R tools which greatly facilitate network analysis. That is why we load it first:
 

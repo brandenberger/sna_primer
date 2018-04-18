@@ -185,11 +185,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Let’s plot the object with ggnet.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_directed, <span class="dt">node.label =</span> T, <span class="dt">arrow.size =</span> <span class="dv">3</span>, <span class="dt">arrow.gap =</span> <span class="fl">0.05</span>) <span class="co">#plot directed network</span></code></pre></div>
 <pre><code>## Loading required package: scales</code></pre>
-<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Using the option directed = F, we can create an undirected network object, which we can also plot with ggnet2.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">net_undirected &lt;-<span class="st"> </span><span class="kw">network</span>(friends_adjmat,<span class="dt">directed =</span> F) <span class="co">#make an undirected network object</span></code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T) <span class="co">#plot undirected network</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-9-1.png" width="672" /></p>
 <p>We can now do different operation on these network objects by feeding them into functions. The first operation is already depicted above. With plot() or ggnet2(), we can create network graphics. But we can go a long way beyond this and use more formalized ways of analyzing network structure.</p>
 <p>A first operation we can do is to only use the largest connected component of the network for further calculation. This is done here to simplify interpretation.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">largest_component &lt;-<span class="st"> </span><span class="kw">component.largest</span>(net_undirected)
@@ -200,7 +200,7 @@ adj_mat_largest_comp_directed &lt;-<span class="st"> </span>net_directed[largest
 net_directed &lt;-<span class="st"> </span><span class="kw">network</span>(adj_mat_largest_comp_directed, <span class="dt">directed =</span> T)</code></pre></div>
 <p>The network now looks like this - only the largest components remains.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_directed, <span class="dt">node.label =</span> T, <span class="dt">arrow.size =</span> <span class="dv">3</span>, <span class="dt">arrow.gap =</span> <span class="fl">0.05</span>) <span class="co">#plot directed network</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="density" class="section level2">
 <h2><span class="header-section-number">4.3</span> Density</h2>
@@ -239,7 +239,7 @@ bet &lt;-<span class="st"> </span><span class="kw">betweenness</span>(net_undire
 ## Barnetta      0.0 0.50   2</code></pre>
 <p>Let’s now size the nodes in our visualization according to betweenness. Who holds the network together?</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T, <span class="dt">node.size =</span> centrality_df<span class="op">$</span>bet) <span class="co">#plot undirected network</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p><img src="mainimages/unnamed-chunk-18-1.png" width="672" /></p>
 <p>We can now for example look at correlation between our centrality measures (these are usually quite high).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(centrality_df)</code></pre></div>
 <pre><code>##           bet       clo       deg

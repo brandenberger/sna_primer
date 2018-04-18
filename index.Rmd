@@ -12,6 +12,10 @@ biblio-style: "apalike"
 link-citations: true
 ---
 
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'mainimages/')
+```
+
 <!-- Verlinken:  \@ref(forschungsfrage) -->
 <!-- ```{block, type='rmdcomment'} -->
 <!-- Hier steht ein Kommentar. -->
