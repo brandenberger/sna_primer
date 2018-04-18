@@ -11,7 +11,7 @@ library(scales)
 Relational data consist of nodes and edges between these nodes. Data on the nodes---nodal attributes---can be stored in the conventional way of storing observational data: in a data frame where each row corresponds to each node (observation) in the network and columns to variables (eg. gender). 
 The edges that make up a network need to be stored in a slightly more complex manner. 
 
-Take the following network:
+Take the following network of friendship relations between members of the Swiss national soccer team, leading up to the 2014 world championship. Players were asked in a series of interviews with each player in Neue Zürcher Zeitung about their friends in the team. This information was used to create a network dataset for illustrative purposes. https://www.nzz.ch/sport/wm-2014/portraetserie-der-schweizer-nationalspieler-1.18315579
 
 ```{r, echo=FALSE}
 myel <- read.csv("bookdown_resources/nati_friends.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
@@ -43,16 +43,15 @@ myel
 
 Here the rows correspond to the edges in the network, the columns correspond to sender nodes `myel[,1]` and target nodes `myel[,2]`.
 
-An alternative way of storing network data is by creating a matrix with all unique nodes in the rows as well as in the columns: 
+An alternative way of storing network data is by creating an adjacency matrix with all unique nodes in the rows as well as in the columns: 
 
 ```{r, echo=FALSE}
 friends_adjmat[1:10,1:10]
 ```
 
-Here, the network information is stored less efficiently but more intuitively: Every possible tie in a network is listed in the data set, for instance sender `a` tying to target `b`. If this tie exists, if
-`(a, b)` are indeed linked in the network, the matrix alotts them a 1. If `(a, b)` are not linked, they receive a 0 in the adjacency matrix.
+Here, every possible tie in a network is listed in the data set, for instance sender `a` tying to target `b`. If this tie exists, if `(a, b)` are indeed linked in the network, the matrix alotts them a 1. If `(a, b)` are not linked, they receive a 0 in the adjacency matrix. This way of storing network data also preserves the direction of the tie. Entries in the lower triangle of the matrix specify a tie from row entry to column entry and vice versa for the upper triangle. For large networks, storing data in adjacency matrices can become inefficient, as a lot of information is redundant (non-existing ties). However, many ways of computing network statistics operate directly on the adjaceny matrix.
 
-A third way of storing network data is through adjacency lists. They combine both features of the edge list and of the adjacency matrix: 
+A third way of storing network data is through adjacency lists. Adjacency list specify a sender first and then list all receivers. They are the most efficient format for gathering data in the field or transcribing/ entering data by hand.
 
 ```{r, echo = FALSE}
 adj_list <- apply(rbind(colnames(friends_adjmat),friends_adjmat), 2, function(x) ifelse(x == 1,x[1],""))
@@ -84,6 +83,9 @@ Read in the network data of the Swiss national socer team.
 
 
 
+### Converting an adjacency list to adjacency
+
+
 ### Storing nodal attributes the right way
 
 
@@ -93,6 +95,8 @@ Read in the network data of the Swiss national socer team.
 
 
 ## Different Network types: one-mode and two-mode networks
+
+Two-mode networks consist of two disjoint sets of nodes (modes) with relations only possible between modes. For example, a two-mode network could illustrate associations between Swiss national soccer players and the clubs they played in between 2012 and 2014.
 
 ```{r, echo=FALSE}
 twomode_el <- read.csv("bookdown_resources/nati_teams.csv", stringsAsFactors = FALSE, encoding = "UTF-8")
@@ -111,13 +115,13 @@ ggnet2(network(bip_mat, matrix.type = "bipartite"),
 
 ```
 
-A adjacency matrix for a two-mode network is rectangular.
+A matrix storing ties for a two-mode network is rectangular and commonly referred to as an incidence or occurence matrix.
 
 ```{r, echo=FALSE}
 bip_mat[1:4,1:7]
 ```
 
-A projection onto a one-mode network can be achieved by multiplying the rectangular matrix by its transpose.
+A projection onto a one-mode network can be achieved by multiplying the rectangular matrix by its transpose. Now players are connected based on whether they played together in the same clubs.
 
 ```{r}
 one_mode_projection <- bip_mat %*% t(bip_mat)
