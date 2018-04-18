@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Social Network Analysis Primer</title>
   <meta name="description" content="Social Network Analysis Primer">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
 
   <meta property="og:title" content="Social Network Analysis Primer" />
   <meta property="og:type" content="book" />
@@ -86,8 +86,9 @@
 <li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#dealing-with-network-data-in-r"><i class="fa fa-check"></i><b>3.4</b> Dealing with network data in R</a><ul>
 <li class="chapter" data-level="3.4.1" data-path="nwdata.html"><a href="nwdata.html#storing-network-data-using-edge-lists"><i class="fa fa-check"></i><b>3.4.1</b> Storing network data using edge lists</a></li>
 <li class="chapter" data-level="3.4.2" data-path="nwdata.html"><a href="nwdata.html#converting-an-edge-list-to-adjacency-matrix"><i class="fa fa-check"></i><b>3.4.2</b> Converting an edge list to adjacency matrix</a></li>
-<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.3</b> Storing nodal attributes the right way</a></li>
-<li class="chapter" data-level="3.4.4" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.4.4</b> The network object from the <code>statnet</code>-package</a></li>
+<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#converting-an-adjacency-list-to-adjacency"><i class="fa fa-check"></i><b>3.4.3</b> Converting an adjacency list to adjacency</a></li>
+<li class="chapter" data-level="3.4.4" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.4</b> Storing nodal attributes the right way</a></li>
+<li class="chapter" data-level="3.4.5" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.4.5</b> The network object from the <code>statnet</code>-package</a></li>
 </ul></li>
 <li class="chapter" data-level="3.5" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.5</b> Different Network types: one-mode and two-mode networks</a></li>
 <li class="chapter" data-level="3.6" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.6</b> Network visualization</a><ul>
@@ -129,8 +130,8 @@
 <div id="relational-data-in-sports" class="section level2">
 <h2><span class="header-section-number">2.1</span> Relational data in sports</h2>
 <p><span class="citation">Wäsche et al. (<a href="#ref-Waesche2017">2017</a>)</span> offer a typology of possible networks in sports. Their article is also an amazing resource to start your journey into SNA (in sports and beyond).</p>
-<!-- html table generated in R 3.4.0 by xtable 1.8-2 package -->
-<!-- Thu Apr 12 11:49:49 2018 -->
+<!-- html table generated in R 3.4.3 by xtable 1.8-2 package -->
+<!-- Wed Apr 18 10:53:15 2018 -->
 <table border="1">
 <caption align="bottom">
 Types of networks in sports based on Waesche et al. (2017)
@@ -280,11 +281,10 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
-"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",

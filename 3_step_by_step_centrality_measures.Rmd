@@ -1,4 +1,3 @@
-
 # A step by step guide to computing centrality measures in statnet
 
 ## Preparation
