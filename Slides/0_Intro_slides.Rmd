@@ -62,15 +62,15 @@ _Analysis I: Centrality and structural measures _
 
 Introduction to basic individual and structural level measures
 
-13.00-14.30
-_Analysis II: R, R, R _
-
-Manipulating network data in R (and how to create pretty pictures)
-
-17.00-18.20
-_Analysis III: Inference _
+13.00-16.30
+_Analysis II: Inference _
 
 Introduction of models that can be used for statistical inference with relational data
+
+17.00-18.20
+_Analysis III: Group work _
+
+
 
 ##
 
