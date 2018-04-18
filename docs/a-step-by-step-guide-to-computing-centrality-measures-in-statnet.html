@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Social Network Analysis Primer</title>
   <meta name="description" content="Social Network Analysis Primer">
-  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
   <meta property="og:title" content="Social Network Analysis Primer" />
   <meta property="og:type" content="book" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="nwdata.html">
-
+<link rel="next" href="nwinference.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -123,16 +123,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.2" data-path="nwdata.html"><a href="nwdata.html#create-adjacency-matrix"><i class="fa fa-check"></i><b>3.2</b> create adjacency matrix</a></li>
 <li class="chapter" data-level="3.3" data-path="nwdata.html"><a href="nwdata.html#plot-the-network"><i class="fa fa-check"></i><b>3.3</b> plot the network</a></li>
 <li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#dealing-with-network-data-in-r"><i class="fa fa-check"></i><b>3.4</b> Dealing with network data in R</a><ul>
-<li class="chapter" data-level="3.4.1" data-path="nwdata.html"><a href="nwdata.html#storing-network-data-using-edge-lists"><i class="fa fa-check"></i><b>3.4.1</b> Storing network data using edge lists</a></li>
+<li class="chapter" data-level="3.4.1" data-path="nwdata.html"><a href="nwdata.html#reading-in-data-stored-in-an-edge-list"><i class="fa fa-check"></i><b>3.4.1</b> Reading in data stored in an edge list</a></li>
 <li class="chapter" data-level="3.4.2" data-path="nwdata.html"><a href="nwdata.html#converting-an-edge-list-to-adjacency-matrix"><i class="fa fa-check"></i><b>3.4.2</b> Converting an edge list to adjacency matrix</a></li>
-<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#converting-an-adjacency-list-to-adjacency"><i class="fa fa-check"></i><b>3.4.3</b> Converting an adjacency list to adjacency</a></li>
-<li class="chapter" data-level="3.4.4" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.4</b> Storing nodal attributes the right way</a></li>
-<li class="chapter" data-level="3.4.5" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.4.5</b> The network object from the <code>statnet</code>-package</a></li>
+<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.3</b> Storing nodal attributes the right way</a></li>
 </ul></li>
-<li class="chapter" data-level="3.5" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.5</b> Different Network types: one-mode and two-mode networks</a></li>
-<li class="chapter" data-level="3.6" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.6</b> Network visualization</a><ul>
-<li class="chapter" data-level="3.6.1" data-path="nwdata.html"><a href="nwdata.html#a-word-of-warning"><i class="fa fa-check"></i><b>3.6.1</b> A word of warning</a></li>
-<li class="chapter" data-level="3.6.2" data-path="nwdata.html"><a href="nwdata.html#resources-for-visualization"><i class="fa fa-check"></i><b>3.6.2</b> Resources for visualization</a></li>
+<li class="chapter" data-level="3.5" data-path="nwdata.html"><a href="nwdata.html#or"><i class="fa fa-check"></i><b>3.5</b> or:</a></li>
+<li class="chapter" data-level="3.6" data-path="nwdata.html"><a href="nwdata.html#or-1"><i class="fa fa-check"></i><b>3.6</b> or:</a></li>
+<li class="chapter" data-level="3.7" data-path="nwdata.html"><a href="nwdata.html#or-2"><i class="fa fa-check"></i><b>3.7</b> or:</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.7.1</b> The network object from the <code>statnet</code>-package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="nwdata.html"><a href="nwdata.html#or-3"><i class="fa fa-check"></i><b>3.8</b> or:</a></li>
+<li class="chapter" data-level="3.9" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.9</b> Different Network types: one-mode and two-mode networks</a></li>
+<li class="chapter" data-level="3.10" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.10</b> Network visualization</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="nwdata.html"><a href="nwdata.html#a-word-of-warning"><i class="fa fa-check"></i><b>3.10.1</b> A word of warning</a></li>
+<li class="chapter" data-level="3.10.2" data-path="nwdata.html"><a href="nwdata.html#resources-for-visualization"><i class="fa fa-check"></i><b>3.10.2</b> Resources for visualization</a></li>
+<li class="chapter" data-level="3.10.3" data-path="nwdata.html"><a href="nwdata.html#a-brief-overview-over-ggnet2"><i class="fa fa-check"></i><b>3.10.3</b> A brief overview over ggnet2()</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><i class="fa fa-check"></i><b>4</b> A step by step guide to computing centrality measures in statnet</a><ul>
@@ -141,6 +146,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4.3" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#density"><i class="fa fa-check"></i><b>4.3</b> Density</a></li>
 <li class="chapter" data-level="4.4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#node-level-centrality-measures"><i class="fa fa-check"></i><b>4.4</b> Node-level centrality measures</a></li>
 <li class="chapter" data-level="4.5" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#global-centrality-measures"><i class="fa fa-check"></i><b>4.5</b> Global centrality measures</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="nwinference.html"><a href="nwinference.html"><i class="fa fa-check"></i><b>5</b> Network inference: Running regressions with network data</a><ul>
+<li class="chapter" data-level="5.1" data-path="nwinference.html"><a href="nwinference.html#basic-idea-of-temporal-network-autocorrelation-model-tnam"><i class="fa fa-check"></i><b>5.1</b> Basic idea of Temporal Network Autocorrelation Model (TNAM)</a></li>
+<li class="chapter" data-level="5.2" data-path="nwinference.html"><a href="nwinference.html#read-data"><i class="fa fa-check"></i><b>5.2</b> read data</a></li>
+<li class="chapter" data-level="5.3" data-path="nwinference.html"><a href="nwinference.html#create-adjacency-matrix-for-all-sorts-of-friends-best-friends-drinking-buddies-school-friends-etc."><i class="fa fa-check"></i><b>5.3</b> create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)</a></li>
+<li class="chapter" data-level="5.4" data-path="nwinference.html"><a href="nwinference.html#create-adjacency-matrix-for-school-friends"><i class="fa fa-check"></i><b>5.4</b> create adjacency matrix for school friends</a></li>
+<li class="chapter" data-level="5.5" data-path="nwinference.html"><a href="nwinference.html#create-adjacency-matrix-for-going-out-friends-friends-with-whom-you-go-out-and-have-drinks-with"><i class="fa fa-check"></i><b>5.5</b> create adjacency matrix for going-out-friends (friends with whom you go out and have drinks with)</a></li>
+<li class="chapter" data-level="5.6" data-path="nwinference.html"><a href="nwinference.html#create-attributes-file-that-matches-the-adjacency-matrix"><i class="fa fa-check"></i><b>5.6</b> create attributes file that matches the adjacency matrix</a></li>
+<li class="chapter" data-level="5.7" data-path="nwinference.html"><a href="nwinference.html#add-attributes"><i class="fa fa-check"></i><b>5.7</b> add attributes</a></li>
+<li class="chapter" data-level="5.8" data-path="nwinference.html"><a href="nwinference.html#tnam-terms"><i class="fa fa-check"></i><b>5.8</b> TNAM-terms</a></li>
+<li class="chapter" data-level="5.9" data-path="nwinference.html"><a href="nwinference.html#running-tnams"><i class="fa fa-check"></i><b>5.9</b> Running TNAMs</a><ul>
+<li class="chapter" data-level="5.9.1" data-path="nwinference.html"><a href="nwinference.html#purely-exogenous-factors---neglecting-important-network-dependencies"><i class="fa fa-check"></i><b>5.9.1</b> Purely exogenous factors - neglecting important network dependencies!</a></li>
+<li class="chapter" data-level="5.9.2" data-path="nwinference.html"><a href="nwinference.html#checking-for-network-autocorrelation"><i class="fa fa-check"></i><b>5.9.2</b> Checking for network autocorrelation</a></li>
+<li class="chapter" data-level="5.9.3" data-path="nwinference.html"><a href="nwinference.html#checking-for-clique-effects"><i class="fa fa-check"></i><b>5.9.3</b> Checking for Clique effects</a></li>
+<li class="chapter" data-level="5.9.4" data-path="nwinference.html"><a href="nwinference.html#checking-for-centrality-effects"><i class="fa fa-check"></i><b>5.9.4</b> Checking for centrality effects</a></li>
+<li class="chapter" data-level="5.9.5" data-path="nwinference.html"><a href="nwinference.html#attribute-similarity"><i class="fa fa-check"></i><b>5.9.5</b> Attribute similarity</a></li>
+<li class="chapter" data-level="5.9.6" data-path="nwinference.html"><a href="nwinference.html#a-fuller-model"><i class="fa fa-check"></i><b>5.9.6</b> A fuller model</a></li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -167,20 +190,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(statnet)</code></pre></div>
 <p>We also need the package GGally. GGally contains <em>ggnet2</em>, which allows us to create pretty network visualizations.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(GGally)</code></pre></div>
-<p>ggnet2 is beautifully documented under <a href="https://briatte.github.io/ggnet/" class="uri">https://briatte.github.io/ggnet/</a></p>
 </div>
 <div id="objekte-vom-typ-network" class="section level2">
 <h2><span class="header-section-number">4.2</span> Objekte vom Typ network</h2>
 <p>In the following, we will utilize the friendship network of the Swiss national soccer team. Let’s quickly recall the adjacency matrix.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friends_adjmat[<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">friends_adjmat[<span class="dv">1</span>:<span class="dv">5</span>,<span class="dv">1</span>:<span class="dv">5</span>]</code></pre></div>
 <pre><code>##            Gavranovic Lang Bürki Schär Sommer
 ## Gavranovic          0    0     0     0      0
 ## Lang                0    0     0     1      1
 ## Bürki               0    1     0     0      0
 ## Schär               0    0     0     0      0
 ## Sommer              0    0     0     0      0</code></pre>
-<p>We will create two <em>network</em> objects out of this matrix. Objects of type network are a specific way to save networks in R. They are created using the function network().</p>
-<p>We first create a directed network with the option directed = T, which we name net_directed. Wir erstellen ein gerichtetes Netzwerk-Objekt mit der Option directed = T, welches wir net_directed nennen.</p>
+<p>We will create two <em>network</em> objects out of this matrix. Remember, objects of type network are a specific way to save networks in R. They are created using the function network().</p>
+<p>We first create a directed network with the option directed = T, which we name net_directed.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">net_directed &lt;-<span class="st"> </span><span class="kw">network</span>(friends_adjmat,<span class="dt">directed =</span> T) <span class="co">#make a directed network object</span></code></pre></div>
 <p>Let’s plot the object with ggnet.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_directed, <span class="dt">node.label =</span> T, <span class="dt">arrow.size =</span> <span class="dv">3</span>, <span class="dt">arrow.gap =</span> <span class="fl">0.05</span>) <span class="co">#plot directed network</span></code></pre></div>
@@ -191,25 +213,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T) <span class="co">#plot undirected network</span></code></pre></div>
 <p><img src="mainimages/unnamed-chunk-9-1.png" width="672" /></p>
 <p>We can now do different operation on these network objects by feeding them into functions. The first operation is already depicted above. With plot() or ggnet2(), we can create network graphics. But we can go a long way beyond this and use more formalized ways of analyzing network structure.</p>
-<p>A first operation we can do is to only use the largest connected component of the network for further calculation. This is done here to simplify interpretation.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">largest_component &lt;-<span class="st"> </span><span class="kw">component.largest</span>(net_undirected)
-adj_mat_largest_comp &lt;-<span class="st"> </span>net_undirected[largest_component, largest_component]
-net_undirected &lt;-<span class="st"> </span><span class="kw">network</span>(adj_mat_largest_comp, <span class="dt">directed =</span> F)
+<p>A first operation we can do is to only use the largest connected component of the network for further calculation. This is done here to simplify interpretation. A connected component of a network is a part of the network where all nodes are connected in some way. There can be many components in a network, if the network is disconnected into different parts. The largest connected component is the connected component with the most nodes.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">largest_component &lt;-<span class="st"> </span><span class="kw">component.largest</span>(net_undirected) <span class="co"># isolate the largest component</span>
+adj_mat_largest_comp &lt;-<span class="st"> </span>net_undirected[largest_component, largest_component] <span class="co"># get the adjacency matrix of the largest component</span>
+net_undirected &lt;-<span class="st"> </span><span class="kw">network</span>(adj_mat_largest_comp, <span class="dt">directed =</span> F) <span class="co"># recreate our net_undirected, only including the largest component</span>
 
 adj_mat_largest_comp_directed &lt;-<span class="st"> </span>net_directed[largest_component, largest_component]
-net_directed &lt;-<span class="st"> </span><span class="kw">network</span>(adj_mat_largest_comp_directed, <span class="dt">directed =</span> T)</code></pre></div>
+net_directed &lt;-<span class="st"> </span><span class="kw">network</span>(adj_mat_largest_comp_directed, <span class="dt">directed =</span> T) <span class="co">#get the directed version</span></code></pre></div>
 <p>The network now looks like this - only the largest components remains.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_directed, <span class="dt">node.label =</span> T, <span class="dt">arrow.size =</span> <span class="dv">3</span>, <span class="dt">arrow.gap =</span> <span class="fl">0.05</span>) <span class="co">#plot directed network</span></code></pre></div>
 <p><img src="mainimages/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
 <div id="density" class="section level2">
 <h2><span class="header-section-number">4.3</span> Density</h2>
-<p>First, let’s compute the density of the undirected network. We can do this using the function gden(). For most network metrics, it is important if the network is directed or net. We can tell the function about this using the parameter <em>mode</em>. Setting mode to “graph”, calculates density according to the formula for an undirected network.</p>
+<p>First, let’s compute the density of the undirected network. We can do this using the function gden(). For most network metrics, it is important if the network is directed or not. We can tell the gden function about this using the parameter <em>mode</em>. Setting mode to “graph”, calculates density according to the formula for an undirected network.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gden</span>(<span class="dt">dat =</span> net_undirected,<span class="dt">mode =</span> <span class="st">&quot;graph&quot;</span>) <span class="co">#calculate with gden function</span></code></pre></div>
 <pre><code>## [1] 0.2545455</code></pre>
 <p>Setting mode to digraph, does the same for a directed network.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">gden</span>(net_directed,<span class="dt">mode =</span> <span class="st">&quot;digraph&quot;</span>)</code></pre></div>
 <pre><code>## [1] 0.1545455</code></pre>
+<p>Remember, you can always look at the different parameters of R functions using ?function, eg. ?gden</p>
 </div>
 <div id="node-level-centrality-measures" class="section level2">
 <h2><span class="header-section-number">4.4</span> Node-level centrality measures</h2>
@@ -221,7 +244,7 @@ net_directed &lt;-<span class="st"> </span><span class="kw">network</span>(adj_m
 <p>Let’s do the same things for closeness and betweenness.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">clo &lt;-<span class="st"> </span><span class="kw">closeness</span>(net_undirected,<span class="dt">gmode =</span> <span class="st">&quot;graph&quot;</span>)
 bet &lt;-<span class="st"> </span><span class="kw">betweenness</span>(net_undirected,<span class="dt">gmode =</span> <span class="st">&quot;graph&quot;</span>)</code></pre></div>
-<p>What do we do with this now. For example, we can create a data frame of all nodes in the undirected network with their respective degree, closeness and betweennes values.</p>
+<p>What do we do with this now? For example, we can create a data frame of all nodes in the undirected network with their respective degree, closeness and betweennes values.</p>
 <p>To do so, we combine the three vectors in a data frame.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">centrality_df &lt;-<span class="st"> </span><span class="kw">data.frame</span>(bet, clo, deg, <span class="dt">row.names =</span> <span class="kw">rownames</span>(adj_mat_largest_comp))
 <span class="kw">round</span>(centrality_df,<span class="dt">digits =</span> <span class="dv">2</span>) <span class="co">#just a bit of rounding.</span></code></pre></div>
@@ -237,16 +260,9 @@ bet &lt;-<span class="st"> </span><span class="kw">betweenness</span>(net_undire
 ## Drmic         4.0 0.48   2
 ## Seferovic     4.0 0.48   2
 ## Barnetta      0.0 0.50   2</code></pre>
-<p>Let’s now size the nodes in our visualization according to betweenness. Who holds the network together?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T, <span class="dt">node.size =</span> centrality_df<span class="op">$</span>bet) <span class="co">#plot undirected network</span></code></pre></div>
+<p>Let’s now size the nodes in our visualization according to betweenness. Who holds the network together? It looks like it’s Fabian Schär.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggnet2</span>(net_undirected, <span class="dt">node.label =</span> T, <span class="dt">node.size =</span> centrality_df$bet) <span class="co">#plot undirected network</span></code></pre></div>
 <p><img src="mainimages/unnamed-chunk-18-1.png" width="672" /></p>
-<p>We can now for example look at correlation between our centrality measures (these are usually quite high).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(centrality_df)</code></pre></div>
-<pre><code>##           bet       clo       deg
-## bet 1.0000000 0.8130028 0.9536775
-## clo 0.8130028 1.0000000 0.8887243
-## deg 0.9536775 0.8887243 1.0000000</code></pre>
-<p>Das Resultat zeigt auf, dass die verschiedenen Zentralitätsmasse stark miteinander korreliert sind. Dies ist meistens der Fall.</p>
 </div>
 <div id="global-centrality-measures" class="section level2">
 <h2><span class="header-section-number">4.5</span> Global centrality measures</h2>
@@ -266,8 +282,8 @@ bet &lt;-<span class="st"> </span><span class="kw">betweenness</span>(net_undire
           </div>
         </div>
       </div>
-<a href="nwdata.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="nwdata.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="nwinference.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -285,10 +301,11 @@ gitbook.start({
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
