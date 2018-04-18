@@ -77,30 +77,117 @@ att
 
 ## Dealing with network data in R
 
-### Storing network data using edge lists
+### Reading in data stored in an edge list
 
+Since edge lists (or adjacency lists) are the most efficient way of storing your data, we urge you to compile your network data in excel/txt-file using the sender-target columns for individual network ties.
 
-
+Reading in your data: 
+```{r, eval=FALSE}
+myel <- read.table(file = "myedgelist.csv", sep = ";", header = TRUE)
+```
 
 
 ```{block, type ='rmdtask'}
 Read in the network data of the Swiss national socer team.
 ```
 
+
 ### Converting an edge list to adjacency matrix
 
+Next you'll need to determine how many unique nodes you have in your network:  
 
+```{r, eval = FALSE}
+mynodes <- unique(c(myel$sender, myel$target))
+```
 
-### Converting an adjacency list to adjacency
+Once you have specified a vector with all the unique names of the nodes in your network, you can create an empty matrix (empty = filled with zeros) and label the columns and rows accordingly: 
 
+```{r, eval=FALSE}
+mat <- matrix(0, nrow = length(mynodes), ncol = length(mynodes))
+colnames(mat) <- mynodes
+rownames(mat) <- mynodes
+```
+
+Next you can fill your empty matrix with the ties reported in your egelist: 
+
+```{r, eval=FALSE}
+mat[cbind(myel$sender, myel$target)] <- 1
+```
 
 ### Storing nodal attributes the right way
 
+Once you have prepared your adjacency list, you can create your nodal attribute data frame. 
+
+```{block, type ='rmdwrong'}
+Never use an attribute data frame without having made sure that the rownames of your adjacency matrix match the rows in your attribute file!
+```
+
+You can either create a new data frame that contains a variable with the unique nodes, or you can sort a given attribute file so that the rows reflect the same people in the attribute file as well as in the adjacency matrix.
+
+```{r, eval=FALSE}
+dt <- read.table(file = "attributes.csv", sep = ";", header = TRUE)
+```
+
+Let's assume your data frame contains a variable `nodeID` with all unique node names. Then you can check if your attribute file matches the adjacency matrix:
+
+```{r, eval = FALSE}
+identical(att$nodeID, rownames(mat))
+```
+
+If they match, you can proceed. If they don't match, you'll have to sort your data: 
+
+```{r, eval=FALSE}
+att <- att[att$nodeID %in% mynodes,]
+## or: 
+att <- att[att$nodeID %in% rownames(mat),]
+## or: 
+att <- att[match(att$nodeID, mynodes),]
+## or: 
+att <- att[match(att$nodeID, rownames(mat)),]
+```
+
+or create a new data frame: 
+
+```{r, eval=FALSE}
+att <- data.frame(nodeID = rownames(mat))
+```
+
+and then match variables from your original attributes file to your new attribute file: 
+
+```{r, eval=FALSE}
+att$newVariable <- dt$variable[match(att$nodeID, dt$nodeID)]
+```
 
 
 ### The network object from the `statnet`-package
 
+The `statnet`-package mainly works with a `network`-object. This means that once you have prepared your adjacency matrix (here named `mat`) and your attributes file (here named `att`) you have to create a nework object with which you can then work with. 
 
+```{r, eval=FALSE}
+nw <- network(mat, directed = TRUE)
+```
+
+The `network()`-command takes various options. If you have a directed network, specify `directed = TRUE`, otherwise `directed = FALSE`.
+
+The network object stores all your information on the network: the number of nodes, the number of edges, whether it's a one-mode or two-mode network, whether it's directed or not, etc. 
+
+For the Swiss national soccer team friendship network, the object looks like this: 
+
+```{r, echo=FALSE}
+network(friends_adjmat, directed = TRUE)
+```
+
+You can see that the network contains 19 nodes (or vertices) and 27 edges (i.e., friendship ties).
+
+It can also store your network attributes that you have saved in the `att`-data frame until now: 
+
+```{r, eval = FALSE}
+set.vertex.attribute(nw, 'gender', att$gender)
+## or: 
+nw %v% 'gender' = att$gender
+```
+
+Now the variable `att$gender` is stored in the network `nw` and is labeled `gender`. You can give it whichever label you'd like, but make sure there are no spaces in between (this may cause errors later on).
 
 ## Different Network types: one-mode and two-mode networks
 
@@ -136,11 +223,10 @@ diag(one_mode_projection) <- 0 #exclude self-ties
 one_mode_projection[1:10,1:10] #look at the first 10 players
 ```
 
-```{r}
+```{r, echo=FALSE}
 ggnet2(network(one_mode_projection),
        label = TRUE)
 ```
-
 
 ## Network visualization
 
@@ -154,4 +240,34 @@ For pretty graphs in R, ggnet2 is hard to beat. https://briatte.github.io/ggnet/
 
 For more advanced (and even prettier) visualizations, Gephi is a dedicated open source project (although somewhat buggy). https://gephi.org/
 
+A third, java-based visualization tool is Visone. It is hard to beat when you want to look at different clusters in your network (but contains almost all other network visualization tools as well). https://visone.info
 
+### A brief overview over ggnet2()
+
+The command `ggnet2()` can work with either the adjacency matrix and the attributes-data frame or with the network object. 
+
+```{r}
+ggnet2(friends_adjmat,
+       label = TRUE,                     # should nodes be labeled?
+       arrow.size = 4, arrow.gap = 0.04, # set arrowheads
+       node.color = att$Position,        # specify node colors
+       palette = 'Spectral')             # use a pretty color-palette
+```
+
+Since all `ggnet()`-plots are `ggplots` you can add theme options that you usually use in ggplots: 
+
+```{r}
+ggnet2(friends_adjmat,
+       label = TRUE,                     
+       arrow.size = 4, arrow.gap = 0.04, 
+       node.color = att$Position,        
+       palette = 'Spectral') +   
+  theme(legend.position = 'bottom') +
+  ggtitle("Friendship network of the Swiss national soccer team")
+```
+
+Plus you can save the plots using `ggsave()`:
+
+```{r, eval=FALSE}
+ggsave(file = 'figures/nw_soccerCH.pdf', width = 15, height = 12, units = 'cm')
+```
