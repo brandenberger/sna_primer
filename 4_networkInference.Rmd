@@ -1,0 +1,255 @@
+# Network inference: Running regressions with network data {#nwinference}
+## Basic idea of Temporal Network Autocorrelation Model (TNAM)
+
+```{r include=FALSE}
+knitr::opts_chunk$set(fig.path = 'mainimages/')
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+library(statnet)
+library(ggplot2)
+library(GGally)
+library(scales)
+library(xergm)
+library(texreg)
+```
+
+```{r}
+## read data 
+el  <- read.table('data_literatur_varia/Edgelist_highSchoolfriends.csv', 
+                  sep = ";", header = TRUE)
+dt <- read.table('data_literatur_varia/Students_highSchoolAttributes.csv', 
+                 sep = ";", header = TRUE)
+
+## create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)
+students <- unique(c(el$studentID, el$friend.ID.code))
+mat <- matrix(0, nrow =length(students) , ncol = length(students))
+colnames(mat) <- as.character(students)
+rownames(mat) <- as.character(students)
+mat[cbind(as.character(el$studentID), 
+            as.character(el$friend.ID.code))] <- 1
+
+## create adjacency matrix for school friends
+matsf <- matrix(0, nrow =length(students) , ncol = length(students))
+colnames(matsf) <- as.character(students)
+rownames(matsf) <- as.character(students)
+matsf[cbind(as.character(el$studentID[el$school.friend == 'Yes']), 
+            as.character(el$friend.ID.code[el$school.friend == 'Yes']))] <- 1
+
+## create adjacency matrix for going-out-friends (friends with whom you go out and have drinks with)
+matdf <- matrix(0, nrow =length(students) , ncol = length(students))
+colnames(matdf) <- as.character(students)
+rownames(matdf) <- as.character(students)
+matdf[cbind(as.character(el$studentID[el$go.out.friend == 'Yes']), 
+            as.character(el$friend.ID.code[el$go.out.friend == 'Yes']))] <- 1
+
+## create attributes file that matches the adjacency matrix
+att <- data.frame('studentID' = rownames(mat))
+
+## add attributes
+# Grades in Math and French-Class
+att$grade.math.french <- dt$marks.french.math.num[match(att$studentID, dt$studentID)]
+# Name of school class
+att$class <- dt$class[match(att$studentID, dt$studentID)]
+# Gender
+att$gender <- dt$gender[match(att$studentID, dt$studentID)]
+# Age
+att$age <- dt$age[match(att$studentID, dt$studentID)]
+# Migration background
+att$migrationbg <- dt$migration.bg[match(att$studentID, dt$studentID)]
+# Liking school
+att$liking.school <- dt$likes.school.num[match(att$studentID, dt$studentID)]
+# Leisure time
+att$sport.hours <- dt$sport.hours[match(att$studentID, dt$studentID)]
+att$tv.hours <- dt$hr.spent.TV.num[match(att$studentID, dt$studentID)]
+att$friends.hours <- dt$hr.spent.friends.num[match(att$studentID, dt$studentID)]
+att$reading.hours <- dt$hr.spent.reading.num[match(att$studentID, dt$studentID)]
+# Values: Being successful & Earning a lot
+att$agree.besuccessfull <- dt$agree.be.successful.num[match(att$studentID, dt$studentID)]
+att$agree.earnalot <- dt$aggree.earn.alot.num[match(att$studentID, dt$studentID)]
+# Values: Repecting elders & Parental monitoring
+att$true.parentsinterested <- dt$true.parents.interested.num[match(att$studentID, dt$studentID)]
+att$true.respectelderly <- dt$agree.respect.elderly.num[match(att$studentID, dt$studentID)]
+```
+
+## TNAM-terms
+
+To capture network dependencies in the data, several different `tnam`-terms can be used to calculate new variables that may affect the dependent variable (or more neutrally: is correlated with the dependent variable).
+
+1. Spatial Lags - where a standard variable is multiplied with an adjacency
+matrix to test whether network autocorrelation exists, meaning whether the
+behavior of my neighbors/friends affects my behavior (is correlated with
+my behavior - no matter which way the correlation points, i.e., whether I
+choose similar friends or whether my friends affect me or whether I 
+influence my friends).
+
+2. Attribute similarity - using a spatial lag term, you compare the
+dependent variable of your friends to your own value in the dependent variable
+to see whether homophily (either influence or selection or both) is at work.
+
+3. Network effects - you can test the effect of network 
+effects on the dependent variable, i.e., whether popularity affects a dependent variable
+or centrality scores correlate with the dependent variable.
+
+Find out more on tnam-terms by typing: 
+
+```{r}
+?'tnam-terms'
+```
+
+## Running TNAMs
+
+### Purely exogenous factors - neglecting important network dependencies!
+
+```{r}
+fit1 <- lm(grade.math.french ~ 
+             age 
+           + gender,
+           data = att)
+summary(fit1)
+```
+
+Now these results are not reliable since we do not control for network dependencies among observations (=students). SE are overestimated, p-values are too low and estimates are also biased if we do not control for the fact that these observations potentially influence each other.
+
+### Checking for network autocorrelation
+
+Let's add a netlag term for network dependency. This term measures whether 
+your own performance (= measured by the grades achieved in the German class) correlates with the performance of your immediate friends. 
+
+With the `netlag()`-function we can easily estimate the (average) performance of an ego's friends.
+
+```{r}
+nldt <- netlag(att$grade.math.french, mat)
+```
+
+The netlag()-function creates a new data set with the following columns: 
+1. netlag.pathdist1 = performance of best friends
+2. time = here a constant
+3. node = nodeID
+4. response = dependent variable = here performance
+
+We will adopt the first variable into our attributes data set and include it in the regression:
+
+```{r}
+att$grade.friends <- netlag(att$grade.math.french, mat)[,1]
+```
+
+```{r}
+fit2 <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + grade.friends,
+           data = att)
+summary(fit2)
+```
+
+The normal `netlag()`-function uses no normalization and simply adds all the values of the friends together. 
+I prefer to use an average effect, where the performance is averaged over the number of friends I have.
+
+```{r}
+att$avg.grade.ofriends <- netlag(att$grade.math.french, mat, normalization = 'row')[,1]
+att$avg.grade.ifriends <- netlag(att$grade.math.french, mat, normalization = 'column')[,1]
+```
+
+```{r}
+fit3 <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + avg.grade.ofriends,
+           data = att)
+summary(fit3)
+```
+
+The `netlag()`-term allows for more distand network effects: 
+
+```{r}
+att$avg.grades.ofriendoffriends <- netlag(att$grade.math.french, mat, normalization = 'row', pathdist = 2)[,1]
+```
+
+```{r}
+fit4 <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + avg.grade.ofriends
+           + avg.grades.ofriendoffriends,
+           data = att)
+summary(fit4)
+```
+
+### Checking for Clique effects
+
+Instead of checking for correlations between ego's behavior and the average behavior of ego's friends you can also check for clique effects: here, the average performance is calculated not only for direct friends but also for indirect friends that are part of ego's clique. 
+
+
+```{r}
+att$clique.grades <- cliquelag(att$grade.math.french, mat)[,1]
+fit4 <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + clique.grades,
+           data = att)
+summary(fit4)
+```
+
+### Checking for centrality effects
+
+```{r}
+att$indegree <- degree(mat, cmode = 'indegree')
+fit5a <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + avg.grade.ofriends
+           + indegree,
+           data = att)
+summary(fit5a)
+att$outdegree <- degree(mat, cmode = 'outdegree')
+fit5b <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + avg.grade.ofriends
+           + outdegree,
+           data = att)
+summary(fit5b)
+att$betweenness <- betweenness(mat)
+fit5c <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + avg.grade.ofriends
+           + betweenness,
+           data = att)
+summary(fit5c)
+```
+
+### Attribute similarity
+
+You can also check whether students who share some attribute also share performance scores. 
+We could test this using the 'sport.hours' variable that measures the hours a student spends doing sports/exercises.
+
+```{r, echo=FALSE}
+source("data_literatur_varia/fun-error.R")
+```
+
+```{r, eval=FALSE}
+att$attrsim.sporthr <- attribsim(att$grade.math.french, att$sport.hours, match = FALSE)[,1]
+fit6 <- lm(grade.math.french ~ 
+             age 
+           + gender 
+           + avg.grade.ofriends
+           + attrsim.sporthr,
+           data = att)
+summary(fit6)
+```
+
+### A fuller model
+
+Controlling for gender and age is probably an underspecification, which leads to biased estimates (i.e., coefficients and standard errors). For sake of teaching a sparse model was chosen, but: 
+
+```{block, type = 'rmdright'}
+always make sure you include all (potential) control variables! 
+Do this by: 
+- comparing BIC scores between models (lower BIC = better model)
+- comparing R^2 between models
+- checking prediction performance of your model (advanced topic)
+```
+
+If you neglect ... HIER WEITER

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Social Network Analysis Primer</title>
+  <meta name="description" content="Social Network Analysis Primer">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Social Network Analysis Primer" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Social Network Analysis Primer" />
+  
+  
+  
+
+<meta name="author" content="Mario Angst and Laurence Brandenberger">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="font-awesome.min.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> A Guite to Social Network Analysis</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#goal"><i class="fa fa-check"></i><b>1.1</b> Goal</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#chapters"><i class="fa fa-check"></i><b>1.2</b> Chapters</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#textblocks"><i class="fa fa-check"></i><b>1.3</b> Textblocks</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction: Social Network Analysis - A primer for sport scientists.</a><ul>
+<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#relational-data-in-sports"><i class="fa fa-check"></i><b>2.1</b> Relational data in sports</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#network-phenomena-global-and-individual-levels"><i class="fa fa-check"></i><b>2.2</b> Network phenomena: Global and individual levels</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#networks-as-independent-variables"><i class="fa fa-check"></i><b>2.3</b> Networks as independent variables</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#example-english-soccer-teams"><i class="fa fa-check"></i><b>2.3.1</b> Example: English soccer teams</a></li>
+<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#example-something-with-individual-level-dependent-variable"><i class="fa fa-check"></i><b>2.3.2</b> Example: something with individual-level dependent variable</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#networks-as-dependent-variables"><i class="fa fa-check"></i><b>2.4</b> Networks as dependent variables</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#example"><i class="fa fa-check"></i><b>2.4.1</b> Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#setting-boundaries"><i class="fa fa-check"></i><b>2.5</b> Setting boundaries</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#conclusion-a-checklist-to-inform-your-research-design"><i class="fa fa-check"></i><b>2.6</b> Conclusion: A checklist to inform your research design</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="nwdata.html"><a href="nwdata.html"><i class="fa fa-check"></i><b>3</b> Network data: how to store and use network data</a><ul>
+<li class="chapter" data-level="3.1" data-path="nwdata.html"><a href="nwdata.html#different-formats-to-store-network-data"><i class="fa fa-check"></i><b>3.1</b> Different formats to store network data</a></li>
+<li class="chapter" data-level="3.2" data-path="nwdata.html"><a href="nwdata.html#create-adjacency-matrix"><i class="fa fa-check"></i><b>3.2</b> create adjacency matrix</a></li>
+<li class="chapter" data-level="3.3" data-path="nwdata.html"><a href="nwdata.html#plot-the-network"><i class="fa fa-check"></i><b>3.3</b> plot the network</a></li>
+<li class="chapter" data-level="3.4" data-path="nwdata.html"><a href="nwdata.html#dealing-with-network-data-in-r"><i class="fa fa-check"></i><b>3.4</b> Dealing with network data in R</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="nwdata.html"><a href="nwdata.html#reading-in-data-stored-in-an-edge-list"><i class="fa fa-check"></i><b>3.4.1</b> Reading in data stored in an edge list</a></li>
+<li class="chapter" data-level="3.4.2" data-path="nwdata.html"><a href="nwdata.html#converting-an-edge-list-to-adjacency-matrix"><i class="fa fa-check"></i><b>3.4.2</b> Converting an edge list to adjacency matrix</a></li>
+<li class="chapter" data-level="3.4.3" data-path="nwdata.html"><a href="nwdata.html#storing-nodal-attributes-the-right-way"><i class="fa fa-check"></i><b>3.4.3</b> Storing nodal attributes the right way</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="nwdata.html"><a href="nwdata.html#or"><i class="fa fa-check"></i><b>3.5</b> or:</a></li>
+<li class="chapter" data-level="3.6" data-path="nwdata.html"><a href="nwdata.html#or-1"><i class="fa fa-check"></i><b>3.6</b> or:</a></li>
+<li class="chapter" data-level="3.7" data-path="nwdata.html"><a href="nwdata.html#or-2"><i class="fa fa-check"></i><b>3.7</b> or:</a><ul>
+<li class="chapter" data-level="3.7.1" data-path="nwdata.html"><a href="nwdata.html#the-network-object-from-the-statnet-package"><i class="fa fa-check"></i><b>3.7.1</b> The network object from the <code>statnet</code>-package</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="nwdata.html"><a href="nwdata.html#or-3"><i class="fa fa-check"></i><b>3.8</b> or:</a></li>
+<li class="chapter" data-level="3.9" data-path="nwdata.html"><a href="nwdata.html#different-network-types-one-mode-and-two-mode-networks"><i class="fa fa-check"></i><b>3.9</b> Different Network types: one-mode and two-mode networks</a></li>
+<li class="chapter" data-level="3.10" data-path="nwdata.html"><a href="nwdata.html#network-visualization"><i class="fa fa-check"></i><b>3.10</b> Network visualization</a><ul>
+<li class="chapter" data-level="3.10.1" data-path="nwdata.html"><a href="nwdata.html#a-word-of-warning"><i class="fa fa-check"></i><b>3.10.1</b> A word of warning</a></li>
+<li class="chapter" data-level="3.10.2" data-path="nwdata.html"><a href="nwdata.html#resources-for-visualization"><i class="fa fa-check"></i><b>3.10.2</b> Resources for visualization</a></li>
+<li class="chapter" data-level="3.10.3" data-path="nwdata.html"><a href="nwdata.html#a-brief-overview-over-ggnet2"><i class="fa fa-check"></i><b>3.10.3</b> A brief overview over ggnet2()</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><i class="fa fa-check"></i><b>4</b> A step by step guide to computing centrality measures in statnet</a><ul>
+<li class="chapter" data-level="4.1" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#preparation"><i class="fa fa-check"></i><b>4.1</b> Preparation</a></li>
+<li class="chapter" data-level="4.2" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#objekte-vom-typ-network"><i class="fa fa-check"></i><b>4.2</b> Objekte vom Typ network</a></li>
+<li class="chapter" data-level="4.3" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#create-adjacency-matrix-1"><i class="fa fa-check"></i><b>4.3</b> create adjacency matrix</a></li>
+<li class="chapter" data-level="4.4" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#density"><i class="fa fa-check"></i><b>4.4</b> Density</a></li>
+<li class="chapter" data-level="4.5" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#node-level-centrality-measures"><i class="fa fa-check"></i><b>4.5</b> Node-level centrality measures</a></li>
+<li class="chapter" data-level="4.6" data-path="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html"><a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html#global-centrality-measures"><i class="fa fa-check"></i><b>4.6</b> Global centrality measures</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="nwinference.html"><a href="nwinference.html"><i class="fa fa-check"></i><b>5</b> Network inference: Running regressions with network data</a><ul>
+<li class="chapter" data-level="5.1" data-path="nwinference.html"><a href="nwinference.html#basic-idea-of-temporal-network-autocorrelation-model-tnam"><i class="fa fa-check"></i><b>5.1</b> Basic idea of Temporal Network Autocorrelation Model (TNAM)</a></li>
+<li class="chapter" data-level="5.2" data-path="nwinference.html"><a href="nwinference.html#tnam-terms"><i class="fa fa-check"></i><b>5.2</b> TNAM-terms</a></li>
+<li class="chapter" data-level="5.3" data-path="nwinference.html"><a href="nwinference.html#running-tnams"><i class="fa fa-check"></i><b>5.3</b> Running TNAMs</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="nwinference.html"><a href="nwinference.html#purely-exogenous-factors---neglecting-important-network-dependencies"><i class="fa fa-check"></i><b>5.3.1</b> Purely exogenous factors - neglecting important network dependencies!</a></li>
+<li class="chapter" data-level="5.3.2" data-path="nwinference.html"><a href="nwinference.html#checking-for-network-autocorrelation"><i class="fa fa-check"></i><b>5.3.2</b> Checking for network autocorrelation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="nwinference.html"><a href="nwinference.html#checking-for-clique-effects"><i class="fa fa-check"></i><b>5.3.3</b> Checking for Clique effects</a></li>
+<li class="chapter" data-level="5.3.4" data-path="nwinference.html"><a href="nwinference.html#checking-for-centrality-effects"><i class="fa fa-check"></i><b>5.3.4</b> Checking for centrality effects</a></li>
+<li class="chapter" data-level="5.3.5" data-path="nwinference.html"><a href="nwinference.html#attribute-similarity"><i class="fa fa-check"></i><b>5.3.5</b> Attribute similarity</a></li>
+<li class="chapter" data-level="5.3.6" data-path="nwinference.html"><a href="nwinference.html#a-fuller-model"><i class="fa fa-check"></i><b>5.3.6</b> A fuller model</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Social Network Analysis Primer</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="nwinference" class="section level1">
+<h1><span class="header-section-number">5</span> Network inference: Running regressions with network data</h1>
+<div id="basic-idea-of-temporal-network-autocorrelation-model-tnam" class="section level2">
+<h2><span class="header-section-number">5.1</span> Basic idea of Temporal Network Autocorrelation Model (TNAM)</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## read data 
+el  &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;data_literatur_varia/Edgelist_highSchoolfriends.csv&#39;</span>, 
+                  <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)
+dt &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;data_literatur_varia/Students_highSchoolAttributes.csv&#39;</span>, 
+                 <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)
+
+## create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)
+students &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">c</span>(el<span class="op">$</span>studentID, el<span class="op">$</span>friend.ID.code))
+mat &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span><span class="kw">length</span>(students) , <span class="dt">ncol =</span> <span class="kw">length</span>(students))
+<span class="kw">colnames</span>(mat) &lt;-<span class="st"> </span><span class="kw">as.character</span>(students)
+<span class="kw">rownames</span>(mat) &lt;-<span class="st"> </span><span class="kw">as.character</span>(students)
+mat[<span class="kw">cbind</span>(<span class="kw">as.character</span>(el<span class="op">$</span>studentID), 
+            <span class="kw">as.character</span>(el<span class="op">$</span>friend.ID.code))] &lt;-<span class="st"> </span><span class="dv">1</span>
+
+## create adjacency matrix for school friends
+matsf &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span><span class="kw">length</span>(students) , <span class="dt">ncol =</span> <span class="kw">length</span>(students))
+<span class="kw">colnames</span>(matsf) &lt;-<span class="st"> </span><span class="kw">as.character</span>(students)
+<span class="kw">rownames</span>(matsf) &lt;-<span class="st"> </span><span class="kw">as.character</span>(students)
+matsf[<span class="kw">cbind</span>(<span class="kw">as.character</span>(el<span class="op">$</span>studentID[el<span class="op">$</span>school.friend <span class="op">==</span><span class="st"> &#39;Yes&#39;</span>]), 
+            <span class="kw">as.character</span>(el<span class="op">$</span>friend.ID.code[el<span class="op">$</span>school.friend <span class="op">==</span><span class="st"> &#39;Yes&#39;</span>]))] &lt;-<span class="st"> </span><span class="dv">1</span>
+
+## create adjacency matrix for going-out-friends (friends with whom you go out and have drinks with)
+matdf &lt;-<span class="st"> </span><span class="kw">matrix</span>(<span class="dv">0</span>, <span class="dt">nrow =</span><span class="kw">length</span>(students) , <span class="dt">ncol =</span> <span class="kw">length</span>(students))
+<span class="kw">colnames</span>(matdf) &lt;-<span class="st"> </span><span class="kw">as.character</span>(students)
+<span class="kw">rownames</span>(matdf) &lt;-<span class="st"> </span><span class="kw">as.character</span>(students)
+matdf[<span class="kw">cbind</span>(<span class="kw">as.character</span>(el<span class="op">$</span>studentID[el<span class="op">$</span>go.out.friend <span class="op">==</span><span class="st"> &#39;Yes&#39;</span>]), 
+            <span class="kw">as.character</span>(el<span class="op">$</span>friend.ID.code[el<span class="op">$</span>go.out.friend <span class="op">==</span><span class="st"> &#39;Yes&#39;</span>]))] &lt;-<span class="st"> </span><span class="dv">1</span>
+
+## create attributes file that matches the adjacency matrix
+att &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="st">&#39;studentID&#39;</span> =<span class="st"> </span><span class="kw">rownames</span>(mat))
+
+## add attributes
+<span class="co"># Grades in Math and French-Class</span>
+att<span class="op">$</span>grade.math.french &lt;-<span class="st"> </span>dt<span class="op">$</span>marks.french.math.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Name of school class</span>
+att<span class="op">$</span>class &lt;-<span class="st"> </span>dt<span class="op">$</span>class[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Gender</span>
+att<span class="op">$</span>gender &lt;-<span class="st"> </span>dt<span class="op">$</span>gender[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Age</span>
+att<span class="op">$</span>age &lt;-<span class="st"> </span>dt<span class="op">$</span>age[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Migration background</span>
+att<span class="op">$</span>migrationbg &lt;-<span class="st"> </span>dt<span class="op">$</span>migration.bg[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Liking school</span>
+att<span class="op">$</span>liking.school &lt;-<span class="st"> </span>dt<span class="op">$</span>likes.school.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Leisure time</span>
+att<span class="op">$</span>sport.hours &lt;-<span class="st"> </span>dt<span class="op">$</span>sport.hours[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+att<span class="op">$</span>tv.hours &lt;-<span class="st"> </span>dt<span class="op">$</span>hr.spent.TV.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+att<span class="op">$</span>friends.hours &lt;-<span class="st"> </span>dt<span class="op">$</span>hr.spent.friends.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+att<span class="op">$</span>reading.hours &lt;-<span class="st"> </span>dt<span class="op">$</span>hr.spent.reading.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Values: Being successful &amp; Earning a lot</span>
+att<span class="op">$</span>agree.besuccessfull &lt;-<span class="st"> </span>dt<span class="op">$</span>agree.be.successful.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+att<span class="op">$</span>agree.earnalot &lt;-<span class="st"> </span>dt<span class="op">$</span>aggree.earn.alot.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+<span class="co"># Values: Repecting elders &amp; Parental monitoring</span>
+att<span class="op">$</span>true.parentsinterested &lt;-<span class="st"> </span>dt<span class="op">$</span>true.parents.interested.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]
+att<span class="op">$</span>true.respectelderly &lt;-<span class="st"> </span>dt<span class="op">$</span>agree.respect.elderly.num[<span class="kw">match</span>(att<span class="op">$</span>studentID, dt<span class="op">$</span>studentID)]</code></pre></div>
+</div>
+<div id="tnam-terms" class="section level2">
+<h2><span class="header-section-number">5.2</span> TNAM-terms</h2>
+<p>To capture network dependencies in the data, several different <code>tnam</code>-terms can be used to calculate new variables that may affect the dependent variable (or more neutrally: is correlated with the dependent variable).</p>
+<ol style="list-style-type: decimal">
+<li><p>Spatial Lags - where a standard variable is multiplied with an adjacency matrix to test whether network autocorrelation exists, meaning whether the behavior of my neighbors/friends affects my behavior (is correlated with my behavior - no matter which way the correlation points, i.e., whether I choose similar friends or whether my friends affect me or whether I influence my friends).</p></li>
+<li><p>Attribute similarity - using a spatial lag term, you compare the dependent variable of your friends to your own value in the dependent variable to see whether homophily (either influence or selection or both) is at work.</p></li>
+<li><p>Network effects - you can test the effect of network effects on the dependent variable, i.e., whether popularity affects a dependent variable or centrality scores correlate with the dependent variable.</p></li>
+</ol>
+<p>Find out more on tnam-terms by typing:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">?<span class="st">&#39;tnam-terms&#39;</span></code></pre></div>
+</div>
+<div id="running-tnams" class="section level2">
+<h2><span class="header-section-number">5.3</span> Running TNAMs</h2>
+<div id="purely-exogenous-factors---neglecting-important-network-dependencies" class="section level3">
+<h3><span class="header-section-number">5.3.1</span> Purely exogenous factors - neglecting important network dependencies!</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit1 &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit1)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender, data = att)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.5166 -0.5166  0.0142  0.6588  1.6588 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  5.64240    0.70978   7.949 2.83e-14 ***
+## age         -0.07229    0.04224  -1.712   0.0879 .  
+## gendermale   0.17541    0.10055   1.745   0.0820 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9051 on 338 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.01636,    Adjusted R-squared:  0.01054 
+## F-statistic: 2.811 on 2 and 338 DF,  p-value: 0.06158</code></pre>
+<p>Now these results are not reliable since we do not control for network dependencies among observations (=students). SE are overestimated, p-values are too low and estimates are also biased if we do not control for the fact that these observations potentially influence each other.</p>
+</div>
+<div id="checking-for-network-autocorrelation" class="section level3">
+<h3><span class="header-section-number">5.3.2</span> Checking for network autocorrelation</h3>
+<p>Let’s add a netlag term for network dependency. This term measures whether your own performance (= measured by the grades achieved in the German class) correlates with the performance of your immediate friends.</p>
+<p>With the <code>netlag()</code>-function we can easily estimate the (average) performance of an ego’s friends.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">nldt &lt;-<span class="st"> </span><span class="kw">netlag</span>(att<span class="op">$</span>grade.math.french, mat)</code></pre></div>
+<p>The netlag()-function creates a new data set with the following columns: 1. netlag.pathdist1 = performance of best friends 2. time = here a constant 3. node = nodeID 4. response = dependent variable = here performance</p>
+<p>We will adopt the first variable into our attributes data set and include it in the regression:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>grade.friends &lt;-<span class="st"> </span><span class="kw">netlag</span>(att<span class="op">$</span>grade.math.french, mat)[,<span class="dv">1</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit2 &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>grade.friends,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit2)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + grade.friends, 
+##     data = att)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.5402 -0.4870  0.0133  0.6676  1.7154 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    5.573817   0.712216   7.826 6.57e-14 ***
+## age           -0.074396   0.042264  -1.760   0.0793 .  
+## gendermale     0.185680   0.100940   1.840   0.0667 .  
+## grade.friends  0.006659   0.005993   1.111   0.2673    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9048 on 337 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.01995,    Adjusted R-squared:  0.01122 
+## F-statistic: 2.287 on 3 and 337 DF,  p-value: 0.07852</code></pre>
+<p>The normal <code>netlag()</code>-function uses no normalization and simply adds all the values of the friends together. I prefer to use an average effect, where the performance is averaged over the number of friends I have.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>avg.grade.ofriends &lt;-<span class="st"> </span><span class="kw">netlag</span>(att<span class="op">$</span>grade.math.french, mat, <span class="dt">normalization =</span> <span class="st">&#39;row&#39;</span>)[,<span class="dv">1</span>]
+att<span class="op">$</span>avg.grade.ifriends &lt;-<span class="st"> </span><span class="kw">netlag</span>(att<span class="op">$</span>grade.math.french, mat, <span class="dt">normalization =</span> <span class="st">&#39;column&#39;</span>)[,<span class="dv">1</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit3 &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>avg.grade.ofriends,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit3)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + avg.grade.ofriends, 
+##     data = att)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.54831 -0.50981 -0.00981  0.71351  1.70279 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         5.30974    0.72837   7.290 2.23e-12 ***
+## age                -0.07413    0.04208  -1.761   0.0791 .  
+## gendermale          0.18675    0.10034   1.861   0.0636 .  
+## avg.grade.ofriends  0.08580    0.04512   1.902   0.0581 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9016 on 337 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.0268, Adjusted R-squared:  0.01814 
+## F-statistic: 3.094 on 3 and 337 DF,  p-value: 0.02713</code></pre>
+<p>The <code>netlag()</code>-term allows for more distand network effects:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>avg.grades.ofriendoffriends &lt;-<span class="st"> </span><span class="kw">netlag</span>(att<span class="op">$</span>grade.math.french, mat, <span class="dt">normalization =</span> <span class="st">&#39;row&#39;</span>, <span class="dt">pathdist =</span> <span class="dv">2</span>)[,<span class="dv">1</span>]</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>avg.grade.ofriends
+           <span class="op">+</span><span class="st"> </span>avg.grades.ofriendoffriends,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit4)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + avg.grade.ofriends + 
+##     avg.grades.ofriendoffriends, data = att)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.53735 -0.51553 -0.00669  0.69880  1.76122 
+## 
+## Coefficients:
+##                             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)                  5.31759    0.72893   7.295 2.16e-12 ***
+## age                         -0.07093    0.04233  -1.676   0.0948 .  
+## gendermale                   0.17945    0.10089   1.779   0.0762 .  
+## avg.grade.ofriends           0.10551    0.05238   2.014   0.0448 *  
+## avg.grades.ofriendoffriends -0.06924    0.09330  -0.742   0.4585    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9022 on 336 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.02839,    Adjusted R-squared:  0.01683 
+## F-statistic: 2.455 on 4 and 336 DF,  p-value: 0.04565</code></pre>
+</div>
+<div id="checking-for-clique-effects" class="section level3">
+<h3><span class="header-section-number">5.3.3</span> Checking for Clique effects</h3>
+<p>Instead of checking for correlations between ego’s behavior and the average behavior of ego’s friends you can also check for clique effects: here, the average performance is calculated not only for direct friends but also for indirect friends that are part of ego’s clique.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>clique.grades &lt;-<span class="st"> </span><span class="kw">cliquelag</span>(att<span class="op">$</span>grade.math.french, mat)[,<span class="dv">1</span>]
+fit4 &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>clique.grades,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit4)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + clique.grades, 
+##     data = att)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.56359 -0.50301  0.01606  0.66415  1.68883 
+## 
+## Coefficients:
+##                Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)    5.587911   0.715100   7.814 7.12e-14 ***
+## age           -0.071803   0.042277  -1.698   0.0904 .  
+## gendermale     0.187352   0.102230   1.833   0.0677 .  
+## clique.grades  0.004487   0.006761   0.664   0.5074    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9059 on 337 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.01764,    Adjusted R-squared:  0.008897 
+## F-statistic: 2.017 on 3 and 337 DF,  p-value: 0.1113</code></pre>
+</div>
+<div id="checking-for-centrality-effects" class="section level3">
+<h3><span class="header-section-number">5.3.4</span> Checking for centrality effects</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>indegree &lt;-<span class="st"> </span><span class="kw">degree</span>(mat, <span class="dt">cmode =</span> <span class="st">&#39;indegree&#39;</span>)
+fit5a &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>avg.grade.ofriends
+           <span class="op">+</span><span class="st"> </span>indegree,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit5a)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + avg.grade.ofriends + 
+##     indegree, data = att)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.48733 -0.52220 -0.00039  0.69348  1.68315 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         5.30653    0.72887   7.280 2.38e-12 ***
+## age                -0.07130    0.04229  -1.686   0.0927 .  
+## gendermale          0.18111    0.10070   1.799   0.0730 .  
+## avg.grade.ofriends  0.08938    0.04540   1.969   0.0498 *  
+## indegree           -0.01702    0.02298  -0.741   0.4595    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9022 on 336 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.02839,    Adjusted R-squared:  0.01682 
+## F-statistic: 2.454 on 4 and 336 DF,  p-value: 0.0457</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>outdegree &lt;-<span class="st"> </span><span class="kw">degree</span>(mat, <span class="dt">cmode =</span> <span class="st">&#39;outdegree&#39;</span>)
+fit5b &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>avg.grade.ofriends
+           <span class="op">+</span><span class="st"> </span>outdegree,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit5b)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + avg.grade.ofriends + 
+##     outdegree, data = att)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -2.53743 -0.52950 -0.00305  0.69813  1.71214 
+## 
+## Coefficients:
+##                    Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         5.32109    0.72908   7.298 2.12e-12 ***
+## age                -0.07280    0.04216  -1.727   0.0851 .  
+## gendermale          0.17998    0.10086   1.784   0.0753 .  
+## avg.grade.ofriends  0.09566    0.04722   2.026   0.0436 *  
+## outdegree          -0.02092    0.02937  -0.712   0.4768    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9023 on 336 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.02827,    Adjusted R-squared:  0.0167 
+## F-statistic: 2.444 on 4 and 336 DF,  p-value: 0.04649</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>betweenness &lt;-<span class="st"> </span><span class="kw">betweenness</span>(mat)
+fit5c &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>avg.grade.ofriends
+           <span class="op">+</span><span class="st"> </span>betweenness,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit5c)</code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = grade.math.french ~ age + gender + avg.grade.ofriends + 
+##     betweenness, data = att)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -2.5533 -0.5063 -0.0064  0.7179  1.7079 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)         5.300e+00  7.303e-01   7.257 2.76e-12 ***
+## age                -7.367e-02  4.217e-02  -1.747   0.0816 .  
+## gendermale          1.871e-01  1.005e-01   1.862   0.0635 .  
+## avg.grade.ofriends  8.401e-02  4.565e-02   1.840   0.0666 .  
+## betweenness         5.164e-06  1.884e-05   0.274   0.7842    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.9029 on 336 degrees of freedom
+##   (27 observations deleted due to missingness)
+## Multiple R-squared:  0.02702,    Adjusted R-squared:  0.01544 
+## F-statistic: 2.333 on 4 and 336 DF,  p-value: 0.05558</code></pre>
+</div>
+<div id="attribute-similarity" class="section level3">
+<h3><span class="header-section-number">5.3.5</span> Attribute similarity</h3>
+<p>You can also check whether students who share some attribute also share performance scores. We could test this using the ‘sport.hours’ variable that measures the hours a student spends doing sports/exercises.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">att<span class="op">$</span>attrsim.sporthr &lt;-<span class="st"> </span><span class="kw">attribsim</span>(att<span class="op">$</span>grade.math.french, att<span class="op">$</span>sport.hours, <span class="dt">match =</span> <span class="ot">FALSE</span>)[,<span class="dv">1</span>]
+fit6 &lt;-<span class="st"> </span><span class="kw">lm</span>(grade.math.french <span class="op">~</span><span class="st"> </span>
+<span class="st">             </span>age 
+           <span class="op">+</span><span class="st"> </span>gender 
+           <span class="op">+</span><span class="st"> </span>avg.grade.ofriends
+           <span class="op">+</span><span class="st"> </span>attrsim.sporthr,
+           <span class="dt">data =</span> att)
+<span class="kw">summary</span>(fit6)</code></pre></div>
+</div>
+<div id="a-fuller-model" class="section level3">
+<h3><span class="header-section-number">5.3.6</span> A fuller model</h3>
+<p>Controlling for gender and age is probably an underspecification, which leads to biased estimates (i.e., coefficients and standard errors). For sake of teaching a sparse model was chosen, but:</p>
+<div class="rmdright">
+<p>
+always make sure you include all (potential) control variables! Do this by: - comparing BIC scores between models (lower BIC = better model) - comparing R^2 between models - checking prediction performance of your model (advanced topic)
+</p>
+</div>
+<p>If you neglect … HIER WEITER</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="a-step-by-step-guide-to-computing-centrality-measures-in-statnet.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
