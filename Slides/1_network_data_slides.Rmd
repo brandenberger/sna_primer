@@ -35,7 +35,3 @@ A comment
 
 </div>
   
-## <span style="color:blue">Your turn</span>
-
-Read in your own data and save it as an edgelist. Use bookdown chapter 2 for instructions.
-  
