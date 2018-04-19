@@ -17,6 +17,8 @@ types_of_edges_table <- xtable(read.csv("bookdown_resources/Waescher_table.csv",
 print(types_of_edges_table, type = 'html', include.rownames = F)
 ```
 
+For a general introduction to SNA there are a number of good books, eg. @Scott2013, @Hanneman2005 or @Wasserman1994 (in their respective current editions). 
+
 ## Network phenomena: Global and individual levels
 
 We can broadly distinguish between network measures on the individual and global level. 
@@ -31,10 +33,6 @@ What is the influence of structure?
 
 @Grund2012 examine the relationship between the passing structure of English soccer teams (network characteristics on the global level as an independent variable) on team success.
 
-### Example: something with individual-level dependent variable
-
-
-
 ## Networks as dependent variables
 
 How does structure come about?
@@ -45,7 +43,16 @@ How does structure come about?
 
 ## Setting boundaries
 
-Nominalist and realist [@Waesche2017]
+Determining the boundaries of a social network (who belongs to it and who not/ who is included in the analysis) is a task fraught with ambiguity. There usually are no neat borders in the social world, especially if relations between social actors are considered. For example, studying friendship ties within a single sports team sounds straightforward at first. However, friendship is an obvious example where relations are usually not confined to a single group. Thus, member of a sports team will be embedded in a larger friendship network. Depending on the character of this embeddedness, this can have a great impact on the phenomenon under study. For example, two groups of team members might originate from friendship relations to polarizing characters outside the team, or former team member might be important actors who still have an influence on present team dynamics.
+
+While recognizing this ambiguity, we should not despair. To ensure reproducability and transparency, it is most important to clearly state the strategy taken in determining network boundaries. The literature has developed a terminology for this.
+
+On a very basic level, nominalist and realist strategies can be distinguished [@Waesche2017]. In nominalist strategies, network boundaries are defined by the researcher. In realist strategies, this is done by the study participants.
+
+When choosing a nominalist approach, the setting of boundaries by the researcher should be justified on theoretical ground. An argument should be supplied for why a chosen boundary setting is the most appropriate for answering the study questionn. @Scott2013 (p. 44) distinguishes different types of nominalist strategies. Using a positional approach, study subjects are chosen from formally defined categories (such as members of a sports team). If this is not possible (if, for example, such categories do not exist, or it is hard to identify them), a reputational approach is another possibility. In a reputational approach, study subjects are identified through nomination by others. Thus for example, to study an informal trend sport community that is not (yet) organized in leagues or teams, member of the community could be asked to name people they consider part of the community or the most important members of the community.
+
+A somewhat different approach to boundary setting is snowball sampling, which can also be applied when a positional approach is not possible. In carrying out snowball sampling, member of a starting population are asked to nominate others they are related to regarding the type of relation under study. These are then included in the study population. This process can be repeated until a desired level of saturation is reached.
+
 
 ## Conclusion: A checklist to inform your research design
 

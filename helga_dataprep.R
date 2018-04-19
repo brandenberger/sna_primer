@@ -21,4 +21,7 @@ el_helga_friends
 
 ggnet2(network(el_helga_friends), label = T)
 
+colnames(el_helga_friends) <- c("sender", "receiver")
+
+write.csv2(el_helga_friends, "data_literatur_varia/el_helga_friends.csv", fileEncoding = "UTF-8", row.names = F)
 
