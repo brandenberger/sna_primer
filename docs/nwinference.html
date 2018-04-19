@@ -100,7 +100,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> A Guite to Social Network Analysis</a><ul>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> A Guide to Social Network Analysis</a><ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#goal"><i class="fa fa-check"></i><b>1.1</b> Goal</a></li>
 <li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#chapters"><i class="fa fa-check"></i><b>1.2</b> Chapters</a></li>
 <li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#textblocks"><i class="fa fa-check"></i><b>1.3</b> Textblocks</a></li>
@@ -110,7 +110,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#network-phenomena-global-and-individual-levels"><i class="fa fa-check"></i><b>2.2</b> Network phenomena: Global and individual levels</a></li>
 <li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#networks-as-independent-variables"><i class="fa fa-check"></i><b>2.3</b> Networks as independent variables</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#example-english-soccer-teams"><i class="fa fa-check"></i><b>2.3.1</b> Example: English soccer teams</a></li>
-<li class="chapter" data-level="2.3.2" data-path="intro.html"><a href="intro.html#example-something-with-individual-level-dependent-variable"><i class="fa fa-check"></i><b>2.3.2</b> Example: something with individual-level dependent variable</a></li>
 </ul></li>
 <li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#networks-as-dependent-variables"><i class="fa fa-check"></i><b>2.4</b> Networks as dependent variables</a><ul>
 <li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#example"><i class="fa fa-check"></i><b>2.4.1</b> Example:</a></li>
@@ -137,7 +136,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="4" data-path="centrality.html"><a href="centrality.html"><i class="fa fa-check"></i><b>4</b> A step by step guide to computing centrality measures in statnet</a><ul>
 <li class="chapter" data-level="4.1" data-path="centrality.html"><a href="centrality.html#preparation"><i class="fa fa-check"></i><b>4.1</b> Preparation</a></li>
-<li class="chapter" data-level="4.2" data-path="centrality.html"><a href="centrality.html#objekte-vom-typ-network"><i class="fa fa-check"></i><b>4.2</b> Objekte vom Typ network</a></li>
+<li class="chapter" data-level="4.2" data-path="centrality.html"><a href="centrality.html#objects-of-type-network"><i class="fa fa-check"></i><b>4.2</b> Objects of type network</a></li>
 <li class="chapter" data-level="4.3" data-path="centrality.html"><a href="centrality.html#density"><i class="fa fa-check"></i><b>4.3</b> Density</a></li>
 <li class="chapter" data-level="4.4" data-path="centrality.html"><a href="centrality.html#node-level-centrality-measures"><i class="fa fa-check"></i><b>4.4</b> Node-level centrality measures</a></li>
 <li class="chapter" data-level="4.5" data-path="centrality.html"><a href="centrality.html#global-centrality-measures"><i class="fa fa-check"></i><b>4.5</b> Global centrality measures</a></li>
@@ -201,6 +200,13 @@ el  &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class
                   <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)
 dt &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&#39;data_literatur_varia/Students_highSchoolAttributes.csv&#39;</span>, 
                  <span class="dt">sep =</span> <span class="st">&quot;;&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p>The data comes from a Swiss high-school that I’ve surveyed in 2014. About 600 students were asked to complete a questionnaire on their friends, their grades, their values, beliefs, deviant behavior etc.</p>
+<div class="figure"><span id="fig:unnamed-chunk-4"></span>
+<img src="data_literatur_varia/NW_year_marks_respondentonly.pdf" alt="Friendship network at a Swiss high-school"  />
+<p class="caption">
+Figure 5.1: Friendship network at a Swiss high-school
+</p>
+</div>
 <p>We’ll create two networks: one for all sorts of friends (best friends, drinking buddies etc.) and one for school friends only:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#create adjacency matrix for all sorts of friends (best friends, drinking buddies, school friends etc.)</span>
 students &lt;-<span class="st"> </span><span class="kw">unique</span>(<span class="kw">c</span>(el<span class="op">$</span>studentID, el<span class="op">$</span>friend.ID.code))
