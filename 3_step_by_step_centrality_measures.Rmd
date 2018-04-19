@@ -18,7 +18,7 @@ library(GGally)
 ```
 
 
-## Objekte vom Typ network
+## Objects of type network
 
 In the following, we will utilize the friendship network of the Swiss national soccer team. Let's quickly recall the adjacency matrix.
 
@@ -45,7 +45,7 @@ friends_adjmat[1:5,1:5]
 
 We will create two _network_ objects out of this matrix. Remember, objects of type network are a specific way to save networks in R. They are created using the function network().
 
-We first create a directed network with the option directed = T, which we name net_directed.
+We first create a directed network with the option directed = T, which we name `net_directed`.
 
 ```{r}
 net_directed <- network(friends_adjmat,directed = T) #make a directed network object
@@ -67,7 +67,7 @@ net_undirected <- network(friends_adjmat,directed = F) #make an undirected netwo
 ggnet2(net_undirected, node.label = T) #plot undirected network
 ```
 
-We can now do different operation on these network objects by feeding them into functions. The first operation is already depicted above. With plot() or ggnet2(), we can create network graphics. But we can go a long way beyond this and use more formalized ways of analyzing network structure.
+We can now do different operation on these network objects by feeding them into functions. The first operation is already depicted above. With `ggnet2()`, we can create network graphics. But we can go a long way beyond this and use more formalized ways of analyzing network structure.
 
 A first operation we can do is to only use the largest connected component of the network for further calculation. This is done here to simplify interpretation. A connected component of a network is a part of the network where all nodes are connected in some way. There can be many components in a network, if the network is disconnected into different parts. The largest connected component is the connected component with the most nodes. 
 
@@ -88,7 +88,7 @@ ggnet2(net_directed, node.label = T, arrow.size = 3, arrow.gap = 0.05) #plot dir
 
 ## Density
 
-First, let's compute the density of the undirected network. We can do this using the function gden(). For most network metrics, it is important if the network is directed or not. We can tell the gden function about this using the parameter _mode_. Setting mode to "graph", calculates density according to the formula for an undirected network.
+First, let's compute the density of the undirected network. We can do this using the function `gden()`. For most network metrics, it is important if the network is directed or not. We can tell the gden function about this using the parameter _mode_. Setting mode to "graph", calculates density according to the formula for an undirected network.
 
 ```{r}
 gden(dat = net_undirected,mode = "graph") #calculate with gden function
@@ -104,17 +104,32 @@ Remember, you can always look at the different parameters of R functions using ?
 
 ## Node-level centrality measures
 
-Using the function degree(), we can now calculate the degree centrality of every mode in the network.
+Using the function `degree()`, we can now calculate the degree centrality of every mode in the network.
+
+```{r, echo=FALSE, fig.cap = 'Degree centrality of node f', fig.width=6, fig.height=5}
+knitr::include_graphics(rep("data_literatur_varia/randNW_undirected_central.jpg"))
+```
+
+Node `f` in the network has a degree of 5, which means five other nodes link to node f.
+
 Using the degree function on the undirected network (remember that we have to specify "graph" again for this), we receive a vector of degree centralitiy for each node.
 
 ```{r}
-degree(net_undirected,gmode = "graph")
+degree(net_undirected, gmode = "graph")
 ```
 
 To further work with these degree values, we have to write them into an object. Thus, we write the vector we receive by running degree into an R object we call deg.
 
 ```{r}
-deg <- degree(net_undirected,gmode = "graph") #calculate a vector of degree values for all nodes in
+deg <- degree(net_undirected, gmode = "graph") #calculate a vector of degree values for all nodes in
+```
+
+If you have a directed network, you can calculate indegree- and outdegree-centrality. 
+Indegree-centrality measures how many other nodes name a particular node as friend (or partner/team mate/..). It measures popularity of nodes in a network. Node `e` has an indegree of 4 (see graph below).
+Outdegree-centrality measures how active a node is in the network, meaning how many other nodes said node nominates as friend/partner/team mate/etc.. Node `f`, for instance, has an outdegree of 4 in the graph below.
+
+```{r, echo=FALSE, fig.cap = 'Indegree- and outdegree-centrality of nodes e and f', fig.width=6, fig.height=5}
+knitr::include_graphics(rep("data_literatur_varia/randNW_directed_central.jpg"))
 ```
 
 Let's do the same things for closeness and betweenness.
@@ -139,6 +154,30 @@ Let's now size the nodes in our visualization according to betweenness. Who hold
 ggnet2(net_undirected, node.label = T, node.size = centrality_df$bet) #plot undirected network
 ```
 
+Centrality scores measure different positions in the network: 
+
+1. Indegree: measures popularity
+2. Outdegree: measures activity
+3. Closeness: measures whether a node is close to all other nodes or not
+4. Betweenness: measures whether a node is in a broker position (between two or more groups)
+
+See how the node-sizes change for different operationalizations of centrality:
+
+```{r, echo=FALSE,fig.cap='Indegree centrality', fig.width=6, fig.height=5}
+knitr::include_graphics(rep("data_literatur_varia/rand_indegree.pdf"))
+```
+
+```{r, echo=FALSE,fig.cap='Outdegree centrality', fig.width=6, fig.height=5}
+knitr::include_graphics(rep("data_literatur_varia/rand_outdegree.pdf"))
+```
+
+```{r, echo=FALSE,fig.cap='Closeness centrality', fig.width=6, fig.height=5}
+knitr::include_graphics(rep("data_literatur_varia/rand_closeness.pdf"))
+```
+
+```{r, echo=FALSE,fig.cap='Betweenness centrality', fig.width=6, fig.height=5}
+knitr::include_graphics(rep("data_literatur_varia/rand_betweenness.pdf"))
+```
 
 ## Global centrality measures
 

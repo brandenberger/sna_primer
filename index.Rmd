@@ -42,7 +42,7 @@ knitr::opts_chunk$set(fig.path = 'mainimages/')
 <!-- knitr::include_graphics(rep("screenshots/plagiate.png")) -->
 <!-- ``` -->
 
-# A Guite to Social Network Analysis
+# A Guide to Social Network Analysis
 ## Goal
 
 The following document contains a brief introduction to social network analysis.
