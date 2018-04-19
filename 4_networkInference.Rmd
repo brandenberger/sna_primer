@@ -45,6 +45,12 @@ dt <- read.table('data_literatur_varia/Students_highSchoolAttributes.csv',
                  sep = ";", header = TRUE)
 ```
 
+The data comes from a Swiss high-school that I've surveyed in 2014. About 600 students were asked to complete a questionnaire on their friends, their grades, their values, beliefs, deviant behavior etc.
+
+```{r, echo=FALSE, fig.cap = 'Friendship network at a Swiss high-school', fig.width=10, fig.height=8}
+knitr::include_graphics(rep("data_literatur_varia/NW_year_marks_respondentonly.pdf"))
+```
+
 We'll create two networks: one for all sorts of friends (best friends, drinking buddies etc.) and one for school friends only:
 
 ```{r}

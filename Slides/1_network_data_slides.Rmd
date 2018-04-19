@@ -22,7 +22,7 @@ What we are going to do:
 - Practice with your own data
 - Visualize a network in R
 
-![](bookdown_resources/ganesha.jpg)
+![](slides_resources/ganesha.jpg)
 
 
 
