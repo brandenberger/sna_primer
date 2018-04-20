@@ -1,0 +1,6 @@
+# Set working directory to the location of the package files
+setwd("D:/my_usb/packages/")
+
+# Read the package filenames and install
+pkgFilenames <- read.csv("pkgFilenames.csv", stringsAsFactors = FALSE)[, 1]
+install.packages(pkgFilenames, repos = NULL, type = "win.binary
